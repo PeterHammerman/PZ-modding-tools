@@ -645,7 +645,7 @@ namespace PZOutfitAssembler
 
 
             if (checkBoxDebug.Checked)
-                xmlFilePath = "C:/PZTest/GeneratedFiles/media/scripts/clothingItems/" + selectedItem + ".xml";
+                xmlFilePath = "C:/PZTest/GeneratedFiles" + clothingItemXMLDir + selectedItem + ".xml";
             else
                 xmlFilePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles" + clothingItemXMLDir + selectedItem + ".xml";
 
