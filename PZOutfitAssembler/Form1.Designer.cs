@@ -89,6 +89,8 @@ namespace PZOutfitAssembler
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.textBoxGUID = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -126,8 +128,6 @@ namespace PZOutfitAssembler
             this.listBoxVanila = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -324,7 +324,7 @@ namespace PZOutfitAssembler
             // checkBoxStatic
             // 
             this.checkBoxStatic.AutoSize = true;
-            this.checkBoxStatic.Location = new System.Drawing.Point(15, 170);
+            this.checkBoxStatic.Location = new System.Drawing.Point(16, 157);
             this.checkBoxStatic.Name = "checkBoxStatic";
             this.checkBoxStatic.Size = new System.Drawing.Size(51, 17);
             this.checkBoxStatic.TabIndex = 32;
@@ -333,7 +333,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxFemaleModel
             // 
-            this.textBoxFemaleModel.Location = new System.Drawing.Point(15, 91);
+            this.textBoxFemaleModel.Location = new System.Drawing.Point(16, 81);
             this.textBoxFemaleModel.Name = "textBoxFemaleModel";
             this.textBoxFemaleModel.Size = new System.Drawing.Size(277, 20);
             this.textBoxFemaleModel.TabIndex = 45;
@@ -342,7 +342,7 @@ namespace PZOutfitAssembler
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 75);
+            this.label16.Location = new System.Drawing.Point(13, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(69, 13);
             this.label16.TabIndex = 44;
@@ -367,7 +367,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxTextureChoices
             // 
-            this.textBoxTextureChoices.Location = new System.Drawing.Point(15, 139);
+            this.textBoxTextureChoices.Location = new System.Drawing.Point(15, 120);
             this.textBoxTextureChoices.Name = "textBoxTextureChoices";
             this.textBoxTextureChoices.Size = new System.Drawing.Size(277, 20);
             this.textBoxTextureChoices.TabIndex = 47;
@@ -376,7 +376,7 @@ namespace PZOutfitAssembler
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 122);
+            this.label18.Location = new System.Drawing.Point(13, 104);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(77, 13);
             this.label18.TabIndex = 46;
@@ -729,6 +729,25 @@ namespace PZOutfitAssembler
             this.panel2.Size = new System.Drawing.Size(599, 574);
             this.panel2.TabIndex = 80;
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(107, 9);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(113, 23);
+            this.button9.TabIndex = 102;
+            this.button9.Text = "New Item";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(383, 17);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(103, 13);
+            this.label27.TabIndex = 83;
+            this.label27.Text = "Not implemented yet";
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(4, 542);
@@ -1038,7 +1057,6 @@ namespace PZOutfitAssembler
             // 
             // button8
             // 
-            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(9, 249);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(87, 34);
@@ -1108,25 +1126,6 @@ namespace PZOutfitAssembler
             this.label24.Size = new System.Drawing.Size(103, 13);
             this.label24.TabIndex = 82;
             this.label24.Text = "Not implemented yet";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(383, 17);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(103, 13);
-            this.label27.TabIndex = 83;
-            this.label27.Text = "Not implemented yet";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(107, 9);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(113, 23);
-            this.button9.TabIndex = 102;
-            this.button9.Text = "New Item";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label28
             // 

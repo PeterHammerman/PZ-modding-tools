@@ -23,6 +23,10 @@ namespace PZOutfitAssembler
         public string directoryPath = "C:/PZTest/GeneratedFiles/media/scripts/clothing/";
         public string PZinstallPath = "";
 
+        public string clothingScriptsDir = "/media/scripts/clothing/";
+        public string clothingItemXMLDir = "/media/clothing/clothingItems/";
+
+
 
 
         public Form1()
@@ -37,7 +41,7 @@ namespace PZOutfitAssembler
             PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
             if (!string.IsNullOrEmpty(installPath))
             {
-                string vanillaItems = installPath + "/media/scripts/clothing/";
+                string vanillaItems = installPath + clothingScriptsDir;
                 PZinstallPath = installPath;
                 PopulateItemListBoxWithFileNames(vanillaItems, listBoxVanila);
             }
@@ -227,7 +231,7 @@ namespace PZOutfitAssembler
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Save item
         {
 
             // Get the file path from textBoxPath
@@ -251,8 +255,8 @@ namespace PZOutfitAssembler
                     outputPath += "/GeneratedFiles";
                     // Create the output directory if it doesn't exist
                     Directory.CreateDirectory(outputPath);
-                    Directory.CreateDirectory(outputPath + "/media/scripts/clothing/");
-                    Directory.CreateDirectory(outputPath + "/media/scripts/clothingItems/");
+                    Directory.CreateDirectory(outputPath + clothingScriptsDir);
+                    Directory.CreateDirectory(outputPath + clothingItemXMLDir);
                     Directory.CreateDirectory(outputPath + "/media/clothing/");
 
 
@@ -266,10 +270,10 @@ namespace PZOutfitAssembler
 
 
                     // Save the itemname.txt file
-                    string itemNameFilePath = Path.Combine(outputPath + "/media/scripts/clothing/", itemID + ".txt");
+                    string itemNameFilePath = Path.Combine(outputPath + clothingScriptsDir, itemID + ".txt");
                     File.WriteAllText(itemNameFilePath, itemNameContent);
 
-                    string xmlClothItemFilePath = Path.Combine(outputPath + "/media/scripts/clothingItems/", itemID + ".xml");
+                    string xmlClothItemFilePath = Path.Combine(outputPath + clothingItemXMLDir, textBoxClothingItem.Text + ".xml");
                     File.WriteAllText(xmlClothItemFilePath, xmlContent);
 
                     string xmlGUIDTableFilePath = Path.Combine(outputPath + "/media/", "newFileGuidTable.xml");
@@ -508,7 +512,7 @@ namespace PZOutfitAssembler
             if (checkBoxDebug.Checked)
                 filePath = directoryPath + selectedItem + ".txt";
             else
-                filePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles//media/scripts/clothing/" + selectedItem + ".txt";
+                filePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles/media/scripts/clothing/" + selectedItem + ".txt";
 
 
 
@@ -518,7 +522,7 @@ namespace PZOutfitAssembler
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e) //Clear editor window
         {
             ResetItemInfo();
         }
@@ -529,6 +533,8 @@ namespace PZOutfitAssembler
 
             if (properties != null)
             {
+
+                //JSON
                 textBoxID.Text = selectedItem;
                 var propertyToTextBoxMapping = new Dictionary<string, TextBox>
             {
@@ -548,12 +554,6 @@ namespace PZOutfitAssembler
                 { "FabricType", textBoxFabric },
                 { "WorldStaticModel", textBoxStaticModel },
                 { "Tags", textBoxTags },
-
-
-  //              textBoxMaleModel.Text = maleModel;
-  //              textBoxFemaleModel.Text = femaleModel;
-   //             textBoxTextureChoices.Text = textureChoices;
-  //              checkBoxStatic.Checked = isStatic;
 
                };
 
@@ -586,7 +586,6 @@ namespace PZOutfitAssembler
                 // Add any other string values that should trigger checkboxes to be checked
             };
 
-                // Populate checkboxes
                 // Populate checkboxes
                 foreach (var kvp in propertyToCheckboxMapping)
                 {
@@ -637,6 +636,9 @@ namespace PZOutfitAssembler
 
             }
 
+            //XML 
+
+            selectedItem = textBoxClothingItem.Text;
 
 
             string xmlFilePath = @"media/scripts/clothingItems/" + selectedItem;
@@ -645,7 +647,7 @@ namespace PZOutfitAssembler
             if (checkBoxDebug.Checked)
                 xmlFilePath = "C:/PZTest/GeneratedFiles/media/scripts/clothingItems/" + selectedItem + ".xml";
             else
-                xmlFilePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles/media/scripts/clothingItems/" + selectedItem + ".xml";
+                xmlFilePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles" + clothingItemXMLDir + selectedItem + ".xml";
 
 
 
@@ -721,27 +723,342 @@ namespace PZOutfitAssembler
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void ExtractVanilaItemDataToDictionary(string txtDirectoryPath, string xmlDirectory, string selectedItemName, Dictionary<string, (string ItemScript, string ItemXml)> itemDataDictionary)
+        {
+            try
+            {
+                // Ensure the directory exists
+                if (!Directory.Exists(txtDirectoryPath))
+                {
+                    MessageBox.Show($"Directory '{txtDirectoryPath}' not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Get all .txt files in the directory
+                string[] txtFiles = Directory.GetFiles(txtDirectoryPath, "*.txt");
+                string itemScript = null;
+                string itemXml = null;
+
+                // Search for the item across all .txt files
+                foreach (string txtFilePath in txtFiles)
+                {
+                    string fileContent = File.ReadAllText(txtFilePath);
+
+                    // Match the selected item structure
+                    Regex itemRegex = new Regex($@"item\s+{Regex.Escape(selectedItemName)}\s*\{{(.*?)\}}", RegexOptions.Singleline);
+                    Match itemMatch = itemRegex.Match(fileContent);
+
+                    if (itemMatch.Success)
+                    {
+                        itemScript = $"item {selectedItemName} {{\n{itemMatch.Groups[1].Value}\n}}";
+                        break;
+                    }
+                }
+
+                if (itemScript == null)
+                {
+                    MessageBox.Show($"Item '{selectedItemName}' not found in any file in the directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Extract associated XML data if ClothingItem property exists
+                Regex clothingItemRegex = new Regex(@"ClothingItem\s*=\s*(?<value>[^,]+),", RegexOptions.IgnoreCase);
+                Match clothingItemMatch = clothingItemRegex.Match(itemScript);
+
+                if (clothingItemMatch.Success)
+                {
+                    string clothingItemFileName = clothingItemMatch.Groups["value"].Value.Trim();
+                    string xmlFilePath = Path.Combine(xmlDirectory, $"{clothingItemFileName}.xml");
+
+                    if (File.Exists(xmlFilePath))
+                    {
+                        itemXml = File.ReadAllText(xmlFilePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Associated XML file '{clothingItemFileName}.xml' not found.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+                // Add the item script and XML data to the dictionary
+                if (itemScript != null)
+                {
+                    itemDataDictionary[selectedItemName] = (itemScript, itemXml ?? string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private Dictionary<string, string> ReadItemPropertiesFromString(string itemScript, string selectedItem)
+        {
+            var properties = new Dictionary<string, string>();
+            try
+            {
+                // Match the selected item structure within the provided script
+                Regex itemRegex = new Regex($@"item\s+{Regex.Escape(selectedItem)}\s*\{{(.*?)\}}", RegexOptions.Singleline);
+                Match itemMatch = itemRegex.Match(itemScript);
+
+                if (!itemMatch.Success)
+                {
+                    throw new Exception($"Item '{selectedItem}' not found in the provided script.");
+                }
+
+                // Extract properties from the item structure
+                string propertiesBlock = itemMatch.Groups[1].Value;
+
+                // Match property name and value pairs
+                Regex propertyRegex = new Regex(@"(?<name>\w+)\s*=\s*(?<value>[^,]+),");
+                foreach (Match propertyMatch in propertyRegex.Matches(propertiesBlock))
+                {
+                    string propertyName = propertyMatch.Groups["name"].Value.Trim();
+                    string propertyValue = propertyMatch.Groups["value"].Value.Trim();
+                    properties[propertyName] = propertyValue;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return properties;
+        }
+
+        private void button8_Click(object sender, EventArgs e) //Vanila items window button
         {
             if (PZinstallPath.Length > 0)
             {
                 ResetItemInfo();
 
                 string selectedItem = listBoxVanila.SelectedItem.ToString();
-                string filePath = @"media/scripts/clothing/" + selectedItem;
-
-
-                filePath = PZinstallPath + "/GeneratedFiles//media/scripts/clothing/" + selectedItem + ".txt";
 
 
 
-                populateItemEditorWindow(filePath, selectedItem);
+                string txtDirectoryPath = PZinstallPath + clothingScriptsDir;
+                string xmlDirectory = PZinstallPath + clothingItemXMLDir;
+
+                var itemDataDictionary = new Dictionary<string, (string ItemScript, string ItemXml)>();
+
+                ExtractVanilaItemDataToDictionary(txtDirectoryPath, xmlDirectory, selectedItem, itemDataDictionary);
+
+                // Accessing the extracted data
+                if (itemDataDictionary.TryGetValue(selectedItem, out var itemData))
+                {
+                    string itemScript = itemData.ItemScript;
+                    string itemXml = itemData.ItemXml;
+
+                    Console.WriteLine("Item Script:");
+                    Console.WriteLine(itemScript);
+
+                    Console.WriteLine("Item XML:");
+                    Console.WriteLine(itemXml);
+
+
+                    Dictionary<string, string> properties = ReadItemPropertiesFromString(itemScript, selectedItem);
+
+                    if (properties != null)
+                    {
+
+                        //JSON
+                        textBoxID.Text = selectedItem;
+                        var propertyToTextBoxMapping = new Dictionary<string, TextBox>
+            {
+                { "DisplayName", textBoxDisplayName },
+                { "DisplayCategory",textBoxCategory},
+                { "Type", textBoxType },
+                { "Weight",textBoxWeigth },
+                { "IconsForTexture", textBoxTextureIcon },
+                { "BodyLocation", textBoxBodyLocation },
+                { "BloodLocation", textBoxBloodLocation },
+                { "ChanceToFall", textBoxChanceToFall },
+                { "ClothingItem", textBoxClothingItem },
+                { "ClothingItemExtra", textBoxClothingItemExtra },
+                { "ClothingItemExtraOption", textBoxClothingItemExtraOption },
+                { "Insulation", textBoxInsulation },
+                { "WindResistance", textBoxWind },
+                { "FabricType", textBoxFabric },
+                { "WorldStaticModel", textBoxStaticModel },
+                { "Tags", textBoxTags },
+
+               };
+
+                        var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
+               {
+                { "CanHaveHoles", checkBoxCanHaveHoles },
+                { "ChanceToFall", checkBoxChanceToFall },
+                { "ClothingItemExtra", checkBoxClothingItemExtra },
+                { "ClothingItemExtraOption", checkBoxClothingItemExtraOption },
+                { "Insulation", checkBoxInsulation },
+                { "WindResistance", checkBoxWind },
+                { "FabricType", checkBoxFabric },
+                { "WorldStaticModel", checkBoxStaticModel },
+                // Add more mappings as necessary
+               };
+
+
+                        // Populate textboxes
+                        foreach (var property in properties)
+                        {
+                            if (propertyToTextBoxMapping.ContainsKey(property.Key))
+                            {
+                                propertyToTextBoxMapping[property.Key].Text = property.Value;
+                            }
+                        }
+
+                        var stringValuesForCheckboxes = new HashSet<string>
+            {
+                "Enabled", "Active", "True", "On", "Yes", "TRUE"
+                // Add any other string values that should trigger checkboxes to be checked
+            };
+
+                        // Populate checkboxes
+                        foreach (var kvp in propertyToCheckboxMapping)
+                        {
+                            if (properties.ContainsKey(kvp.Key))
+                            {
+                                string propertyValue = properties[kvp.Key].Trim().ToLowerInvariant();
+
+                                // Check for boolean values (true/false) and string-based true values
+                                if (propertyValue == "true" || propertyValue == "1" || propertyValue == "yes" || propertyValue == "enabled")
+                                {
+                                    kvp.Value.Checked = true;
+                                }
+                                else if (propertyValue == "false" || propertyValue == "0" || propertyValue == "no" || propertyValue == "disabled")
+                                {
+                                    kvp.Value.Checked = false;
+                                }
+                                else if (float.TryParse(propertyValue, out float floatValue))
+                                {
+                                    // Property has a valid float value, enable the checkbox
+                                    kvp.Value.Checked = true;
+                                }
+                                else if (!string.IsNullOrEmpty(propertyValue))
+                                {
+                                    // If the value is a non-empty string (e.g., "Cotton", "media/models/model.fbx"), enable the checkbox
+                                    kvp.Value.Checked = true;
+                                }
+                                else
+                                {
+                                    // Unexpected value, log and uncheck the checkbox
+                                    Console.WriteLine($"Unexpected value for property '{kvp.Key}': {propertyValue}");
+                                    kvp.Value.Checked = false;
+                                }
+                            }
+                            else
+                            {
+                                // Property is missing, set checkbox to false
+                                kvp.Value.Checked = false;
+                            }
+                        }
+
+
+
+
+
+
+                        //           string displayCategory = checkBoxCanHaveHoles.Checked ? textBoxDisplayName.Text : null;
+
+
+                    }
+                    //XML 
+
+                    selectedItem = textBoxClothingItem.Text;
+
+                    if (selectedItem.Length > 0)
+                    {
+                        string xmlFilePath = @"media/scripts/clothingItems/" + selectedItem;
+
+
+
+                        xmlFilePath = PZinstallPath + clothingItemXMLDir + selectedItem + ".xml";
+
+
+
+                        try
+                        {
+                            // Load the XML file
+                            XElement clothingItemElement = XElement.Load(xmlFilePath);
+
+                            // Map XML element names to corresponding textboxes
+                            var propertyToTextBoxMapping = new Dictionary<string, TextBox>
+        {
+            { "m_MaleModel", textBoxMaleModel },
+            { "m_FemaleModel", textBoxFemaleModel },
+            { "m_GUID", textBoxGUID },
+            { "textureChoices", textBoxTextureChoices }
+            // Add more mappings as needed
+        };
+
+                            // Map XML element names to corresponding checkboxes
+                            var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
+        {
+            { "m_Static", checkBoxStatic },
+          //  { "m_AllowRandomHue", checkBoxAllowRandomHue },
+          //  { "m_AllowRandomTint", checkBoxAllowRandomTint }
+            // Add more checkboxes as needed
+        };
+
+                            // Populate textboxes
+                            foreach (var property in propertyToTextBoxMapping)
+                            {
+                                var element = clothingItemElement.Element(property.Key);
+                                if (element != null)
+                                {
+                                    property.Value.Text = element.Value;
+                                }
+                            }
+
+                            // Populate checkboxes
+                            foreach (var kvp in propertyToCheckboxMapping)
+                            {
+                                var element = clothingItemElement.Element(kvp.Key);
+                                if (element != null)
+                                {
+                                    string propertyValue = element.Value.Trim().ToLowerInvariant();
+
+                                    // Set the checkbox based on boolean values (true/false)
+                                    if (propertyValue == "true" || propertyValue == "1" || propertyValue == "yes" || propertyValue == "enabled")
+                                    {
+                                        kvp.Value.Checked = true;
+                                    }
+                                    else if (propertyValue == "false" || propertyValue == "0" || propertyValue == "no" || propertyValue == "disabled")
+                                    {
+                                        kvp.Value.Checked = false;
+                                    }
+                                    else
+                                    {
+                                        // Handle unexpected values if needed
+                                        Console.WriteLine($"Unexpected value for checkbox property '{kvp.Key}': {propertyValue}");
+                                        kvp.Value.Checked = false;
+                                    }
+                                }
+                                else
+                                {
+                                    // If the property is not found, uncheck the checkbox
+                                    kvp.Value.Checked = false;
+                                }
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"An error occurred while populating controls from XML: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                        MessageBox.Show($"This is not valid clothing item, only regular item", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show($"Project Zomboid not found on computer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-                MessageBox.Show($"Project ZOmboid not found on computer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
+    
+
+   
 
 
 
