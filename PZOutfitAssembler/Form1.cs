@@ -22,7 +22,7 @@ namespace PZOutfitAssembler
         // string directoryPath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles/media/scripts/clothing/";
         public string directoryPath = "C:/PZTest/GeneratedFiles/media/scripts/clothing/";
         public string PZinstallPath = "";
-
+        public string GUIDsDir = "/media/";
         public string clothingScriptsDir = "/media/scripts/clothing/";
         public string clothingItemXMLDir = "/media/clothing/clothingItems/";
 
@@ -266,7 +266,7 @@ namespace PZOutfitAssembler
                     // Assemble the XML content
                     string xmlContent = AssembleItemXML();
                     string xmlnewOutfit = AssembleOutfitXML();
-                    string xmlnewGUID = "test";
+
 
 
                     // Save the itemname.txt file
@@ -276,8 +276,7 @@ namespace PZOutfitAssembler
                     string xmlClothItemFilePath = Path.Combine(outputPath + clothingItemXMLDir, textBoxClothingItem.Text + ".xml");
                     File.WriteAllText(xmlClothItemFilePath, xmlContent);
 
-                    string xmlGUIDTableFilePath = Path.Combine(outputPath + "/media/", "newFileGuidTable.xml");
-                    File.WriteAllText(xmlGUIDTableFilePath, xmlnewGUID);
+
 
                     string xmlOutfitTableFilePath = Path.Combine(outputPath + "/media/clothing/", "newClothing.xml");
                     File.WriteAllText(xmlOutfitTableFilePath, xmlnewOutfit);
@@ -1052,6 +1051,107 @@ namespace PZOutfitAssembler
                 }
                 else
                     MessageBox.Show($"Project Zomboid not found on computer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)  // Assemble GUID table
+        {
+
+            string outputPath;
+
+            if (checkBoxDebug.Checked)
+                outputPath = textBoxPath.Text;
+            else
+                outputPath = AppDomain.CurrentDomain.BaseDirectory;
+            // Validate the output path
+
+
+            try
+            {
+
+                outputPath += "/GeneratedFiles";
+                // Create the output directory if it doesn't exist
+                Directory.CreateDirectory(outputPath + GUIDsDir);
+
+                string outputFilePath = outputPath + GUIDsDir + "newFileGuidTable.xml";
+
+//                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                GenerateFileGuidTable(outputFilePath, "media/clothing/clothingItems/", listBoxItems);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void GenerateFileGuidTable(string outputFilePath, string folderPath, ListBox listBox)
+        {
+            try
+            {
+                // Define paths
+                string inputFolderPath = @"C:/PZTest/GeneratedFiles/media/clothing/clothingitems/";
+                string outputFilePathGUID = @"C:/PZTest/GeneratedFiles/media/newFileGuidTable.xml";
+
+                // Initialize the root element of the XML
+                var xmlDoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
+                var rootElement = new XElement("fileGuidTable");
+
+                // Get all XML files in the folder
+                string[] xmlFiles = Directory.GetFiles(inputFolderPath, "*.xml");
+
+                foreach (string filePath in xmlFiles)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Processing file: {filePath}");
+
+                        // Read and parse the file
+                        string fileContent = File.ReadAllText(filePath);
+                        Console.WriteLine(fileContent); // Debug: Check the content
+
+                        XDocument fileXml = XDocument.Parse(fileContent);
+
+                        // Locate the <m_GUID> element
+                        var guidElement = fileXml.Descendants().FirstOrDefault(e => e.Name.LocalName.Equals("m_GUID", StringComparison.OrdinalIgnoreCase));
+
+                        if (guidElement != null)
+                        {
+                            string guidValue = guidElement.Value.Trim();
+
+                            // Extract the relative path starting from "media/"
+                            int mediaIndex = filePath.IndexOf("media", StringComparison.OrdinalIgnoreCase);
+                            string relativePath = mediaIndex >= 0 ? filePath.Substring(mediaIndex).Replace("\\", "/") : filePath;
+
+                            // Create and add the entry for this file
+                            var fileElement = new XElement("files",
+                                new XElement("path", relativePath),
+                                new XElement("guid", guidValue)
+                            );
+
+                            rootElement.Add(fileElement);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Warning: <m_GUID> not found in file: {filePath}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error processing file {filePath}: {ex.Message}");
+                    }
+                }
+
+                // Add root element and save the output file
+                xmlDoc.Add(rootElement);
+                xmlDoc.Save(outputFilePathGUID);
+
+                MessageBox.Show("FileGuidTable.xml generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
