@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace PZOutfitAssembler
 {
@@ -102,74 +103,100 @@ namespace PZOutfitAssembler
 
         private void ResetItemInfo()
         {
-            // Get values from textboxes
-            string IDName = "";
-            string displayName = "";
-            //           string displayCategory = checkBoxCanHaveHoles.Checked ? textBoxDisplayName.Text : null;
-            string displayCategory = "";
-            string type = "";
-            string weight = "";
-            string iconsForTexture = "";
-            string bodyLocation = "";
-            string bloodLocation = "";
-            string chanceToFall = "";
-            string clothingItem = "";
-            string clothingItemExtra = "";
-            string clothingItemExtraOption = "";
-            string insulation = "";
-            string wind = "";
-            string fabrictype = "";
-            string staticModel = "";
-            string tags = "";
 
-            string maleModel = "";
-            string femaleModel = "";
-            string textureChoices = "";
 
-            bool isStatic = false;
-            bool haveHoles = false;
-            bool haveChanceToFall = false;
-            bool haveClothingItemExtra = false;
-            bool haveClothingItemExtraOptions = false;
-            bool haveInsulation = false;
-            bool haveWindRes = false;
-            bool haveFabricType = false;
-            bool haveWorldStaticModel = false;
             guid = "";
 
 
-            textBoxID.Text = IDName;
-            textBoxDisplayName.Text = displayName;
+            textBoxID.Text = "";
+            textBoxDisplayName.Text = "";
             //           string displayCategory = checkBoxCanHaveHoles.Checked ? textBoxDisplayName.Text : null;
-            textBoxCategory.Text = displayCategory;
-            textBoxType.Text = type;
-            textBoxWeigth.Text = weight;
-            textBoxTextureIcon.Text = iconsForTexture;
-            textBoxBodyLocation.Text = bodyLocation;
-            textBoxBloodLocation.Text = bloodLocation;
-            textBoxChanceToFall.Text = chanceToFall;
-            textBoxClothingItem.Text = clothingItem;
-            textBoxClothingItemExtra.Text = clothingItemExtra;
-            textBoxClothingItemExtraOption.Text = clothingItemExtraOption;
-            textBoxInsulation.Text = insulation;
-            textBoxWind.Text = wind;
-            textBoxFabric.Text = fabrictype;
-            textBoxStaticModel.Text = staticModel;
-            textBoxTags.Text = tags;
+            textBoxCategory.Text = "";
+            textBoxType.Text = "";
+            textBoxWeigth.Text = "";
+            textBoxTextureIcon.Text = "";
+            textBoxBodyLocation.Text = "";
+            textBoxBloodLocation.Text = "";
+            textBoxChanceToFall.Text = "";
+            textBoxClothingItem.Text = ""; 
+            textBoxClothingItemExtra.Text = "";
+            textBoxClothingItemExtraOption.Text = "";
+            textBoxInsulation.Text = "";
+            textBoxWind.Text = "";
+            textBoxFabric.Text = "";
+            textBoxStaticModel.Text = "";
+            textBoxTags.Text = "";
 
-            textBoxMaleModel.Text = maleModel;
-            textBoxFemaleModel.Text = femaleModel;
-            textBoxTextureChoices.Text = textureChoices;
+            textBoxMaleModel.Text = "";
+            textBoxFemaleModel.Text = "";
+            textBoxTextureChoices.Text = "";
 
-            checkBoxStatic.Checked = isStatic;
-            checkBoxCanHaveHoles.Checked = haveHoles;
-            checkBoxChanceToFall.Checked = haveChanceToFall;
-            checkBoxClothingItemExtra.Checked = haveClothingItemExtra;
-            checkBoxClothingItemExtraOption.Checked = haveClothingItemExtraOptions;
-            checkBoxInsulation.Checked = haveInsulation;
-            checkBoxWind.Checked = haveWindRes;
-            checkBoxFabric.Checked = haveFabricType;
-            checkBoxStaticModel.Checked = haveWorldStaticModel;
+            textBoxAttachReplacement.Text = "";
+            textBoxCapacity.Text = "";
+            textBoxCanbeequipped.Text = "";
+            textBoxOpenSound.Text = "";
+            textBoxCloseSound.Text = "";
+            textBoxPutinsound.Text = "";
+            textBoxReplaceprimaryhand.Text = "";
+            textBoxReplacesecondaryhand.Text = "";
+            textBoxRunspeedmodifier.Text = "";
+            textBoxWeigthreduction.Text = "";
+            textBoxAttachmentProvided.Text = "";
+
+            textBoxIcon.Text = "";
+            textBoxBulletDefense.Text = "";
+            textBoxScratchDefense.Text = "";
+            textBoxDiscomfort.Text = "";
+            textBoxCombatSpeed.Text = "";
+            textBoxWaterResistance.Text = "";
+            textBoxVisionModifier.Text = "";
+            textBoxHearing.Text = "";
+            textBoxCorpseSicknessDefence.Text = "";
+            textBoxDamageSound.Text = "";
+            textBoxMaxItemSize.Text = "";
+            textBoxSoundParam.Text = "";
+            textBoxMetalValue.Text = "";
+            textBoxAcceptItemFunction.Text = "";
+
+
+
+            checkBoxStatic.Checked = false;
+            checkBoxCanHaveHoles.Checked = false;
+            checkBoxChanceToFall.Checked = false;
+            checkBoxClothingItemExtra.Checked = false;
+            checkBoxClothingItemExtraOption.Checked = false;
+            checkBoxInsulation.Checked = false;
+            checkBoxWind.Checked = false;
+            checkBoxFabric.Checked = false;
+            checkBoxStaticModel.Checked = false;
+
+            checkBoxCapacity.Checked = false;
+            checkBoxCanbeequipped.Checked = false;
+            checkBoxOpensound.Checked = false;
+            checkBoxClosesound.Checked = false;
+            checkBoxPutinsound.Checked = false;
+            checkBoxReplaceprimaryhand.Checked = false;
+            checkBoxReplacesecondhand.Checked = false;
+            checkBoxRunspeedmodifier.Checked = false;
+            checkBoxWeigthreduction.Checked = false;
+            checkBoxAttachmentProvided.Checked = false;
+            checkBoxAttachmentReplacement.Checked = false;
+
+            checkBoxIcon.Checked = false;
+            checkBoxBulletDefense.Checked = false;
+            checkBoxScratchDefense.Checked = false;
+            checkBoxDiscomfort.Checked = false;
+            checkBoxCombatSpeed.Checked = false;
+            checkBoxWaterResistance.Checked = false;
+            checkBoxVisionModifier.Checked = false;
+            checkBoxHearingModifier.Checked = false;
+            checkBoxCorpseSicknessDefence.Checked = false;
+            checkBoxDamageSound.Checked = false;
+            checkBoxMaxItemSize.Checked = false;
+            checkBoxSoundParam.Checked = false;
+            checkBoxMetalValue.Checked = false;
+            checkBoxAcceptItemFunction.Checked = false;
+
 
             textBoxGUID.Text = guid;
 
@@ -320,6 +347,38 @@ namespace PZOutfitAssembler
             string staticModel = textBoxStaticModel.Text;
 
 
+
+
+
+            string attachreplacement = textBoxAttachReplacement.Text;
+            string canbeequipped = textBoxCanbeequipped.Text;
+            string capacity = textBoxCapacity.Text;
+            string opensound = textBoxOpenSound.Text;
+            string closesound = textBoxCloseSound.Text;
+            string putinsound = textBoxPutinsound.Text;
+            string primaryhand = textBoxReplaceprimaryhand.Text;
+            string secondaryhand = textBoxReplacesecondaryhand.Text;
+            string runspeedmodifier = textBoxRunspeedmodifier.Text;
+            string weigthreduction = textBoxWeigthreduction.Text;
+            string attachmentprovided = textBoxAttachmentProvided.Text;
+
+            string icon = textBoxIcon.Text;
+            string bulletdef = textBoxBulletDefense.Text;
+            string scratchdef = textBoxScratchDefense.Text;
+            string discomfort = textBoxDiscomfort.Text;
+            string combatspeed = textBoxCombatSpeed.Text;
+            string waterres = textBoxWaterResistance.Text;
+            string visionmod = textBoxVisionModifier.Text;
+            string hearing = textBoxHearing.Text;
+            string corpsedef = textBoxCorpseSicknessDefence.Text;
+
+            string damagesound = textBoxDamageSound.Text;
+            string maxitemsize = textBoxMaxItemSize.Text;
+            string soundparam = textBoxSoundParam.Text;
+            string metalvalue = textBoxMetalValue.Text;
+            string itemfunction = textBoxAcceptItemFunction.Text;
+
+
             // Build the script content
             string script = "module Base\n{ \n";
             script += $"    item {IDName}\n";
@@ -337,6 +396,7 @@ namespace PZOutfitAssembler
             script += $"        IconsForTexture = {iconsForTexture},\n";
             script += $"        BodyLocation = {bodyLocation},\n";
             script += $"        BloodLocation = {bloodLocation},\n";
+
             if (checkBoxChanceToFall.Checked)
                 script += $"        ChanceToFall = {chanceToFall},\n";
 
@@ -363,6 +423,71 @@ namespace PZOutfitAssembler
                 script += $"        CanHaveHoles = TRUE,\n";
             else
                 script += $"        CanHaveHoles = FALSE,\n";
+
+
+
+            if (checkBoxAttachmentReplacement.Checked)
+                script += $"        AttachmentReplacement = {attachreplacement},\n";
+
+            if(checkBoxCanbeequipped.Checked)
+                script += $"        CanBeEquipped = {canbeequipped},\n";
+            if(checkBoxCapacity.Checked)
+                script += $"        Capacity = {capacity},\n";
+
+            if(checkBoxOpensound.Checked)
+                script += $"        OpenSound = {opensound},\n";
+            if(checkBoxClosesound.Checked)
+                script += $"        CloseSound = {closesound},\n";
+            if(checkBoxPutinsound.Checked)
+                script += $"        PutInSound = {putinsound},\n";
+            if(checkBoxReplaceprimaryhand.Checked)
+                script += $"        ReplaceInPrimaryHand = {primaryhand},\n";
+            if(checkBoxReplacesecondhand.Checked)
+                script += $"        ReplaceInSecondHand = {secondaryhand},\n";
+            if(checkBoxRunspeedmodifier.Checked)
+                script += $"        RunSpeedModifier = {runspeedmodifier},\n";
+            if(checkBoxWeigthreduction.Checked)
+                script += $"        WeightReduction = {weigthreduction},\n";
+            if(checkBoxAttachmentProvided.Checked)
+                script += $"        AttachmentProvided = {attachmentprovided},\n";
+
+            if(checkBoxIcon.Checked)
+                script += $"        Icon = {icon},\n";
+            if(checkBoxBulletDefense.Checked)
+                script += $"        BulletDefense = {bulletdef},\n";
+            if(checkBoxScratchDefense.Checked)
+                script += $"        ScratchDefense = {scratchdef},\n";
+            if(checkBoxDiscomfort.Checked)
+                script += $"        DiscomfortModifier = {discomfort},\n";
+            if(checkBoxCombatSpeed.Checked)
+                script += $"        CombatSpeedModifier = {combatspeed},\n";
+            if(checkBoxWaterResistance.Checked)
+                script += $"        WaterRessistance = {waterres},\n";
+            if(checkBoxVisionModifier.Checked)
+                script += $"        VisionModifier = {visionmod},\n";
+            if(checkBoxHearingModifier.Checked)
+                script += $"        HearingModifier = {hearing},\n";
+            if(checkBoxCorpseSicknessDefence.Checked)
+                script += $"        CorpseSicknessDefense = {corpsedef},\n";
+
+            if(checkBoxDamageSound.Checked)
+                script += $"        DamageSound = {damagesound},\n";
+            if(checkBoxMaxItemSize.Checked)
+                script += $"        MaxItemSize = {maxitemsize},\n";
+            if(checkBoxSoundParam.Checked)
+                script += $"        SoundParameter = {soundparam},\n";
+            if(checkBoxMetalValue.Checked)
+                script += $"        MetalValue = {metalvalue},\n";
+
+            if(checkBoxAcceptItemFunction.Checked)
+                script += $"        AcceptItemFunction = {itemfunction},\n";
+
+            if(checkBoxCosmetic.Checked)
+                script += $"        Cosmetic = TRUE,\n";
+            if (checkBoxVisualAid.Checked)
+                script += $"        VisualAid = TRUE,\n";
+
+
 
             script += $"        Tags = {tags},\n";
 
@@ -554,6 +679,34 @@ namespace PZOutfitAssembler
                 { "WorldStaticModel", textBoxStaticModel },
                 { "Tags", textBoxTags },
 
+                { "AttachmentReplacement", textBoxAttachReplacement},
+                { "CanBeEquipped",textBoxCanbeequipped},
+                { "Capacity",textBoxCapacity},
+                { "OpenSound",textBoxOpenSound},
+                { "CloseSound",textBoxCloseSound},
+                { "PutInSound",textBoxPutinsound},
+                { "ReplaceInPrimaryHand",textBoxReplaceprimaryhand},
+                { "ReplaceInSecondHand", textBoxReplacesecondaryhand},
+                { "RunSpeedModifier",textBoxRunspeedmodifier},
+                { "WeightReduction",textBoxWeigthreduction},
+                { "AttachmentsProvided",textBoxAttachmentProvided},
+
+                            {"Icon", textBoxIcon },
+                            {"BulletDefense", textBoxBulletDefense },
+                            {"ScratchDefense", textBoxScratchDefense },
+                            {"DiscomfortModifier", textBoxDiscomfort },
+                            {"CombatSpeedModifier", textBoxCombatSpeed },
+                            {"WaterRessistance", textBoxWaterResistance },
+                            {"VisionModifier", textBoxVisionModifier },
+                            {"HearingModifier", textBoxHearing },
+                            {"CorpseSicknessDefense", textBoxCorpseSicknessDefence },
+
+                            {"DamageSound", textBoxDamageSound },
+                            {"MaxItemSize", textBoxMaxItemSize },
+                            {"SoundParameter", textBoxSoundParam },
+                            {"MetalValue", textBoxMetalValue },
+                            {"AcceptItemFunction", textBoxAcceptItemFunction },
+
                };
 
                 var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
@@ -566,6 +719,37 @@ namespace PZOutfitAssembler
                 { "WindResistance", checkBoxWind },
                 { "FabricType", checkBoxFabric },
                 { "WorldStaticModel", checkBoxStaticModel },
+
+                { "CanBeEquipped", checkBoxCanbeequipped},
+                { "OpenSound", checkBoxOpensound},
+                { "CloseSound", checkBoxClosesound},
+                { "PutInSound", checkBoxPutinsound},
+                { "ReplaceInPrimaryHand", checkBoxReplaceprimaryhand},
+                { "ReplaceInSecondHand", checkBoxReplacesecondhand},
+                { "RunSpeedModifier", checkBoxRunspeedmodifier},
+                { "WeightReduction", checkBoxWeigthreduction},
+                { "AttachmentsProvided",checkBoxAttachmentProvided},
+
+                            {"AttachmentReplacement", checkBoxAttachmentReplacement },
+
+                            {"Icon", checkBoxIcon },
+                            {"BulletDefense", checkBoxBulletDefense },
+                            {"ScratchDefense", checkBoxScratchDefense },
+                            {"DiscomfortModifier", checkBoxDiscomfort },
+                            {"CombatSpeedModifier", checkBoxCombatSpeed },
+                            {"WaterResisstance", checkBoxWaterResistance },
+                            {"VisionModifier", checkBoxVisionModifier },
+                            {"HearingModifier", checkBoxHearingModifier },
+                            {"CorpseSicknessDefense", checkBoxCorpseSicknessDefence },
+                            {"Capacity", checkBoxCapacity },
+                            {"DamageSound", checkBoxDamageSound },
+                            {"MaxItemSize", checkBoxMaxItemSize },
+                            {"SoundParameter", checkBoxSoundParam },
+                            {"MetalValue", checkBoxMetalValue },
+                            {"AcceptItemFunction", checkBoxAcceptItemFunction },
+
+                            {"Cosmetic", checkBoxCosmetic },
+                            {"VisualAid", checkBoxVisualAid },
                 // Add more mappings as necessary
                };
 
@@ -881,6 +1065,36 @@ namespace PZOutfitAssembler
                 { "WorldStaticModel", textBoxStaticModel },
                 { "Tags", textBoxTags },
 
+                { "AttachmentReplacement", textBoxAttachReplacement},
+                { "CanBeEquipped",textBoxCanbeequipped},
+                { "Capacity",textBoxCapacity},
+                { "OpenSound",textBoxOpenSound},
+                { "CloseSound",textBoxCloseSound},
+                { "PutInSound",textBoxPutinsound},
+                { "ReplaceInPrimaryHand",textBoxReplaceprimaryhand},
+                { "ReplaceInSecondHand", textBoxReplacesecondaryhand},
+                { "RunSpeedModifier",textBoxRunspeedmodifier},
+                { "WeightReduction",textBoxWeigthreduction},
+                { "AttachmentsProvided",textBoxAttachmentProvided},
+
+                            {"Icon", textBoxIcon },
+                            {"BulletDefense", textBoxBulletDefense },
+                            {"ScratchDefense", textBoxScratchDefense },
+                            {"DiscomfortModifier", textBoxDiscomfort },
+                            {"CombatSpeedModifier", textBoxCombatSpeed },
+                            {"WaterRessistance", textBoxWaterResistance },
+                            {"VisionModifier", textBoxVisionModifier },
+                            {"HearingModifier", textBoxHearing },
+                            {"CorpseSicknessDefense", textBoxCorpseSicknessDefence },
+
+                            {"DamageSound", textBoxDamageSound },
+                            {"MaxItemSize", textBoxMaxItemSize },
+                            {"SoundParameter", textBoxSoundParam },
+                            {"MetalValue", textBoxMetalValue },
+                            {"AcceptItemFunction", textBoxAcceptItemFunction },
+
+
+
                };
 
                         var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
@@ -893,6 +1107,39 @@ namespace PZOutfitAssembler
                 { "WindResistance", checkBoxWind },
                 { "FabricType", checkBoxFabric },
                 { "WorldStaticModel", checkBoxStaticModel },
+
+                { "CanBeEquipped", checkBoxCanbeequipped},
+                { "OpenSound", checkBoxOpensound},
+                { "CloseSound", checkBoxClosesound},
+                { "PutInSound", checkBoxPutinsound},
+                { "ReplaceInPrimaryHand", checkBoxReplaceprimaryhand},
+                { "ReplaceInSecondHand", checkBoxReplacesecondhand},
+                { "RunSpeedModifier", checkBoxRunspeedmodifier},
+                { "WeightReduction", checkBoxWeigthreduction},
+                { "AttachmentsProvided",checkBoxAttachmentProvided},
+
+                            {"AttachmentReplacement", checkBoxAttachmentReplacement },
+
+                            {"Icon", checkBoxIcon },
+                            {"BulletDefense", checkBoxBulletDefense },
+                            {"ScratchDefense", checkBoxScratchDefense },
+                            {"DiscomfortModifier", checkBoxDiscomfort },
+                            {"CombatSpeedModifier", checkBoxCombatSpeed },
+                            {"WaterResisstance", checkBoxWaterResistance },
+                            {"VisionModifier", checkBoxVisionModifier },
+                            {"HearingModifier", checkBoxHearingModifier },
+                            {"CorpseSicknessDefense", checkBoxCorpseSicknessDefence },
+                            {"Capacity", checkBoxCapacity },
+                            {"DamageSound", checkBoxDamageSound },
+                            {"MaxItemSize", checkBoxMaxItemSize },
+                            {"SoundParameter", checkBoxSoundParam },
+                            {"MetalValue", checkBoxMetalValue },
+                            {"AcceptItemFunction", checkBoxAcceptItemFunction },
+
+                            {"Cosmetic", checkBoxCosmetic },
+                            {"VisualAid", checkBoxVisualAid },
+
+
                 // Add more mappings as necessary
                };
 
@@ -1152,6 +1399,107 @@ namespace PZOutfitAssembler
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Specify the URL you want to open
+                string url = "https://steamcommunity.com/id/peterhammerman/myworkshopfiles/";
+
+                // Open the default web browser with the URL
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Ensures it uses the default web browser
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Specify the URL you want to open
+                string url = "https://skynet7500.wixsite.com/pzk-forge";
+
+                // Open the default web browser with the URL
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Ensures it uses the default web browser
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Specify the URL you want to open
+                string url = "https://ko-fi.com/peterhammerman";
+
+                // Open the default web browser with the URL
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Ensures it uses the default web browser
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Specify the URL you want to open
+                string url = "https://www.youtube.com/@PeterHammerman";
+
+                // Open the default web browser with the URL
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Ensures it uses the default web browser
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Specify the URL you want to open
+                string url = "https://discord.gg/mPWXu5f";
+
+                // Open the default web browser with the URL
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true // Ensures it uses the default web browser
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
