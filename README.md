@@ -8,3 +8,4 @@ Executable files of working editor are in Compiled folder.
 
 WARNING
 Editor is still under alpha development. There can be bugs or stability problems. Expect bugs.
+Please report bugs on discord server
