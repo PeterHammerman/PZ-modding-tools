@@ -90,20 +90,54 @@ namespace PZOutfitAssembler
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBoxGUID = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.checkBoxStaticModel = new System.Windows.Forms.CheckBox();
-            this.textBoxStaticModel = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkBoxHearingModifier = new System.Windows.Forms.CheckBox();
+            this.textBoxHearing = new System.Windows.Forms.TextBox();
+            this.checkBoxCorpseSicknessDefence = new System.Windows.Forms.CheckBox();
+            this.textBoxCorpseSicknessDefence = new System.Windows.Forms.TextBox();
+            this.checkBoxVisionModifier = new System.Windows.Forms.CheckBox();
+            this.textBoxVisionModifier = new System.Windows.Forms.TextBox();
+            this.checkBoxWaterResistance = new System.Windows.Forms.CheckBox();
+            this.textBoxWaterResistance = new System.Windows.Forms.TextBox();
+            this.checkBoxVisualAid = new System.Windows.Forms.CheckBox();
+            this.checkBoxCosmetic = new System.Windows.Forms.CheckBox();
+            this.textBoxAcceptItemFunction = new System.Windows.Forms.TextBox();
+            this.checkBoxAcceptItemFunction = new System.Windows.Forms.CheckBox();
+            this.textBoxIcon = new System.Windows.Forms.TextBox();
+            this.checkBoxIcon = new System.Windows.Forms.CheckBox();
+            this.textBoxMetalValue = new System.Windows.Forms.TextBox();
+            this.checkBoxMetalValue = new System.Windows.Forms.CheckBox();
+            this.textBoxSoundParam = new System.Windows.Forms.TextBox();
+            this.checkBoxSoundParam = new System.Windows.Forms.CheckBox();
+            this.checkBoxCombatSpeed = new System.Windows.Forms.CheckBox();
+            this.textBoxCombatSpeed = new System.Windows.Forms.TextBox();
+            this.textBoxMaxItemSize = new System.Windows.Forms.TextBox();
+            this.checkBoxMaxItemSize = new System.Windows.Forms.CheckBox();
+            this.checkBoxAttachmentReplacement = new System.Windows.Forms.CheckBox();
+            this.checkBoxCapacity = new System.Windows.Forms.CheckBox();
+            this.textBoxDamageSound = new System.Windows.Forms.TextBox();
+            this.checkBoxDamageSound = new System.Windows.Forms.CheckBox();
+            this.checkBoxDiscomfort = new System.Windows.Forms.CheckBox();
+            this.textBoxDiscomfort = new System.Windows.Forms.TextBox();
+            this.checkBoxScratchDefense = new System.Windows.Forms.CheckBox();
+            this.textBoxScratchDefense = new System.Windows.Forms.TextBox();
+            this.checkBoxBulletDefense = new System.Windows.Forms.CheckBox();
+            this.textBoxBulletDefense = new System.Windows.Forms.TextBox();
+            this.textBoxAttachmentProvided = new System.Windows.Forms.TextBox();
+            this.checkBoxAttachmentProvided = new System.Windows.Forms.CheckBox();
             this.textBoxAttachReplacement = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.textBoxWeigthreduction = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBoxCanbeequipped = new System.Windows.Forms.TextBox();
+            this.textBoxGUID = new System.Windows.Forms.TextBox();
             this.textBoxRunspeedmodifier = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.checkBoxCanbeequipped = new System.Windows.Forms.CheckBox();
+            this.checkBoxStaticModel = new System.Windows.Forms.CheckBox();
             this.textBoxReplacesecondaryhand = new System.Windows.Forms.TextBox();
+            this.textBoxStaticModel = new System.Windows.Forms.TextBox();
             this.textBoxReplaceprimaryhand = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.textBoxCapacity = new System.Windows.Forms.TextBox();
             this.textBoxPutinsound = new System.Windows.Forms.TextBox();
             this.checkBoxReplaceprimaryhand = new System.Windows.Forms.CheckBox();
@@ -115,9 +149,10 @@ namespace PZOutfitAssembler
             this.checkBoxWeigthreduction = new System.Windows.Forms.CheckBox();
             this.checkBoxClosesound = new System.Windows.Forms.CheckBox();
             this.checkBoxOpensound = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -125,40 +160,6 @@ namespace PZOutfitAssembler
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBoxAttachmentProvided = new System.Windows.Forms.TextBox();
-            this.checkBoxAttachmentProvided = new System.Windows.Forms.CheckBox();
-            this.checkBoxBulletDefense = new System.Windows.Forms.CheckBox();
-            this.textBoxBulletDefense = new System.Windows.Forms.TextBox();
-            this.checkBoxScratchDefense = new System.Windows.Forms.CheckBox();
-            this.textBoxScratchDefense = new System.Windows.Forms.TextBox();
-            this.checkBoxDiscomfort = new System.Windows.Forms.CheckBox();
-            this.textBoxDiscomfort = new System.Windows.Forms.TextBox();
-            this.textBoxDamageSound = new System.Windows.Forms.TextBox();
-            this.checkBoxDamageSound = new System.Windows.Forms.CheckBox();
-            this.checkBoxCapacity = new System.Windows.Forms.CheckBox();
-            this.checkBoxAttachmentReplacement = new System.Windows.Forms.CheckBox();
-            this.textBoxMaxItemSize = new System.Windows.Forms.TextBox();
-            this.checkBoxMaxItemSize = new System.Windows.Forms.CheckBox();
-            this.checkBoxCombatSpeed = new System.Windows.Forms.CheckBox();
-            this.textBoxCombatSpeed = new System.Windows.Forms.TextBox();
-            this.textBoxSoundParam = new System.Windows.Forms.TextBox();
-            this.checkBoxSoundParam = new System.Windows.Forms.CheckBox();
-            this.textBoxMetalValue = new System.Windows.Forms.TextBox();
-            this.checkBoxMetalValue = new System.Windows.Forms.CheckBox();
-            this.textBoxIcon = new System.Windows.Forms.TextBox();
-            this.checkBoxIcon = new System.Windows.Forms.CheckBox();
-            this.textBoxAcceptItemFunction = new System.Windows.Forms.TextBox();
-            this.checkBoxAcceptItemFunction = new System.Windows.Forms.CheckBox();
-            this.checkBoxCosmetic = new System.Windows.Forms.CheckBox();
-            this.checkBoxVisualAid = new System.Windows.Forms.CheckBox();
-            this.checkBoxWaterResistance = new System.Windows.Forms.CheckBox();
-            this.textBoxWaterResistance = new System.Windows.Forms.TextBox();
-            this.checkBoxVisionModifier = new System.Windows.Forms.CheckBox();
-            this.textBoxVisionModifier = new System.Windows.Forms.TextBox();
-            this.checkBoxCorpseSicknessDefence = new System.Windows.Forms.CheckBox();
-            this.textBoxCorpseSicknessDefence = new System.Windows.Forms.TextBox();
-            this.checkBoxHearingModifier = new System.Windows.Forms.CheckBox();
-            this.textBoxHearing = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -168,7 +169,8 @@ namespace PZOutfitAssembler
             this.label13 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.checkBoxBiteDefense = new System.Windows.Forms.CheckBox();
+            this.textBoxBiteDefense = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -184,7 +186,7 @@ namespace PZOutfitAssembler
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(6, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 2;
@@ -192,7 +194,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxDisplayName
             // 
-            this.textBoxDisplayName.Location = new System.Drawing.Point(106, 60);
+            this.textBoxDisplayName.Location = new System.Drawing.Point(106, 59);
             this.textBoxDisplayName.Name = "textBoxDisplayName";
             this.textBoxDisplayName.Size = new System.Drawing.Size(161, 20);
             this.textBoxDisplayName.TabIndex = 3;
@@ -217,7 +219,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxType
             // 
-            this.textBoxType.Location = new System.Drawing.Point(106, 106);
+            this.textBoxType.Location = new System.Drawing.Point(106, 103);
             this.textBoxType.Name = "textBoxType";
             this.textBoxType.Size = new System.Drawing.Size(161, 20);
             this.textBoxType.TabIndex = 6;
@@ -226,7 +228,7 @@ namespace PZOutfitAssembler
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 110);
+            this.label4.Location = new System.Drawing.Point(6, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 7;
@@ -235,7 +237,7 @@ namespace PZOutfitAssembler
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 201);
+            this.label5.Location = new System.Drawing.Point(7, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 8;
@@ -244,7 +246,7 @@ namespace PZOutfitAssembler
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 280);
+            this.label6.Location = new System.Drawing.Point(6, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 10;
@@ -252,7 +254,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItem
             // 
-            this.textBoxClothingItem.Location = new System.Drawing.Point(144, 277);
+            this.textBoxClothingItem.Location = new System.Drawing.Point(144, 257);
             this.textBoxClothingItem.Name = "textBoxClothingItem";
             this.textBoxClothingItem.Size = new System.Drawing.Size(123, 20);
             this.textBoxClothingItem.TabIndex = 11;
@@ -261,7 +263,7 @@ namespace PZOutfitAssembler
             // checkBoxCanHaveHoles
             // 
             this.checkBoxCanHaveHoles.AutoSize = true;
-            this.checkBoxCanHaveHoles.Location = new System.Drawing.Point(9, 233);
+            this.checkBoxCanHaveHoles.Location = new System.Drawing.Point(9, 216);
             this.checkBoxCanHaveHoles.Name = "checkBoxCanHaveHoles";
             this.checkBoxCanHaveHoles.Size = new System.Drawing.Size(101, 17);
             this.checkBoxCanHaveHoles.TabIndex = 13;
@@ -270,7 +272,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxChanceToFall
             // 
-            this.textBoxChanceToFall.Location = new System.Drawing.Point(113, 254);
+            this.textBoxChanceToFall.Location = new System.Drawing.Point(113, 235);
             this.textBoxChanceToFall.Name = "textBoxChanceToFall";
             this.textBoxChanceToFall.Size = new System.Drawing.Size(154, 20);
             this.textBoxChanceToFall.TabIndex = 15;
@@ -278,7 +280,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxInsulation
             // 
-            this.textBoxInsulation.Location = new System.Drawing.Point(144, 346);
+            this.textBoxInsulation.Location = new System.Drawing.Point(144, 323);
             this.textBoxInsulation.Name = "textBoxInsulation";
             this.textBoxInsulation.Size = new System.Drawing.Size(123, 20);
             this.textBoxInsulation.TabIndex = 16;
@@ -286,7 +288,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxWind
             // 
-            this.textBoxWind.Location = new System.Drawing.Point(144, 369);
+            this.textBoxWind.Location = new System.Drawing.Point(144, 345);
             this.textBoxWind.Name = "textBoxWind";
             this.textBoxWind.Size = new System.Drawing.Size(123, 20);
             this.textBoxWind.TabIndex = 18;
@@ -311,7 +313,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxFabric
             // 
-            this.textBoxFabric.Location = new System.Drawing.Point(144, 576);
+            this.textBoxFabric.Location = new System.Drawing.Point(144, 563);
             this.textBoxFabric.Name = "textBoxFabric";
             this.textBoxFabric.Size = new System.Drawing.Size(123, 20);
             this.textBoxFabric.TabIndex = 22;
@@ -319,7 +321,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxWeigth
             // 
-            this.textBoxWeigth.Location = new System.Drawing.Point(106, 129);
+            this.textBoxWeigth.Location = new System.Drawing.Point(106, 125);
             this.textBoxWeigth.Name = "textBoxWeigth";
             this.textBoxWeigth.Size = new System.Drawing.Size(161, 20);
             this.textBoxWeigth.TabIndex = 25;
@@ -328,7 +330,7 @@ namespace PZOutfitAssembler
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 133);
+            this.label12.Location = new System.Drawing.Point(6, 129);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 24;
@@ -336,21 +338,21 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItemExtra
             // 
-            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(144, 300);
+            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(144, 279);
             this.textBoxClothingItemExtra.Name = "textBoxClothingItemExtra";
             this.textBoxClothingItemExtra.Size = new System.Drawing.Size(123, 20);
             this.textBoxClothingItemExtra.TabIndex = 27;
             // 
             // textBoxClothingItemExtraOption
             // 
-            this.textBoxClothingItemExtraOption.Location = new System.Drawing.Point(158, 323);
+            this.textBoxClothingItemExtraOption.Location = new System.Drawing.Point(158, 301);
             this.textBoxClothingItemExtraOption.Name = "textBoxClothingItemExtraOption";
             this.textBoxClothingItemExtraOption.Size = new System.Drawing.Size(109, 20);
             this.textBoxClothingItemExtraOption.TabIndex = 29;
             // 
             // textBoxTextureIcon
             // 
-            this.textBoxTextureIcon.Location = new System.Drawing.Point(106, 152);
+            this.textBoxTextureIcon.Location = new System.Drawing.Point(106, 147);
             this.textBoxTextureIcon.Name = "textBoxTextureIcon";
             this.textBoxTextureIcon.Size = new System.Drawing.Size(161, 20);
             this.textBoxTextureIcon.TabIndex = 31;
@@ -359,7 +361,7 @@ namespace PZOutfitAssembler
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 155);
+            this.label15.Location = new System.Drawing.Point(6, 150);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 13);
             this.label15.TabIndex = 30;
@@ -428,7 +430,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxBloodLocation
             // 
-            this.textBoxBloodLocation.Location = new System.Drawing.Point(106, 600);
+            this.textBoxBloodLocation.Location = new System.Drawing.Point(106, 586);
             this.textBoxBloodLocation.Name = "textBoxBloodLocation";
             this.textBoxBloodLocation.Size = new System.Drawing.Size(161, 20);
             this.textBoxBloodLocation.TabIndex = 49;
@@ -437,7 +439,7 @@ namespace PZOutfitAssembler
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 603);
+            this.label19.Location = new System.Drawing.Point(15, 589);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(73, 13);
             this.label19.TabIndex = 48;
@@ -445,7 +447,7 @@ namespace PZOutfitAssembler
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(476, 638);
+            this.button1.Location = new System.Drawing.Point(476, 619);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 28);
             this.button1.TabIndex = 51;
@@ -522,7 +524,7 @@ namespace PZOutfitAssembler
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(9, 718);
+            this.label26.Location = new System.Drawing.Point(9, 682);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(99, 13);
             this.label26.TabIndex = 61;
@@ -531,7 +533,7 @@ namespace PZOutfitAssembler
             // textBoxPath
             // 
             this.textBoxPath.Enabled = false;
-            this.textBoxPath.Location = new System.Drawing.Point(12, 736);
+            this.textBoxPath.Location = new System.Drawing.Point(12, 700);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(160, 20);
             this.textBoxPath.TabIndex = 62;
@@ -539,7 +541,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCategory
             // 
-            this.textBoxCategory.Location = new System.Drawing.Point(106, 83);
+            this.textBoxCategory.Location = new System.Drawing.Point(106, 81);
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(161, 20);
             this.textBoxCategory.TabIndex = 64;
@@ -548,7 +550,7 @@ namespace PZOutfitAssembler
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 86);
+            this.label25.Location = new System.Drawing.Point(6, 84);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(86, 13);
             this.label25.TabIndex = 63;
@@ -556,7 +558,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxBodyLocation
             // 
-            this.textBoxBodyLocation.Location = new System.Drawing.Point(106, 198);
+            this.textBoxBodyLocation.Location = new System.Drawing.Point(106, 191);
             this.textBoxBodyLocation.Name = "textBoxBodyLocation";
             this.textBoxBodyLocation.Size = new System.Drawing.Size(161, 20);
             this.textBoxBodyLocation.TabIndex = 65;
@@ -567,7 +569,7 @@ namespace PZOutfitAssembler
             this.checkBoxChanceToFall.AutoSize = true;
             this.checkBoxChanceToFall.Checked = true;
             this.checkBoxChanceToFall.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxChanceToFall.Location = new System.Drawing.Point(9, 254);
+            this.checkBoxChanceToFall.Location = new System.Drawing.Point(9, 235);
             this.checkBoxChanceToFall.Name = "checkBoxChanceToFall";
             this.checkBoxChanceToFall.Size = new System.Drawing.Size(90, 17);
             this.checkBoxChanceToFall.TabIndex = 66;
@@ -579,7 +581,7 @@ namespace PZOutfitAssembler
             this.checkBoxInsulation.AutoSize = true;
             this.checkBoxInsulation.Checked = true;
             this.checkBoxInsulation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxInsulation.Location = new System.Drawing.Point(9, 349);
+            this.checkBoxInsulation.Location = new System.Drawing.Point(9, 326);
             this.checkBoxInsulation.Name = "checkBoxInsulation";
             this.checkBoxInsulation.Size = new System.Drawing.Size(70, 17);
             this.checkBoxInsulation.TabIndex = 67;
@@ -591,7 +593,7 @@ namespace PZOutfitAssembler
             this.checkBoxWind.AutoSize = true;
             this.checkBoxWind.Checked = true;
             this.checkBoxWind.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWind.Location = new System.Drawing.Point(8, 372);
+            this.checkBoxWind.Location = new System.Drawing.Point(8, 348);
             this.checkBoxWind.Name = "checkBoxWind";
             this.checkBoxWind.Size = new System.Drawing.Size(107, 17);
             this.checkBoxWind.TabIndex = 68;
@@ -603,7 +605,7 @@ namespace PZOutfitAssembler
             this.checkBoxFabric.AutoSize = true;
             this.checkBoxFabric.Checked = true;
             this.checkBoxFabric.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFabric.Location = new System.Drawing.Point(8, 578);
+            this.checkBoxFabric.Location = new System.Drawing.Point(8, 565);
             this.checkBoxFabric.Name = "checkBoxFabric";
             this.checkBoxFabric.Size = new System.Drawing.Size(75, 17);
             this.checkBoxFabric.TabIndex = 69;
@@ -613,7 +615,7 @@ namespace PZOutfitAssembler
             // checkBoxClothingItemExtra
             // 
             this.checkBoxClothingItemExtra.AutoSize = true;
-            this.checkBoxClothingItemExtra.Location = new System.Drawing.Point(9, 302);
+            this.checkBoxClothingItemExtra.Location = new System.Drawing.Point(9, 281);
             this.checkBoxClothingItemExtra.Name = "checkBoxClothingItemExtra";
             this.checkBoxClothingItemExtra.Size = new System.Drawing.Size(111, 17);
             this.checkBoxClothingItemExtra.TabIndex = 70;
@@ -623,7 +625,7 @@ namespace PZOutfitAssembler
             // checkBoxClothingItemExtraOption
             // 
             this.checkBoxClothingItemExtraOption.AutoSize = true;
-            this.checkBoxClothingItemExtraOption.Location = new System.Drawing.Point(9, 325);
+            this.checkBoxClothingItemExtraOption.Location = new System.Drawing.Point(9, 303);
             this.checkBoxClothingItemExtraOption.Name = "checkBoxClothingItemExtraOption";
             this.checkBoxClothingItemExtraOption.Size = new System.Drawing.Size(143, 17);
             this.checkBoxClothingItemExtraOption.TabIndex = 71;
@@ -636,7 +638,7 @@ namespace PZOutfitAssembler
             this.checkBoxDebug.Checked = true;
             this.checkBoxDebug.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDebug.Enabled = false;
-            this.checkBoxDebug.Location = new System.Drawing.Point(114, 717);
+            this.checkBoxDebug.Location = new System.Drawing.Point(114, 681);
             this.checkBoxDebug.Name = "checkBoxDebug";
             this.checkBoxDebug.Size = new System.Drawing.Size(58, 17);
             this.checkBoxDebug.TabIndex = 73;
@@ -723,6 +725,8 @@ namespace PZOutfitAssembler
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.checkBoxBiteDefense);
+            this.panel2.Controls.Add(this.textBoxBiteDefense);
             this.panel2.Controls.Add(this.checkBoxHearingModifier);
             this.panel2.Controls.Add(this.textBoxHearing);
             this.panel2.Controls.Add(this.checkBoxCorpseSicknessDefence);
@@ -819,8 +823,356 @@ namespace PZOutfitAssembler
             this.panel2.Controls.Add(this.label19);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(599, 680);
+            this.panel2.Size = new System.Drawing.Size(599, 651);
             this.panel2.TabIndex = 80;
+            // 
+            // checkBoxHearingModifier
+            // 
+            this.checkBoxHearingModifier.AutoSize = true;
+            this.checkBoxHearingModifier.Checked = true;
+            this.checkBoxHearingModifier.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxHearingModifier.Location = new System.Drawing.Point(8, 522);
+            this.checkBoxHearingModifier.Name = "checkBoxHearingModifier";
+            this.checkBoxHearingModifier.Size = new System.Drawing.Size(102, 17);
+            this.checkBoxHearingModifier.TabIndex = 136;
+            this.checkBoxHearingModifier.Text = "Hearing modifier";
+            this.checkBoxHearingModifier.UseVisualStyleBackColor = true;
+            // 
+            // textBoxHearing
+            // 
+            this.textBoxHearing.Location = new System.Drawing.Point(144, 519);
+            this.textBoxHearing.Name = "textBoxHearing";
+            this.textBoxHearing.Size = new System.Drawing.Size(123, 20);
+            this.textBoxHearing.TabIndex = 135;
+            this.textBoxHearing.Text = "0.2";
+            // 
+            // checkBoxCorpseSicknessDefence
+            // 
+            this.checkBoxCorpseSicknessDefence.AutoSize = true;
+            this.checkBoxCorpseSicknessDefence.Checked = true;
+            this.checkBoxCorpseSicknessDefence.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCorpseSicknessDefence.Location = new System.Drawing.Point(8, 544);
+            this.checkBoxCorpseSicknessDefence.Name = "checkBoxCorpseSicknessDefence";
+            this.checkBoxCorpseSicknessDefence.Size = new System.Drawing.Size(145, 17);
+            this.checkBoxCorpseSicknessDefence.TabIndex = 134;
+            this.checkBoxCorpseSicknessDefence.Text = "Corpse sickness defence";
+            this.checkBoxCorpseSicknessDefence.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCorpseSicknessDefence
+            // 
+            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(159, 541);
+            this.textBoxCorpseSicknessDefence.Name = "textBoxCorpseSicknessDefence";
+            this.textBoxCorpseSicknessDefence.Size = new System.Drawing.Size(108, 20);
+            this.textBoxCorpseSicknessDefence.TabIndex = 133;
+            this.textBoxCorpseSicknessDefence.Text = "0.2";
+            // 
+            // checkBoxVisionModifier
+            // 
+            this.checkBoxVisionModifier.AutoSize = true;
+            this.checkBoxVisionModifier.Checked = true;
+            this.checkBoxVisionModifier.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxVisionModifier.Location = new System.Drawing.Point(8, 500);
+            this.checkBoxVisionModifier.Name = "checkBoxVisionModifier";
+            this.checkBoxVisionModifier.Size = new System.Drawing.Size(93, 17);
+            this.checkBoxVisionModifier.TabIndex = 132;
+            this.checkBoxVisionModifier.Text = "Vision modifier";
+            this.checkBoxVisionModifier.UseVisualStyleBackColor = true;
+            // 
+            // textBoxVisionModifier
+            // 
+            this.textBoxVisionModifier.Location = new System.Drawing.Point(144, 497);
+            this.textBoxVisionModifier.Name = "textBoxVisionModifier";
+            this.textBoxVisionModifier.Size = new System.Drawing.Size(123, 20);
+            this.textBoxVisionModifier.TabIndex = 131;
+            this.textBoxVisionModifier.Text = "0.2";
+            // 
+            // checkBoxWaterResistance
+            // 
+            this.checkBoxWaterResistance.AutoSize = true;
+            this.checkBoxWaterResistance.Checked = true;
+            this.checkBoxWaterResistance.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxWaterResistance.Location = new System.Drawing.Point(8, 478);
+            this.checkBoxWaterResistance.Name = "checkBoxWaterResistance";
+            this.checkBoxWaterResistance.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxWaterResistance.TabIndex = 130;
+            this.checkBoxWaterResistance.Text = "Water resistance";
+            this.checkBoxWaterResistance.UseVisualStyleBackColor = true;
+            // 
+            // textBoxWaterResistance
+            // 
+            this.textBoxWaterResistance.Location = new System.Drawing.Point(144, 475);
+            this.textBoxWaterResistance.Name = "textBoxWaterResistance";
+            this.textBoxWaterResistance.Size = new System.Drawing.Size(123, 20);
+            this.textBoxWaterResistance.TabIndex = 129;
+            this.textBoxWaterResistance.Text = "0.2";
+            // 
+            // checkBoxVisualAid
+            // 
+            this.checkBoxVisualAid.AutoSize = true;
+            this.checkBoxVisualAid.Checked = true;
+            this.checkBoxVisualAid.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxVisualAid.Location = new System.Drawing.Point(361, 435);
+            this.checkBoxVisualAid.Name = "checkBoxVisualAid";
+            this.checkBoxVisualAid.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxVisualAid.TabIndex = 128;
+            this.checkBoxVisualAid.Text = "VisualAid";
+            this.checkBoxVisualAid.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCosmetic
+            // 
+            this.checkBoxCosmetic.AutoSize = true;
+            this.checkBoxCosmetic.Checked = true;
+            this.checkBoxCosmetic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCosmetic.Location = new System.Drawing.Point(288, 435);
+            this.checkBoxCosmetic.Name = "checkBoxCosmetic";
+            this.checkBoxCosmetic.Size = new System.Drawing.Size(69, 17);
+            this.checkBoxCosmetic.TabIndex = 127;
+            this.checkBoxCosmetic.Text = "Cosmetic";
+            this.checkBoxCosmetic.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAcceptItemFunction
+            // 
+            this.textBoxAcceptItemFunction.Location = new System.Drawing.Point(434, 402);
+            this.textBoxAcceptItemFunction.Name = "textBoxAcceptItemFunction";
+            this.textBoxAcceptItemFunction.Size = new System.Drawing.Size(144, 20);
+            this.textBoxAcceptItemFunction.TabIndex = 126;
+            // 
+            // checkBoxAcceptItemFunction
+            // 
+            this.checkBoxAcceptItemFunction.AutoSize = true;
+            this.checkBoxAcceptItemFunction.Checked = true;
+            this.checkBoxAcceptItemFunction.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAcceptItemFunction.Location = new System.Drawing.Point(287, 404);
+            this.checkBoxAcceptItemFunction.Name = "checkBoxAcceptItemFunction";
+            this.checkBoxAcceptItemFunction.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxAcceptItemFunction.TabIndex = 125;
+            this.checkBoxAcceptItemFunction.Text = "Accept item function";
+            this.checkBoxAcceptItemFunction.UseVisualStyleBackColor = true;
+            // 
+            // textBoxIcon
+            // 
+            this.textBoxIcon.Location = new System.Drawing.Point(106, 169);
+            this.textBoxIcon.Name = "textBoxIcon";
+            this.textBoxIcon.Size = new System.Drawing.Size(161, 20);
+            this.textBoxIcon.TabIndex = 123;
+            this.textBoxIcon.Text = "Duffelbag";
+            // 
+            // checkBoxIcon
+            // 
+            this.checkBoxIcon.AutoSize = true;
+            this.checkBoxIcon.Checked = true;
+            this.checkBoxIcon.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIcon.Location = new System.Drawing.Point(8, 172);
+            this.checkBoxIcon.Name = "checkBoxIcon";
+            this.checkBoxIcon.Size = new System.Drawing.Size(47, 17);
+            this.checkBoxIcon.TabIndex = 124;
+            this.checkBoxIcon.Text = "Icon";
+            this.checkBoxIcon.UseVisualStyleBackColor = true;
+            // 
+            // textBoxMetalValue
+            // 
+            this.textBoxMetalValue.Location = new System.Drawing.Point(434, 379);
+            this.textBoxMetalValue.Name = "textBoxMetalValue";
+            this.textBoxMetalValue.Size = new System.Drawing.Size(144, 20);
+            this.textBoxMetalValue.TabIndex = 122;
+            // 
+            // checkBoxMetalValue
+            // 
+            this.checkBoxMetalValue.AutoSize = true;
+            this.checkBoxMetalValue.Checked = true;
+            this.checkBoxMetalValue.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMetalValue.Location = new System.Drawing.Point(287, 381);
+            this.checkBoxMetalValue.Name = "checkBoxMetalValue";
+            this.checkBoxMetalValue.Size = new System.Drawing.Size(82, 17);
+            this.checkBoxMetalValue.TabIndex = 121;
+            this.checkBoxMetalValue.Text = "Metal Value";
+            this.checkBoxMetalValue.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSoundParam
+            // 
+            this.textBoxSoundParam.Location = new System.Drawing.Point(434, 356);
+            this.textBoxSoundParam.Name = "textBoxSoundParam";
+            this.textBoxSoundParam.Size = new System.Drawing.Size(144, 20);
+            this.textBoxSoundParam.TabIndex = 120;
+            // 
+            // checkBoxSoundParam
+            // 
+            this.checkBoxSoundParam.AutoSize = true;
+            this.checkBoxSoundParam.Checked = true;
+            this.checkBoxSoundParam.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSoundParam.Location = new System.Drawing.Point(287, 358);
+            this.checkBoxSoundParam.Name = "checkBoxSoundParam";
+            this.checkBoxSoundParam.Size = new System.Drawing.Size(108, 17);
+            this.checkBoxSoundParam.TabIndex = 119;
+            this.checkBoxSoundParam.Text = "Sound Parameter";
+            this.checkBoxSoundParam.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCombatSpeed
+            // 
+            this.checkBoxCombatSpeed.AutoSize = true;
+            this.checkBoxCombatSpeed.Checked = true;
+            this.checkBoxCombatSpeed.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCombatSpeed.Location = new System.Drawing.Point(8, 456);
+            this.checkBoxCombatSpeed.Name = "checkBoxCombatSpeed";
+            this.checkBoxCombatSpeed.Size = new System.Drawing.Size(133, 17);
+            this.checkBoxCombatSpeed.TabIndex = 118;
+            this.checkBoxCombatSpeed.Text = "Combat speed modifier";
+            this.checkBoxCombatSpeed.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCombatSpeed
+            // 
+            this.textBoxCombatSpeed.Location = new System.Drawing.Point(144, 453);
+            this.textBoxCombatSpeed.Name = "textBoxCombatSpeed";
+            this.textBoxCombatSpeed.Size = new System.Drawing.Size(123, 20);
+            this.textBoxCombatSpeed.TabIndex = 117;
+            this.textBoxCombatSpeed.Text = "0.2";
+            // 
+            // textBoxMaxItemSize
+            // 
+            this.textBoxMaxItemSize.Location = new System.Drawing.Point(434, 333);
+            this.textBoxMaxItemSize.Name = "textBoxMaxItemSize";
+            this.textBoxMaxItemSize.Size = new System.Drawing.Size(144, 20);
+            this.textBoxMaxItemSize.TabIndex = 116;
+            // 
+            // checkBoxMaxItemSize
+            // 
+            this.checkBoxMaxItemSize.AutoSize = true;
+            this.checkBoxMaxItemSize.Checked = true;
+            this.checkBoxMaxItemSize.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMaxItemSize.Location = new System.Drawing.Point(287, 335);
+            this.checkBoxMaxItemSize.Name = "checkBoxMaxItemSize";
+            this.checkBoxMaxItemSize.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxMaxItemSize.TabIndex = 115;
+            this.checkBoxMaxItemSize.Text = "Max item size";
+            this.checkBoxMaxItemSize.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAttachmentReplacement
+            // 
+            this.checkBoxAttachmentReplacement.AutoSize = true;
+            this.checkBoxAttachmentReplacement.Location = new System.Drawing.Point(287, 60);
+            this.checkBoxAttachmentReplacement.Name = "checkBoxAttachmentReplacement";
+            this.checkBoxAttachmentReplacement.Size = new System.Drawing.Size(141, 17);
+            this.checkBoxAttachmentReplacement.TabIndex = 114;
+            this.checkBoxAttachmentReplacement.Text = "Attachment replacement";
+            this.checkBoxAttachmentReplacement.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCapacity
+            // 
+            this.checkBoxCapacity.AutoSize = true;
+            this.checkBoxCapacity.Checked = true;
+            this.checkBoxCapacity.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCapacity.Location = new System.Drawing.Point(287, 105);
+            this.checkBoxCapacity.Name = "checkBoxCapacity";
+            this.checkBoxCapacity.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxCapacity.TabIndex = 113;
+            this.checkBoxCapacity.Text = "Capacity";
+            this.checkBoxCapacity.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDamageSound
+            // 
+            this.textBoxDamageSound.Location = new System.Drawing.Point(434, 195);
+            this.textBoxDamageSound.Name = "textBoxDamageSound";
+            this.textBoxDamageSound.Size = new System.Drawing.Size(144, 20);
+            this.textBoxDamageSound.TabIndex = 112;
+            // 
+            // checkBoxDamageSound
+            // 
+            this.checkBoxDamageSound.AutoSize = true;
+            this.checkBoxDamageSound.Checked = true;
+            this.checkBoxDamageSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDamageSound.Location = new System.Drawing.Point(287, 197);
+            this.checkBoxDamageSound.Name = "checkBoxDamageSound";
+            this.checkBoxDamageSound.Size = new System.Drawing.Size(98, 17);
+            this.checkBoxDamageSound.TabIndex = 111;
+            this.checkBoxDamageSound.Text = "Damage sound";
+            this.checkBoxDamageSound.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDiscomfort
+            // 
+            this.checkBoxDiscomfort.AutoSize = true;
+            this.checkBoxDiscomfort.Checked = true;
+            this.checkBoxDiscomfort.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxDiscomfort.Location = new System.Drawing.Point(8, 434);
+            this.checkBoxDiscomfort.Name = "checkBoxDiscomfort";
+            this.checkBoxDiscomfort.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxDiscomfort.TabIndex = 110;
+            this.checkBoxDiscomfort.Text = "Discomfort modifier";
+            this.checkBoxDiscomfort.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDiscomfort
+            // 
+            this.textBoxDiscomfort.Location = new System.Drawing.Point(144, 431);
+            this.textBoxDiscomfort.Name = "textBoxDiscomfort";
+            this.textBoxDiscomfort.Size = new System.Drawing.Size(123, 20);
+            this.textBoxDiscomfort.TabIndex = 109;
+            this.textBoxDiscomfort.Text = "0.2";
+            // 
+            // checkBoxScratchDefense
+            // 
+            this.checkBoxScratchDefense.AutoSize = true;
+            this.checkBoxScratchDefense.Checked = true;
+            this.checkBoxScratchDefense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxScratchDefense.Location = new System.Drawing.Point(8, 412);
+            this.checkBoxScratchDefense.Name = "checkBoxScratchDefense";
+            this.checkBoxScratchDefense.Size = new System.Drawing.Size(104, 17);
+            this.checkBoxScratchDefense.TabIndex = 108;
+            this.checkBoxScratchDefense.Text = "Scratch defense";
+            this.checkBoxScratchDefense.UseVisualStyleBackColor = true;
+            // 
+            // textBoxScratchDefense
+            // 
+            this.textBoxScratchDefense.Location = new System.Drawing.Point(144, 409);
+            this.textBoxScratchDefense.Name = "textBoxScratchDefense";
+            this.textBoxScratchDefense.Size = new System.Drawing.Size(123, 20);
+            this.textBoxScratchDefense.TabIndex = 107;
+            this.textBoxScratchDefense.Text = "0.2";
+            // 
+            // checkBoxBulletDefense
+            // 
+            this.checkBoxBulletDefense.AutoSize = true;
+            this.checkBoxBulletDefense.Checked = true;
+            this.checkBoxBulletDefense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxBulletDefense.Location = new System.Drawing.Point(8, 390);
+            this.checkBoxBulletDefense.Name = "checkBoxBulletDefense";
+            this.checkBoxBulletDefense.Size = new System.Drawing.Size(93, 17);
+            this.checkBoxBulletDefense.TabIndex = 106;
+            this.checkBoxBulletDefense.Text = "Bullet defense";
+            this.checkBoxBulletDefense.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBulletDefense
+            // 
+            this.textBoxBulletDefense.Location = new System.Drawing.Point(144, 387);
+            this.textBoxBulletDefense.Name = "textBoxBulletDefense";
+            this.textBoxBulletDefense.Size = new System.Drawing.Size(123, 20);
+            this.textBoxBulletDefense.TabIndex = 105;
+            this.textBoxBulletDefense.Text = "0.2";
+            // 
+            // textBoxAttachmentProvided
+            // 
+            this.textBoxAttachmentProvided.Location = new System.Drawing.Point(434, 310);
+            this.textBoxAttachmentProvided.Name = "textBoxAttachmentProvided";
+            this.textBoxAttachmentProvided.Size = new System.Drawing.Size(144, 20);
+            this.textBoxAttachmentProvided.TabIndex = 104;
+            // 
+            // checkBoxAttachmentProvided
+            // 
+            this.checkBoxAttachmentProvided.AutoSize = true;
+            this.checkBoxAttachmentProvided.Checked = true;
+            this.checkBoxAttachmentProvided.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAttachmentProvided.Location = new System.Drawing.Point(287, 312);
+            this.checkBoxAttachmentProvided.Name = "checkBoxAttachmentProvided";
+            this.checkBoxAttachmentProvided.Size = new System.Drawing.Size(124, 17);
+            this.checkBoxAttachmentProvided.TabIndex = 103;
+            this.checkBoxAttachmentProvided.Text = "Attachment provided";
+            this.checkBoxAttachmentProvided.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAttachReplacement
+            // 
+            this.textBoxAttachReplacement.Location = new System.Drawing.Point(434, 57);
+            this.textBoxAttachReplacement.Name = "textBoxAttachReplacement";
+            this.textBoxAttachReplacement.Size = new System.Drawing.Size(144, 20);
+            this.textBoxAttachReplacement.TabIndex = 75;
+            this.textBoxAttachReplacement.Text = "Bag";
             // 
             // button9
             // 
@@ -832,72 +1184,22 @@ namespace PZOutfitAssembler
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(8, 637);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(96, 29);
-            this.button5.TabIndex = 101;
-            this.button5.Text = "New GUID";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // textBoxGUID
-            // 
-            this.textBoxGUID.Location = new System.Drawing.Point(150, 642);
-            this.textBoxGUID.Name = "textBoxGUID";
-            this.textBoxGUID.ReadOnly = true;
-            this.textBoxGUID.Size = new System.Drawing.Size(302, 20);
-            this.textBoxGUID.TabIndex = 100;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(107, 646);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(37, 13);
-            this.label14.TabIndex = 99;
-            this.label14.Text = "GUID:";
-            // 
-            // checkBoxStaticModel
-            // 
-            this.checkBoxStaticModel.AutoSize = true;
-            this.checkBoxStaticModel.Location = new System.Drawing.Point(287, 37);
-            this.checkBoxStaticModel.Name = "checkBoxStaticModel";
-            this.checkBoxStaticModel.Size = new System.Drawing.Size(113, 17);
-            this.checkBoxStaticModel.TabIndex = 97;
-            this.checkBoxStaticModel.Text = "World static model";
-            this.checkBoxStaticModel.UseVisualStyleBackColor = true;
-            // 
-            // textBoxStaticModel
-            // 
-            this.textBoxStaticModel.Location = new System.Drawing.Point(434, 34);
-            this.textBoxStaticModel.Name = "textBoxStaticModel";
-            this.textBoxStaticModel.Size = new System.Drawing.Size(144, 20);
-            this.textBoxStaticModel.TabIndex = 98;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel5.Location = new System.Drawing.Point(845, 303);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(327, 347);
-            this.panel5.TabIndex = 83;
-            // 
-            // textBoxAttachReplacement
-            // 
-            this.textBoxAttachReplacement.Location = new System.Drawing.Point(434, 57);
-            this.textBoxAttachReplacement.Name = "textBoxAttachReplacement";
-            this.textBoxAttachReplacement.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAttachReplacement.TabIndex = 75;
-            this.textBoxAttachReplacement.Text = "Bag";
-            // 
             // textBoxWeigthreduction
             // 
             this.textBoxWeigthreduction.Location = new System.Drawing.Point(434, 287);
             this.textBoxWeigthreduction.Name = "textBoxWeigthreduction";
             this.textBoxWeigthreduction.Size = new System.Drawing.Size(144, 20);
             this.textBoxWeigthreduction.TabIndex = 96;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(8, 618);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(96, 29);
+            this.button5.TabIndex = 101;
+            this.button5.Text = "New GUID";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBoxCanbeequipped
             // 
@@ -907,12 +1209,29 @@ namespace PZOutfitAssembler
             this.textBoxCanbeequipped.TabIndex = 76;
             this.textBoxCanbeequipped.Text = "Back";
             // 
+            // textBoxGUID
+            // 
+            this.textBoxGUID.Location = new System.Drawing.Point(150, 623);
+            this.textBoxGUID.Name = "textBoxGUID";
+            this.textBoxGUID.ReadOnly = true;
+            this.textBoxGUID.Size = new System.Drawing.Size(302, 20);
+            this.textBoxGUID.TabIndex = 100;
+            // 
             // textBoxRunspeedmodifier
             // 
             this.textBoxRunspeedmodifier.Location = new System.Drawing.Point(434, 264);
             this.textBoxRunspeedmodifier.Name = "textBoxRunspeedmodifier";
             this.textBoxRunspeedmodifier.Size = new System.Drawing.Size(144, 20);
             this.textBoxRunspeedmodifier.TabIndex = 95;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(107, 627);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 13);
+            this.label14.TabIndex = 99;
+            this.label14.Text = "GUID:";
             // 
             // checkBoxCanbeequipped
             // 
@@ -926,6 +1245,16 @@ namespace PZOutfitAssembler
             this.checkBoxCanbeequipped.Text = "can be equipped";
             this.checkBoxCanbeequipped.UseVisualStyleBackColor = true;
             // 
+            // checkBoxStaticModel
+            // 
+            this.checkBoxStaticModel.AutoSize = true;
+            this.checkBoxStaticModel.Location = new System.Drawing.Point(287, 37);
+            this.checkBoxStaticModel.Name = "checkBoxStaticModel";
+            this.checkBoxStaticModel.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxStaticModel.TabIndex = 97;
+            this.checkBoxStaticModel.Text = "World static model";
+            this.checkBoxStaticModel.UseVisualStyleBackColor = true;
+            // 
             // textBoxReplacesecondaryhand
             // 
             this.textBoxReplacesecondaryhand.Location = new System.Drawing.Point(434, 241);
@@ -933,12 +1262,35 @@ namespace PZOutfitAssembler
             this.textBoxReplacesecondaryhand.Size = new System.Drawing.Size(144, 20);
             this.textBoxReplacesecondaryhand.TabIndex = 94;
             // 
+            // textBoxStaticModel
+            // 
+            this.textBoxStaticModel.Location = new System.Drawing.Point(434, 34);
+            this.textBoxStaticModel.Name = "textBoxStaticModel";
+            this.textBoxStaticModel.Size = new System.Drawing.Size(144, 20);
+            this.textBoxStaticModel.TabIndex = 98;
+            // 
             // textBoxReplaceprimaryhand
             // 
             this.textBoxReplaceprimaryhand.Location = new System.Drawing.Point(434, 218);
             this.textBoxReplaceprimaryhand.Name = "textBoxReplaceprimaryhand";
             this.textBoxReplaceprimaryhand.Size = new System.Drawing.Size(144, 20);
             this.textBoxReplaceprimaryhand.TabIndex = 93;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.textBoxTextureChoices);
+            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.textBoxFemaleModel);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.textBoxMaleModel);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.checkBoxStatic);
+            this.panel3.Location = new System.Drawing.Point(273, 454);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(319, 153);
+            this.panel3.TabIndex = 72;
             // 
             // textBoxCapacity
             // 
@@ -1052,27 +1404,19 @@ namespace PZOutfitAssembler
             this.checkBoxOpensound.Text = "Open sound";
             this.checkBoxOpensound.UseVisualStyleBackColor = true;
             // 
-            // panel3
+            // panel5
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.textBoxTextureChoices);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.textBoxFemaleModel);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.textBoxMaleModel);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.checkBoxStatic);
-            this.panel3.Location = new System.Drawing.Point(273, 469);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(319, 153);
-            this.panel3.TabIndex = 72;
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Location = new System.Drawing.Point(845, 303);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(327, 335);
+            this.panel5.TabIndex = 83;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(899, 747);
+            this.label9.Location = new System.Drawing.Point(899, 714);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(278, 13);
             this.label9.TabIndex = 82;
@@ -1088,12 +1432,20 @@ namespace PZOutfitAssembler
             this.panel4.Controls.Add(this.listBoxVanila);
             this.panel4.Location = new System.Drawing.Point(617, 348);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 344);
+            this.panel4.Size = new System.Drawing.Size(222, 315);
             this.panel4.TabIndex = 80;
+            // 
+            // label30
+            // 
+            this.label30.Location = new System.Drawing.Point(91, 271);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(128, 39);
+            this.label30.TabIndex = 85;
+            this.label30.Text = "Consider as templates, dont forget to generate new GUID before saving";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(4, 293);
+            this.button8.Location = new System.Drawing.Point(4, 278);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(87, 34);
             this.button8.TabIndex = 84;
@@ -1125,7 +1477,7 @@ namespace PZOutfitAssembler
             this.listBoxVanila.FormattingEnabled = true;
             this.listBoxVanila.Location = new System.Drawing.Point(24, 28);
             this.listBoxVanila.Name = "listBoxVanila";
-            this.listBoxVanila.Size = new System.Drawing.Size(156, 251);
+            this.listBoxVanila.Size = new System.Drawing.Size(156, 199);
             this.listBoxVanila.TabIndex = 76;
             // 
             // panel6
@@ -1156,357 +1508,17 @@ namespace PZOutfitAssembler
             // 
             // label28
             // 
-            this.label28.Location = new System.Drawing.Point(196, 718);
+            this.label28.Location = new System.Drawing.Point(196, 682);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(246, 36);
             this.label28.TabIndex = 84;
             this.label28.Text = "Debug will create files in C:\\PZTest folder";
             // 
-            // textBoxAttachmentProvided
-            // 
-            this.textBoxAttachmentProvided.Location = new System.Drawing.Point(434, 310);
-            this.textBoxAttachmentProvided.Name = "textBoxAttachmentProvided";
-            this.textBoxAttachmentProvided.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAttachmentProvided.TabIndex = 104;
-            // 
-            // checkBoxAttachmentProvided
-            // 
-            this.checkBoxAttachmentProvided.AutoSize = true;
-            this.checkBoxAttachmentProvided.Checked = true;
-            this.checkBoxAttachmentProvided.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAttachmentProvided.Location = new System.Drawing.Point(287, 312);
-            this.checkBoxAttachmentProvided.Name = "checkBoxAttachmentProvided";
-            this.checkBoxAttachmentProvided.Size = new System.Drawing.Size(124, 17);
-            this.checkBoxAttachmentProvided.TabIndex = 103;
-            this.checkBoxAttachmentProvided.Text = "Attachment provided";
-            this.checkBoxAttachmentProvided.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxBulletDefense
-            // 
-            this.checkBoxBulletDefense.AutoSize = true;
-            this.checkBoxBulletDefense.Checked = true;
-            this.checkBoxBulletDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBulletDefense.Location = new System.Drawing.Point(8, 395);
-            this.checkBoxBulletDefense.Name = "checkBoxBulletDefense";
-            this.checkBoxBulletDefense.Size = new System.Drawing.Size(93, 17);
-            this.checkBoxBulletDefense.TabIndex = 106;
-            this.checkBoxBulletDefense.Text = "Bullet defense";
-            this.checkBoxBulletDefense.UseVisualStyleBackColor = true;
-            // 
-            // textBoxBulletDefense
-            // 
-            this.textBoxBulletDefense.Location = new System.Drawing.Point(144, 392);
-            this.textBoxBulletDefense.Name = "textBoxBulletDefense";
-            this.textBoxBulletDefense.Size = new System.Drawing.Size(123, 20);
-            this.textBoxBulletDefense.TabIndex = 105;
-            this.textBoxBulletDefense.Text = "0.2";
-            // 
-            // checkBoxScratchDefense
-            // 
-            this.checkBoxScratchDefense.AutoSize = true;
-            this.checkBoxScratchDefense.Checked = true;
-            this.checkBoxScratchDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxScratchDefense.Location = new System.Drawing.Point(8, 418);
-            this.checkBoxScratchDefense.Name = "checkBoxScratchDefense";
-            this.checkBoxScratchDefense.Size = new System.Drawing.Size(104, 17);
-            this.checkBoxScratchDefense.TabIndex = 108;
-            this.checkBoxScratchDefense.Text = "Scratch defense";
-            this.checkBoxScratchDefense.UseVisualStyleBackColor = true;
-            // 
-            // textBoxScratchDefense
-            // 
-            this.textBoxScratchDefense.Location = new System.Drawing.Point(144, 415);
-            this.textBoxScratchDefense.Name = "textBoxScratchDefense";
-            this.textBoxScratchDefense.Size = new System.Drawing.Size(123, 20);
-            this.textBoxScratchDefense.TabIndex = 107;
-            this.textBoxScratchDefense.Text = "0.2";
-            // 
-            // checkBoxDiscomfort
-            // 
-            this.checkBoxDiscomfort.AutoSize = true;
-            this.checkBoxDiscomfort.Checked = true;
-            this.checkBoxDiscomfort.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDiscomfort.Location = new System.Drawing.Point(8, 441);
-            this.checkBoxDiscomfort.Name = "checkBoxDiscomfort";
-            this.checkBoxDiscomfort.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxDiscomfort.TabIndex = 110;
-            this.checkBoxDiscomfort.Text = "Discomfort modifier";
-            this.checkBoxDiscomfort.UseVisualStyleBackColor = true;
-            // 
-            // textBoxDiscomfort
-            // 
-            this.textBoxDiscomfort.Location = new System.Drawing.Point(144, 438);
-            this.textBoxDiscomfort.Name = "textBoxDiscomfort";
-            this.textBoxDiscomfort.Size = new System.Drawing.Size(123, 20);
-            this.textBoxDiscomfort.TabIndex = 109;
-            this.textBoxDiscomfort.Text = "0.2";
-            // 
-            // textBoxDamageSound
-            // 
-            this.textBoxDamageSound.Location = new System.Drawing.Point(434, 195);
-            this.textBoxDamageSound.Name = "textBoxDamageSound";
-            this.textBoxDamageSound.Size = new System.Drawing.Size(144, 20);
-            this.textBoxDamageSound.TabIndex = 112;
-            // 
-            // checkBoxDamageSound
-            // 
-            this.checkBoxDamageSound.AutoSize = true;
-            this.checkBoxDamageSound.Checked = true;
-            this.checkBoxDamageSound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDamageSound.Location = new System.Drawing.Point(287, 197);
-            this.checkBoxDamageSound.Name = "checkBoxDamageSound";
-            this.checkBoxDamageSound.Size = new System.Drawing.Size(98, 17);
-            this.checkBoxDamageSound.TabIndex = 111;
-            this.checkBoxDamageSound.Text = "Damage sound";
-            this.checkBoxDamageSound.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCapacity
-            // 
-            this.checkBoxCapacity.AutoSize = true;
-            this.checkBoxCapacity.Checked = true;
-            this.checkBoxCapacity.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCapacity.Location = new System.Drawing.Point(287, 105);
-            this.checkBoxCapacity.Name = "checkBoxCapacity";
-            this.checkBoxCapacity.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxCapacity.TabIndex = 113;
-            this.checkBoxCapacity.Text = "Capacity";
-            this.checkBoxCapacity.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAttachmentReplacement
-            // 
-            this.checkBoxAttachmentReplacement.AutoSize = true;
-            this.checkBoxAttachmentReplacement.Location = new System.Drawing.Point(287, 60);
-            this.checkBoxAttachmentReplacement.Name = "checkBoxAttachmentReplacement";
-            this.checkBoxAttachmentReplacement.Size = new System.Drawing.Size(141, 17);
-            this.checkBoxAttachmentReplacement.TabIndex = 114;
-            this.checkBoxAttachmentReplacement.Text = "Attachment replacement";
-            this.checkBoxAttachmentReplacement.UseVisualStyleBackColor = true;
-            // 
-            // textBoxMaxItemSize
-            // 
-            this.textBoxMaxItemSize.Location = new System.Drawing.Point(434, 333);
-            this.textBoxMaxItemSize.Name = "textBoxMaxItemSize";
-            this.textBoxMaxItemSize.Size = new System.Drawing.Size(144, 20);
-            this.textBoxMaxItemSize.TabIndex = 116;
-            // 
-            // checkBoxMaxItemSize
-            // 
-            this.checkBoxMaxItemSize.AutoSize = true;
-            this.checkBoxMaxItemSize.Checked = true;
-            this.checkBoxMaxItemSize.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMaxItemSize.Location = new System.Drawing.Point(287, 335);
-            this.checkBoxMaxItemSize.Name = "checkBoxMaxItemSize";
-            this.checkBoxMaxItemSize.Size = new System.Drawing.Size(89, 17);
-            this.checkBoxMaxItemSize.TabIndex = 115;
-            this.checkBoxMaxItemSize.Text = "Max item size";
-            this.checkBoxMaxItemSize.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCombatSpeed
-            // 
-            this.checkBoxCombatSpeed.AutoSize = true;
-            this.checkBoxCombatSpeed.Checked = true;
-            this.checkBoxCombatSpeed.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCombatSpeed.Location = new System.Drawing.Point(8, 464);
-            this.checkBoxCombatSpeed.Name = "checkBoxCombatSpeed";
-            this.checkBoxCombatSpeed.Size = new System.Drawing.Size(133, 17);
-            this.checkBoxCombatSpeed.TabIndex = 118;
-            this.checkBoxCombatSpeed.Text = "Combat speed modifier";
-            this.checkBoxCombatSpeed.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCombatSpeed
-            // 
-            this.textBoxCombatSpeed.Location = new System.Drawing.Point(144, 461);
-            this.textBoxCombatSpeed.Name = "textBoxCombatSpeed";
-            this.textBoxCombatSpeed.Size = new System.Drawing.Size(123, 20);
-            this.textBoxCombatSpeed.TabIndex = 117;
-            this.textBoxCombatSpeed.Text = "0.2";
-            // 
-            // textBoxSoundParam
-            // 
-            this.textBoxSoundParam.Location = new System.Drawing.Point(434, 356);
-            this.textBoxSoundParam.Name = "textBoxSoundParam";
-            this.textBoxSoundParam.Size = new System.Drawing.Size(144, 20);
-            this.textBoxSoundParam.TabIndex = 120;
-            // 
-            // checkBoxSoundParam
-            // 
-            this.checkBoxSoundParam.AutoSize = true;
-            this.checkBoxSoundParam.Checked = true;
-            this.checkBoxSoundParam.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSoundParam.Location = new System.Drawing.Point(287, 358);
-            this.checkBoxSoundParam.Name = "checkBoxSoundParam";
-            this.checkBoxSoundParam.Size = new System.Drawing.Size(108, 17);
-            this.checkBoxSoundParam.TabIndex = 119;
-            this.checkBoxSoundParam.Text = "Sound Parameter";
-            this.checkBoxSoundParam.UseVisualStyleBackColor = true;
-            // 
-            // textBoxMetalValue
-            // 
-            this.textBoxMetalValue.Location = new System.Drawing.Point(434, 379);
-            this.textBoxMetalValue.Name = "textBoxMetalValue";
-            this.textBoxMetalValue.Size = new System.Drawing.Size(144, 20);
-            this.textBoxMetalValue.TabIndex = 122;
-            // 
-            // checkBoxMetalValue
-            // 
-            this.checkBoxMetalValue.AutoSize = true;
-            this.checkBoxMetalValue.Checked = true;
-            this.checkBoxMetalValue.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMetalValue.Location = new System.Drawing.Point(287, 381);
-            this.checkBoxMetalValue.Name = "checkBoxMetalValue";
-            this.checkBoxMetalValue.Size = new System.Drawing.Size(82, 17);
-            this.checkBoxMetalValue.TabIndex = 121;
-            this.checkBoxMetalValue.Text = "Metal Value";
-            this.checkBoxMetalValue.UseVisualStyleBackColor = true;
-            // 
-            // textBoxIcon
-            // 
-            this.textBoxIcon.Location = new System.Drawing.Point(106, 175);
-            this.textBoxIcon.Name = "textBoxIcon";
-            this.textBoxIcon.Size = new System.Drawing.Size(161, 20);
-            this.textBoxIcon.TabIndex = 123;
-            this.textBoxIcon.Text = "Duffelbag";
-            // 
-            // checkBoxIcon
-            // 
-            this.checkBoxIcon.AutoSize = true;
-            this.checkBoxIcon.Checked = true;
-            this.checkBoxIcon.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxIcon.Location = new System.Drawing.Point(8, 178);
-            this.checkBoxIcon.Name = "checkBoxIcon";
-            this.checkBoxIcon.Size = new System.Drawing.Size(47, 17);
-            this.checkBoxIcon.TabIndex = 124;
-            this.checkBoxIcon.Text = "Icon";
-            this.checkBoxIcon.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAcceptItemFunction
-            // 
-            this.textBoxAcceptItemFunction.Location = new System.Drawing.Point(434, 402);
-            this.textBoxAcceptItemFunction.Name = "textBoxAcceptItemFunction";
-            this.textBoxAcceptItemFunction.Size = new System.Drawing.Size(144, 20);
-            this.textBoxAcceptItemFunction.TabIndex = 126;
-            // 
-            // checkBoxAcceptItemFunction
-            // 
-            this.checkBoxAcceptItemFunction.AutoSize = true;
-            this.checkBoxAcceptItemFunction.Checked = true;
-            this.checkBoxAcceptItemFunction.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAcceptItemFunction.Location = new System.Drawing.Point(287, 404);
-            this.checkBoxAcceptItemFunction.Name = "checkBoxAcceptItemFunction";
-            this.checkBoxAcceptItemFunction.Size = new System.Drawing.Size(123, 17);
-            this.checkBoxAcceptItemFunction.TabIndex = 125;
-            this.checkBoxAcceptItemFunction.Text = "Accept item function";
-            this.checkBoxAcceptItemFunction.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxCosmetic
-            // 
-            this.checkBoxCosmetic.AutoSize = true;
-            this.checkBoxCosmetic.Checked = true;
-            this.checkBoxCosmetic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCosmetic.Location = new System.Drawing.Point(288, 445);
-            this.checkBoxCosmetic.Name = "checkBoxCosmetic";
-            this.checkBoxCosmetic.Size = new System.Drawing.Size(69, 17);
-            this.checkBoxCosmetic.TabIndex = 127;
-            this.checkBoxCosmetic.Text = "Cosmetic";
-            this.checkBoxCosmetic.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVisualAid
-            // 
-            this.checkBoxVisualAid.AutoSize = true;
-            this.checkBoxVisualAid.Checked = true;
-            this.checkBoxVisualAid.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxVisualAid.Location = new System.Drawing.Point(361, 445);
-            this.checkBoxVisualAid.Name = "checkBoxVisualAid";
-            this.checkBoxVisualAid.Size = new System.Drawing.Size(69, 17);
-            this.checkBoxVisualAid.TabIndex = 128;
-            this.checkBoxVisualAid.Text = "VisualAid";
-            this.checkBoxVisualAid.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxWaterResistance
-            // 
-            this.checkBoxWaterResistance.AutoSize = true;
-            this.checkBoxWaterResistance.Checked = true;
-            this.checkBoxWaterResistance.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWaterResistance.Location = new System.Drawing.Point(8, 487);
-            this.checkBoxWaterResistance.Name = "checkBoxWaterResistance";
-            this.checkBoxWaterResistance.Size = new System.Drawing.Size(106, 17);
-            this.checkBoxWaterResistance.TabIndex = 130;
-            this.checkBoxWaterResistance.Text = "Water resistance";
-            this.checkBoxWaterResistance.UseVisualStyleBackColor = true;
-            // 
-            // textBoxWaterResistance
-            // 
-            this.textBoxWaterResistance.Location = new System.Drawing.Point(144, 484);
-            this.textBoxWaterResistance.Name = "textBoxWaterResistance";
-            this.textBoxWaterResistance.Size = new System.Drawing.Size(123, 20);
-            this.textBoxWaterResistance.TabIndex = 129;
-            this.textBoxWaterResistance.Text = "0.2";
-            // 
-            // checkBoxVisionModifier
-            // 
-            this.checkBoxVisionModifier.AutoSize = true;
-            this.checkBoxVisionModifier.Checked = true;
-            this.checkBoxVisionModifier.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxVisionModifier.Location = new System.Drawing.Point(8, 510);
-            this.checkBoxVisionModifier.Name = "checkBoxVisionModifier";
-            this.checkBoxVisionModifier.Size = new System.Drawing.Size(93, 17);
-            this.checkBoxVisionModifier.TabIndex = 132;
-            this.checkBoxVisionModifier.Text = "Vision modifier";
-            this.checkBoxVisionModifier.UseVisualStyleBackColor = true;
-            // 
-            // textBoxVisionModifier
-            // 
-            this.textBoxVisionModifier.Location = new System.Drawing.Point(144, 507);
-            this.textBoxVisionModifier.Name = "textBoxVisionModifier";
-            this.textBoxVisionModifier.Size = new System.Drawing.Size(123, 20);
-            this.textBoxVisionModifier.TabIndex = 131;
-            this.textBoxVisionModifier.Text = "0.2";
-            // 
-            // checkBoxCorpseSicknessDefence
-            // 
-            this.checkBoxCorpseSicknessDefence.AutoSize = true;
-            this.checkBoxCorpseSicknessDefence.Checked = true;
-            this.checkBoxCorpseSicknessDefence.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCorpseSicknessDefence.Location = new System.Drawing.Point(8, 556);
-            this.checkBoxCorpseSicknessDefence.Name = "checkBoxCorpseSicknessDefence";
-            this.checkBoxCorpseSicknessDefence.Size = new System.Drawing.Size(145, 17);
-            this.checkBoxCorpseSicknessDefence.TabIndex = 134;
-            this.checkBoxCorpseSicknessDefence.Text = "Corpse sickness defence";
-            this.checkBoxCorpseSicknessDefence.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCorpseSicknessDefence
-            // 
-            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(159, 553);
-            this.textBoxCorpseSicknessDefence.Name = "textBoxCorpseSicknessDefence";
-            this.textBoxCorpseSicknessDefence.Size = new System.Drawing.Size(108, 20);
-            this.textBoxCorpseSicknessDefence.TabIndex = 133;
-            this.textBoxCorpseSicknessDefence.Text = "0.2";
-            // 
-            // checkBoxHearingModifier
-            // 
-            this.checkBoxHearingModifier.AutoSize = true;
-            this.checkBoxHearingModifier.Checked = true;
-            this.checkBoxHearingModifier.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxHearingModifier.Location = new System.Drawing.Point(8, 533);
-            this.checkBoxHearingModifier.Name = "checkBoxHearingModifier";
-            this.checkBoxHearingModifier.Size = new System.Drawing.Size(102, 17);
-            this.checkBoxHearingModifier.TabIndex = 136;
-            this.checkBoxHearingModifier.Text = "Hearing modifier";
-            this.checkBoxHearingModifier.UseVisualStyleBackColor = true;
-            // 
-            // textBoxHearing
-            // 
-            this.textBoxHearing.Location = new System.Drawing.Point(144, 530);
-            this.textBoxHearing.Name = "textBoxHearing";
-            this.textBoxHearing.Size = new System.Drawing.Size(123, 20);
-            this.textBoxHearing.TabIndex = 135;
-            this.textBoxHearing.Text = "0.2";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(664, 716);
+            this.pictureBox1.Location = new System.Drawing.Point(664, 686);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1518,9 +1530,9 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(985, 656);
+            this.pictureBox2.Location = new System.Drawing.Point(991, 644);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(88, 88);
+            this.pictureBox2.Size = new System.Drawing.Size(69, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 86;
             this.pictureBox2.TabStop = false;
@@ -1530,7 +1542,7 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(522, 713);
+            this.pictureBox3.Location = new System.Drawing.Point(522, 683);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(117, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1542,7 +1554,7 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(736, 715);
+            this.pictureBox4.Location = new System.Drawing.Point(736, 685);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(61, 41);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1554,7 +1566,7 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(803, 716);
+            this.pictureBox5.Location = new System.Drawing.Point(803, 686);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(65, 41);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1566,7 +1578,7 @@ namespace PZOutfitAssembler
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(523, 695);
+            this.label7.Location = new System.Drawing.Point(523, 665);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 90;
@@ -1575,7 +1587,7 @@ namespace PZOutfitAssembler
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(744, 697);
+            this.label13.Location = new System.Drawing.Point(744, 667);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 91;
@@ -1584,7 +1596,7 @@ namespace PZOutfitAssembler
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(819, 697);
+            this.label27.Location = new System.Drawing.Point(819, 667);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(33, 13);
             this.label27.TabIndex = 92;
@@ -1593,25 +1605,37 @@ namespace PZOutfitAssembler
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(674, 696);
+            this.label29.Location = new System.Drawing.Point(674, 666);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(47, 13);
             this.label29.TabIndex = 93;
             this.label29.Text = "Youtube";
             // 
-            // label30
+            // checkBoxBiteDefense
             // 
-            this.label30.Location = new System.Drawing.Point(91, 291);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(128, 39);
-            this.label30.TabIndex = 85;
-            this.label30.Text = "Consider as templates, dont forget to generate new GUID before saving";
+            this.checkBoxBiteDefense.AutoSize = true;
+            this.checkBoxBiteDefense.Checked = true;
+            this.checkBoxBiteDefense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxBiteDefense.Location = new System.Drawing.Point(8, 369);
+            this.checkBoxBiteDefense.Name = "checkBoxBiteDefense";
+            this.checkBoxBiteDefense.Size = new System.Drawing.Size(85, 17);
+            this.checkBoxBiteDefense.TabIndex = 138;
+            this.checkBoxBiteDefense.Text = "Bite defense";
+            this.checkBoxBiteDefense.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBiteDefense
+            // 
+            this.textBoxBiteDefense.Location = new System.Drawing.Point(144, 366);
+            this.textBoxBiteDefense.Name = "textBoxBiteDefense";
+            this.textBoxBiteDefense.Size = new System.Drawing.Size(123, 20);
+            this.textBoxBiteDefense.TabIndex = 137;
+            this.textBoxBiteDefense.Text = "0.2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 769);
+            this.ClientSize = new System.Drawing.Size(1184, 733);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label13);
@@ -1794,6 +1818,8 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.CheckBox checkBoxBiteDefense;
+        private System.Windows.Forms.TextBox textBoxBiteDefense;
     }
 }
 

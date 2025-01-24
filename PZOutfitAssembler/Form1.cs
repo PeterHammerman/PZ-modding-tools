@@ -378,6 +378,8 @@ namespace PZOutfitAssembler
             string metalvalue = textBoxMetalValue.Text;
             string itemfunction = textBoxAcceptItemFunction.Text;
 
+            string bitedefense = textBoxBiteDefense.Text;
+
 
             // Build the script content
             string script = "module Base\n{ \n";
@@ -453,7 +455,10 @@ namespace PZOutfitAssembler
 
             if(checkBoxIcon.Checked)
                 script += $"        Icon = {icon},\n";
-            if(checkBoxBulletDefense.Checked)
+            if (checkBoxBiteDefense.Checked)
+                script += $"        BiteDefense = {bitedefense},\n";
+
+            if (checkBoxBulletDefense.Checked)
                 script += $"        BulletDefense = {bulletdef},\n";
             if(checkBoxScratchDefense.Checked)
                 script += $"        ScratchDefense = {scratchdef},\n";
@@ -692,6 +697,7 @@ namespace PZOutfitAssembler
                 { "AttachmentsProvided",textBoxAttachmentProvided},
 
                             {"Icon", textBoxIcon },
+                            {"BiteDefense", textBoxBiteDefense },
                             {"BulletDefense", textBoxBulletDefense },
                             {"ScratchDefense", textBoxScratchDefense },
                             {"DiscomfortModifier", textBoxDiscomfort },
@@ -733,6 +739,7 @@ namespace PZOutfitAssembler
                             {"AttachmentReplacement", checkBoxAttachmentReplacement },
 
                             {"Icon", checkBoxIcon },
+                            {"BiteDefense", checkBoxBiteDefense },
                             {"BulletDefense", checkBoxBulletDefense },
                             {"ScratchDefense", checkBoxScratchDefense },
                             {"DiscomfortModifier", checkBoxDiscomfort },
@@ -1078,6 +1085,7 @@ namespace PZOutfitAssembler
                 { "AttachmentsProvided",textBoxAttachmentProvided},
 
                             {"Icon", textBoxIcon },
+                            {"BiteDefense", textBoxBiteDefense },
                             {"BulletDefense", textBoxBulletDefense },
                             {"ScratchDefense", textBoxScratchDefense },
                             {"DiscomfortModifier", textBoxDiscomfort },
@@ -1121,6 +1129,7 @@ namespace PZOutfitAssembler
                             {"AttachmentReplacement", checkBoxAttachmentReplacement },
 
                             {"Icon", checkBoxIcon },
+                            {"BiteDefense", checkBoxBiteDefense },
                             {"BulletDefense", checkBoxBulletDefense },
                             {"ScratchDefense", checkBoxScratchDefense },
                             {"DiscomfortModifier", checkBoxDiscomfort },

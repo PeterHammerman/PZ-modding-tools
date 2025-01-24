@@ -11,5 +11,13 @@ To do:
 
 5. Add missing possible properties for clothing
 
-6. Overal optimization and cleanup code
+6. Reading Vanilla outfits templates
+
+7. Deleting custom cloth
+
+8. Graphical representation of outfit and bags hierarhy
+
+9. Deleting custom outfits
+
+10. Overal optimization and cleanup code
 
