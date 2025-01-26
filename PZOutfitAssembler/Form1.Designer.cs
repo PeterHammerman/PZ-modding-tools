@@ -90,6 +90,8 @@ namespace PZOutfitAssembler
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxBiteDefense = new System.Windows.Forms.CheckBox();
+            this.textBoxBiteDefense = new System.Windows.Forms.TextBox();
             this.checkBoxHearingModifier = new System.Windows.Forms.CheckBox();
             this.textBoxHearing = new System.Windows.Forms.TextBox();
             this.checkBoxCorpseSicknessDefence = new System.Windows.Forms.CheckBox();
@@ -158,7 +160,6 @@ namespace PZOutfitAssembler
             this.label11 = new System.Windows.Forms.Label();
             this.listBoxVanila = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -169,11 +170,31 @@ namespace PZOutfitAssembler
             this.label13 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.checkBoxBiteDefense = new System.Windows.Forms.CheckBox();
-            this.textBoxBiteDefense = new System.Windows.Forms.TextBox();
+            this.checkBoxAllowRandomHue = new System.Windows.Forms.CheckBox();
+            this.checkBoxAllowRandomTint = new System.Windows.Forms.CheckBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -181,6 +202,7 @@ namespace PZOutfitAssembler
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -458,7 +480,7 @@ namespace PZOutfitAssembler
             // checkBoxMale
             // 
             this.checkBoxMale.AutoSize = true;
-            this.checkBoxMale.Location = new System.Drawing.Point(119, 154);
+            this.checkBoxMale.Location = new System.Drawing.Point(8, 113);
             this.checkBoxMale.Name = "checkBoxMale";
             this.checkBoxMale.Size = new System.Drawing.Size(48, 17);
             this.checkBoxMale.TabIndex = 52;
@@ -470,7 +492,7 @@ namespace PZOutfitAssembler
             this.checkBoxFemale.AutoSize = true;
             this.checkBoxFemale.Checked = true;
             this.checkBoxFemale.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFemale.Location = new System.Drawing.Point(119, 180);
+            this.checkBoxFemale.Location = new System.Drawing.Point(8, 139);
             this.checkBoxFemale.Name = "checkBoxFemale";
             this.checkBoxFemale.Size = new System.Drawing.Size(57, 17);
             this.checkBoxFemale.TabIndex = 53;
@@ -480,7 +502,7 @@ namespace PZOutfitAssembler
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(116, 103);
+            this.label20.Location = new System.Drawing.Point(12, 62);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 13);
             this.label20.TabIndex = 55;
@@ -488,7 +510,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxProbability
             // 
-            this.textBoxProbability.Location = new System.Drawing.Point(119, 119);
+            this.textBoxProbability.Location = new System.Drawing.Point(15, 78);
             this.textBoxProbability.Name = "textBoxProbability";
             this.textBoxProbability.Size = new System.Drawing.Size(126, 20);
             this.textBoxProbability.TabIndex = 54;
@@ -681,9 +703,9 @@ namespace PZOutfitAssembler
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(102, 288);
+            this.button2.Location = new System.Drawing.Point(130, 288);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 34);
+            this.button2.Size = new System.Drawing.Size(89, 34);
             this.button2.TabIndex = 78;
             this.button2.Text = "Assemble new GUID Table";
             this.button2.UseVisualStyleBackColor = true;
@@ -692,6 +714,7 @@ namespace PZOutfitAssembler
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.button2);
@@ -704,9 +727,9 @@ namespace PZOutfitAssembler
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(9, 288);
+            this.button7.Location = new System.Drawing.Point(8, 288);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(87, 34);
+            this.button7.Size = new System.Drawing.Size(59, 34);
             this.button7.TabIndex = 82;
             this.button7.Text = "Edit Item";
             this.button7.UseVisualStyleBackColor = true;
@@ -715,7 +738,7 @@ namespace PZOutfitAssembler
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(186, 145);
+            this.button3.Location = new System.Drawing.Point(186, 126);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 33);
             this.button3.TabIndex = 81;
@@ -825,6 +848,26 @@ namespace PZOutfitAssembler
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(599, 651);
             this.panel2.TabIndex = 80;
+            // 
+            // checkBoxBiteDefense
+            // 
+            this.checkBoxBiteDefense.AutoSize = true;
+            this.checkBoxBiteDefense.Checked = true;
+            this.checkBoxBiteDefense.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxBiteDefense.Location = new System.Drawing.Point(8, 369);
+            this.checkBoxBiteDefense.Name = "checkBoxBiteDefense";
+            this.checkBoxBiteDefense.Size = new System.Drawing.Size(85, 17);
+            this.checkBoxBiteDefense.TabIndex = 138;
+            this.checkBoxBiteDefense.Text = "Bite defense";
+            this.checkBoxBiteDefense.UseVisualStyleBackColor = true;
+            // 
+            // textBoxBiteDefense
+            // 
+            this.textBoxBiteDefense.Location = new System.Drawing.Point(144, 366);
+            this.textBoxBiteDefense.Name = "textBoxBiteDefense";
+            this.textBoxBiteDefense.Size = new System.Drawing.Size(123, 20);
+            this.textBoxBiteDefense.TabIndex = 137;
+            this.textBoxBiteDefense.Text = "0.2";
             // 
             // checkBoxHearingModifier
             // 
@@ -1279,6 +1322,8 @@ namespace PZOutfitAssembler
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.checkBoxAllowRandomTint);
+            this.panel3.Controls.Add(this.checkBoxAllowRandomHue);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.textBoxTextureChoices);
             this.panel3.Controls.Add(this.label18);
@@ -1407,16 +1452,25 @@ namespace PZOutfitAssembler
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel5.Location = new System.Drawing.Point(845, 303);
+            this.panel5.Controls.Add(this.button15);
+            this.panel5.Controls.Add(this.button12);
+            this.panel5.Controls.Add(this.button11);
+            this.panel5.Controls.Add(this.button10);
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.listBox3);
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Controls.Add(this.listBox2);
+            this.panel5.Enabled = false;
+            this.panel5.Location = new System.Drawing.Point(1066, 232);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(327, 335);
+            this.panel5.Size = new System.Drawing.Size(299, 403);
             this.panel5.TabIndex = 83;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(899, 714);
+            this.label9.Location = new System.Drawing.Point(974, 711);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(278, 13);
             this.label9.TabIndex = 82;
@@ -1483,7 +1537,12 @@ namespace PZOutfitAssembler
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel6.Controls.Add(this.button14);
+            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.label34);
+            this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.label24);
+            this.panel6.Controls.Add(this.button13);
             this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.textBoxProbability);
@@ -1492,19 +1551,10 @@ namespace PZOutfitAssembler
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.textBoxClothingName);
             this.panel6.Enabled = false;
-            this.panel6.Location = new System.Drawing.Point(845, 12);
+            this.panel6.Location = new System.Drawing.Point(1066, 12);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(327, 281);
+            this.panel6.Size = new System.Drawing.Size(299, 215);
             this.panel6.TabIndex = 83;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(12, 261);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(103, 13);
-            this.label24.TabIndex = 82;
-            this.label24.Text = "Not implemented yet";
             // 
             // label28
             // 
@@ -1530,7 +1580,7 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(991, 644);
+            this.pictureBox2.Location = new System.Drawing.Point(1066, 641);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(69, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1611,31 +1661,212 @@ namespace PZOutfitAssembler
             this.label29.TabIndex = 93;
             this.label29.Text = "Youtube";
             // 
-            // checkBoxBiteDefense
+            // checkBoxAllowRandomHue
             // 
-            this.checkBoxBiteDefense.AutoSize = true;
-            this.checkBoxBiteDefense.Checked = true;
-            this.checkBoxBiteDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBiteDefense.Location = new System.Drawing.Point(8, 369);
-            this.checkBoxBiteDefense.Name = "checkBoxBiteDefense";
-            this.checkBoxBiteDefense.Size = new System.Drawing.Size(85, 17);
-            this.checkBoxBiteDefense.TabIndex = 138;
-            this.checkBoxBiteDefense.Text = "Bite defense";
-            this.checkBoxBiteDefense.UseVisualStyleBackColor = true;
+            this.checkBoxAllowRandomHue.AutoSize = true;
+            this.checkBoxAllowRandomHue.Location = new System.Drawing.Point(80, 130);
+            this.checkBoxAllowRandomHue.Name = "checkBoxAllowRandomHue";
+            this.checkBoxAllowRandomHue.Size = new System.Drawing.Size(110, 17);
+            this.checkBoxAllowRandomHue.TabIndex = 58;
+            this.checkBoxAllowRandomHue.Text = "Allow random hue";
+            this.checkBoxAllowRandomHue.UseVisualStyleBackColor = true;
             // 
-            // textBoxBiteDefense
+            // checkBoxAllowRandomTint
             // 
-            this.textBoxBiteDefense.Location = new System.Drawing.Point(144, 366);
-            this.textBoxBiteDefense.Name = "textBoxBiteDefense";
-            this.textBoxBiteDefense.Size = new System.Drawing.Size(123, 20);
-            this.textBoxBiteDefense.TabIndex = 137;
-            this.textBoxBiteDefense.Text = "0.2";
+            this.checkBoxAllowRandomTint.AutoSize = true;
+            this.checkBoxAllowRandomTint.Location = new System.Drawing.Point(195, 130);
+            this.checkBoxAllowRandomTint.Name = "checkBoxAllowRandomTint";
+            this.checkBoxAllowRandomTint.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAllowRandomTint.TabIndex = 59;
+            this.checkBoxAllowRandomTint.Text = "Allow random tint";
+            this.checkBoxAllowRandomTint.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel7.Controls.Add(this.button16);
+            this.panel7.Controls.Add(this.label31);
+            this.panel7.Controls.Add(this.listBox1);
+            this.panel7.Enabled = false;
+            this.panel7.Location = new System.Drawing.Point(854, 12);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(206, 623);
+            this.panel7.TabIndex = 94;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Item1",
+            "-subitem1",
+            "-subitem2",
+            "--subitem1",
+            "-subitem3",
+            "Item2",
+            "Item3",
+            "-subtem1",
+            "Item4",
+            "Item5"});
+            this.listBox1.Location = new System.Drawing.Point(13, 36);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(173, 576);
+            this.listBox1.TabIndex = 0;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(11, 12);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(76, 13);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "Outfit structure";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(70, 288);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 34);
+            this.button4.TabIndex = 83;
+            this.button4.Text = "Delete item";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(14, 38);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(127, 303);
+            this.listBox2.TabIndex = 0;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 13);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Custom outfits";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(158, 38);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(130, 303);
+            this.listBox3.TabIndex = 2;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(159, 13);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(69, 13);
+            this.label33.TabIndex = 3;
+            this.label33.Text = "Vanilla outfits";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(30, 348);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(45, 34);
+            this.button10.TabIndex = 83;
+            this.button10.Text = "Edit Item";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(78, 348);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(46, 34);
+            this.button11.TabIndex = 84;
+            this.button11.Text = "Delete item";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(194, 354);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(59, 34);
+            this.button12.TabIndex = 84;
+            this.button12.Text = "Edit Item";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(185, 172);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(107, 28);
+            this.button13.TabIndex = 139;
+            this.button13.Text = "Save Outfit";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(104, 110);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(192, 20);
+            this.textBox1.TabIndex = 140;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(68, 114);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(37, 13);
+            this.label24.TabIndex = 139;
+            this.label24.Text = "GUID:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(104, 136);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(192, 20);
+            this.textBox2.TabIndex = 142;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(68, 140);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(37, 13);
+            this.label34.TabIndex = 141;
+            this.label34.Text = "GUID:";
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(11, 172);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(96, 29);
+            this.button14.TabIndex = 139;
+            this.button14.Text = "New GUIDs";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(78, 2);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(63, 34);
+            this.button15.TabIndex = 85;
+            this.button15.Text = "Assemble XML";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(90, 7);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(96, 23);
+            this.button16.TabIndex = 139;
+            this.button16.Text = "Clear";
+            this.button16.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 733);
+            this.ClientSize = new System.Drawing.Size(1370, 733);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label13);
@@ -1664,6 +1895,8 @@ namespace PZOutfitAssembler
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1673,6 +1906,8 @@ namespace PZOutfitAssembler
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1768,7 +2003,6 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.TextBox textBoxGUID;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
@@ -1820,6 +2054,27 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.CheckBox checkBoxBiteDefense;
         private System.Windows.Forms.TextBox textBoxBiteDefense;
+        private System.Windows.Forms.CheckBox checkBoxAllowRandomTint;
+        private System.Windows.Forms.CheckBox checkBoxAllowRandomHue;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button16;
     }
 }
 

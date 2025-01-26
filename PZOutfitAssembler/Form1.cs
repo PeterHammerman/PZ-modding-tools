@@ -196,6 +196,9 @@ namespace PZOutfitAssembler
             checkBoxSoundParam.Checked = false;
             checkBoxMetalValue.Checked = false;
             checkBoxAcceptItemFunction.Checked = false;
+            checkBoxAllowRandomHue.Checked = false;
+            checkBoxAllowRandomTint.Checked = false;
+
 
 
             textBoxGUID.Text = guid;
@@ -519,8 +522,8 @@ namespace PZOutfitAssembler
             xml += $"  <m_FemaleModel>{femaleModel}</m_FemaleModel>\n";
             xml += $"  <m_GUID>{guid}</m_GUID>\n";
             xml += $"  <m_Static>{isStatic}</m_Static>\n";
-            xml += $"  <m_AllowRandomHue>false</m_AllowRandomHue>\n";
-            xml += $"  <m_AllowRandomTint>false</m_AllowRandomTint>\n";
+            xml += $"  <m_AllowRandomHue>"+checkBoxAllowRandomHue.Checked+"</m_AllowRandomHue>\n";
+            xml += $"  <m_AllowRandomTint>"+checkBoxAllowRandomTint.Checked+"</m_AllowRandomTint>\n";
             xml += $"  <m_AttachBone></m_AttachBone>\n";
             xml += $"  <textureChoices>{textureChoices}</textureChoices>\n";
             xml += "</clothingItem>";
@@ -860,8 +863,9 @@ namespace PZOutfitAssembler
                 var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
         {
             { "m_Static", checkBoxStatic },
-          //  { "m_AllowRandomHue", checkBoxAllowRandomHue },
-          //  { "m_AllowRandomTint", checkBoxAllowRandomTint }
+            {"m_AllowRandomHue", checkBoxAllowRandomHue },
+            {"m_AllowRandomTint", checkBoxAllowRandomTint},
+
             // Add more checkboxes as needed
         };
 
@@ -1249,9 +1253,10 @@ namespace PZOutfitAssembler
                             // Map XML element names to corresponding checkboxes
                             var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
         {
-            { "m_Static", checkBoxStatic },
-          //  { "m_AllowRandomHue", checkBoxAllowRandomHue },
-          //  { "m_AllowRandomTint", checkBoxAllowRandomTint }
+            {"m_Static", checkBoxStatic },
+            {"m_AllowRandomHue", checkBoxAllowRandomHue},
+            {"m_AllowRandomTint", checkBoxAllowRandomTint},
+
             // Add more checkboxes as needed
         };
 
