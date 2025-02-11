@@ -28,7 +28,7 @@ namespace PZOutfitAssembler
         public string clothingXMLDir = "/media/clothing/";
         public string clothingItemXMLDir = "/media/clothing/clothingItems/";
 
-       
+
 
 
 
@@ -310,7 +310,7 @@ namespace PZOutfitAssembler
             textBoxBodyLocation.Text = "";
             textBoxBloodLocation.Text = "";
             textBoxChanceToFall.Text = "";
-            textBoxClothingItem.Text = ""; 
+            textBoxClothingItem.Text = "";
             textBoxClothingItemExtra.Text = "";
             textBoxClothingItemExtraOption.Text = "";
             textBoxInsulation.Text = "";
@@ -492,7 +492,7 @@ namespace PZOutfitAssembler
 
                     // Assemble the XML content
                     string xmlContent = AssembleItemXML();
-                 //   string xmlnewOutfit = AssembleOutfitXML();
+                    //   string xmlnewOutfit = AssembleOutfitXML();
 
 
 
@@ -505,8 +505,8 @@ namespace PZOutfitAssembler
 
 
 
-                 //   string xmlOutfitTableFilePath = Path.Combine(outputPath + "/media/clothing/", "newClothing.xml");
-                 //   File.WriteAllText(xmlOutfitTableFilePath, xmlnewOutfit);
+                    //   string xmlOutfitTableFilePath = Path.Combine(outputPath + "/media/clothing/", "newClothing.xml");
+                    //   File.WriteAllText(xmlOutfitTableFilePath, xmlnewOutfit);
 
                     MessageBox.Show("item has been generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
@@ -631,63 +631,63 @@ namespace PZOutfitAssembler
             if (checkBoxAttachmentReplacement.Checked)
                 script += $"        AttachmentReplacement = {attachreplacement},\n";
 
-            if(checkBoxCanbeequipped.Checked)
+            if (checkBoxCanbeequipped.Checked)
                 script += $"        CanBeEquipped = {canbeequipped},\n";
-            if(checkBoxCapacity.Checked)
+            if (checkBoxCapacity.Checked)
                 script += $"        Capacity = {capacity},\n";
 
-            if(checkBoxOpensound.Checked)
+            if (checkBoxOpensound.Checked)
                 script += $"        OpenSound = {opensound},\n";
-            if(checkBoxClosesound.Checked)
+            if (checkBoxClosesound.Checked)
                 script += $"        CloseSound = {closesound},\n";
-            if(checkBoxPutinsound.Checked)
+            if (checkBoxPutinsound.Checked)
                 script += $"        PutInSound = {putinsound},\n";
-            if(checkBoxReplaceprimaryhand.Checked)
+            if (checkBoxReplaceprimaryhand.Checked)
                 script += $"        ReplaceInPrimaryHand = {primaryhand},\n";
-            if(checkBoxReplacesecondhand.Checked)
+            if (checkBoxReplacesecondhand.Checked)
                 script += $"        ReplaceInSecondHand = {secondaryhand},\n";
-            if(checkBoxRunspeedmodifier.Checked)
+            if (checkBoxRunspeedmodifier.Checked)
                 script += $"        RunSpeedModifier = {runspeedmodifier},\n";
-            if(checkBoxWeigthreduction.Checked)
+            if (checkBoxWeigthreduction.Checked)
                 script += $"        WeightReduction = {weigthreduction},\n";
-            if(checkBoxAttachmentProvided.Checked)
+            if (checkBoxAttachmentProvided.Checked)
                 script += $"        AttachmentProvided = {attachmentprovided},\n";
 
-            if(checkBoxIcon.Checked)
+            if (checkBoxIcon.Checked)
                 script += $"        Icon = {icon},\n";
             if (checkBoxBiteDefense.Checked)
                 script += $"        BiteDefense = {bitedefense},\n";
 
             if (checkBoxBulletDefense.Checked)
                 script += $"        BulletDefense = {bulletdef},\n";
-            if(checkBoxScratchDefense.Checked)
+            if (checkBoxScratchDefense.Checked)
                 script += $"        ScratchDefense = {scratchdef},\n";
-            if(checkBoxDiscomfort.Checked)
+            if (checkBoxDiscomfort.Checked)
                 script += $"        DiscomfortModifier = {discomfort},\n";
-            if(checkBoxCombatSpeed.Checked)
+            if (checkBoxCombatSpeed.Checked)
                 script += $"        CombatSpeedModifier = {combatspeed},\n";
-            if(checkBoxWaterResistance.Checked)
+            if (checkBoxWaterResistance.Checked)
                 script += $"        WaterRessistance = {waterres},\n";
-            if(checkBoxVisionModifier.Checked)
+            if (checkBoxVisionModifier.Checked)
                 script += $"        VisionModifier = {visionmod},\n";
-            if(checkBoxHearingModifier.Checked)
+            if (checkBoxHearingModifier.Checked)
                 script += $"        HearingModifier = {hearing},\n";
-            if(checkBoxCorpseSicknessDefence.Checked)
+            if (checkBoxCorpseSicknessDefence.Checked)
                 script += $"        CorpseSicknessDefense = {corpsedef},\n";
 
-            if(checkBoxDamageSound.Checked)
+            if (checkBoxDamageSound.Checked)
                 script += $"        DamageSound = {damagesound},\n";
-            if(checkBoxMaxItemSize.Checked)
+            if (checkBoxMaxItemSize.Checked)
                 script += $"        MaxItemSize = {maxitemsize},\n";
-            if(checkBoxSoundParam.Checked)
+            if (checkBoxSoundParam.Checked)
                 script += $"        SoundParameter = {soundparam},\n";
-            if(checkBoxMetalValue.Checked)
+            if (checkBoxMetalValue.Checked)
                 script += $"        MetalValue = {metalvalue},\n";
 
-            if(checkBoxAcceptItemFunction.Checked)
+            if (checkBoxAcceptItemFunction.Checked)
                 script += $"        AcceptItemFunction = {itemfunction},\n";
 
-            if(checkBoxCosmetic.Checked)
+            if (checkBoxCosmetic.Checked)
                 script += $"        Cosmetic = TRUE,\n";
             if (checkBoxVisualAid.Checked)
                 script += $"        VisualAid = TRUE,\n";
@@ -715,45 +715,52 @@ namespace PZOutfitAssembler
             string underlayMasksFolder = textBoxunderlayMasksFolder.Text;
             bool isStatic = checkBoxStatic.Checked;
 
-
-
             // Build the XML content
-            string xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
-            xml += "<clothingItem>\n";
-            xml += $"  <m_MaleModel>{maleModel}</m_MaleModel>\n";
-            xml += $"  <m_FemaleModel>{femaleModel}</m_FemaleModel>\n";
+            StringBuilder xml = new StringBuilder();
 
-            if (altmaleModel.Length != 0)
-                xml += $"  <m_AltMaleModel>{altmaleModel}</m_AltMaleModel>\n";
-            if (altfemaleModel.Length != 0)
-                xml += $"  <m_AltFemaleModel>{altfemaleModel}</m_AltFemaleModel>\n";
+            xml.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+            xml.AppendLine("<clothingItem>");
+            xml.AppendLine($"  <m_MaleModel>{maleModel}</m_MaleModel>");
+            xml.AppendLine($"  <m_FemaleModel>{femaleModel}</m_FemaleModel>");
 
-            xml += $"  <m_GUID>{guid}</m_GUID>\n";
-            xml += $"  <m_Static>{isStatic}</m_Static>\n";
-            xml += $"  <m_AllowRandomHue>"+checkBoxAllowRandomHue.Checked+"</m_AllowRandomHue>\n";
-            xml += $"  <m_AllowRandomTint>"+checkBoxAllowRandomTint.Checked+"</m_AllowRandomTint>\n";
-            xml += $"  <m_AttachBone></m_AttachBone>\n";
-            if (maleModel.Length != 0 || femaleModel.Length != 0)
-            {
-                xml += $"  <textureChoices>{textureChoices}</textureChoices>\n";
-            }
+            if (!string.IsNullOrEmpty(altmaleModel))
+                xml.AppendLine($"  <m_AltMaleModel>{altmaleModel}</m_AltMaleModel>");
+            if (!string.IsNullOrEmpty(altfemaleModel))
+                xml.AppendLine($"  <m_AltFemaleModel>{altfemaleModel}</m_AltFemaleModel>");
+
+            xml.AppendLine($"  <m_GUID>{guid}</m_GUID>");
+            xml.AppendLine($"  <m_Static>{isStatic}</m_Static>");
+            xml.AppendLine($"  <m_AllowRandomHue>{checkBoxAllowRandomHue.Checked}</m_AllowRandomHue>");
+            xml.AppendLine($"  <m_AllowRandomTint>{checkBoxAllowRandomTint.Checked}</m_AllowRandomTint>");
+            xml.AppendLine("  <m_AttachBone></m_AttachBone>");
+
+            if (!string.IsNullOrEmpty(maleModel) || !string.IsNullOrEmpty(femaleModel))
+                xml.AppendLine($"  <textureChoices>{textureChoices}</textureChoices>");
             else
+                xml.AppendLine($"  <m_BaseTextures>{textureChoices}</m_BaseTextures>");
+
+            // Handle multiple <m_Masks> properties
+            if (!string.IsNullOrEmpty(masks))
             {
-                xml += $"  <m_BaseTextures>{textureChoices}</m_BaseTextures>\n";
+                var maskValues = masks.Split(',')
+                                      .Select(m => m.Trim())
+                                      .Where(m => !string.IsNullOrEmpty(m));
+
+                foreach (var mask in maskValues)
+                {
+                    xml.AppendLine($"  <m_Masks>{mask}</m_Masks>");
+                }
             }
 
-            if (masks.Length > 0)
-            xml += $"  <m_Masks>{masks}</m_Masks>\n";
+            if (!string.IsNullOrEmpty(masksFolder))
+                xml.AppendLine($"  <m_MasksFolder>{masksFolder}</m_MasksFolder>");
 
-            if (masksFolder.Length >0)
-            xml += $"  <m_MasksFolder>{masksFolder}</m_MasksFolder>\n";
+            if (!string.IsNullOrEmpty(underlayMasksFolder))
+                xml.AppendLine($"  <m_UnderlayMasksFolder>{underlayMasksFolder}</m_UnderlayMasksFolder>");
 
-            if (underlayMasksFolder.Length > 0)
-                xml += $"  <m_UnderlayMasksFolder>{underlayMasksFolder}</m_UnderlayMasksFolder>\n";
+            xml.AppendLine("</clothingItem>");
 
-            xml += "</clothingItem>";
-
-            return xml;
+            return xml.ToString();
         }
 
         /*
@@ -1070,6 +1077,20 @@ namespace PZOutfitAssembler
                 xmlFilePath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles" + clothingItemXMLDir + selectedItem + ".xml";
 
 
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(xmlFilePath);
+                var masks = xmlDoc.Descendants("m_Masks")
+                                  .Select(x => x.Value.Trim())
+                                  .Where(x => !string.IsNullOrEmpty(x))
+                                  .ToList();
+
+                textBoxMasks.Text = string.Join(",", masks);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading XML: " + ex.Message);
+            }
 
             try
             {
@@ -1086,7 +1107,7 @@ namespace PZOutfitAssembler
             { "m_GUID", textBoxGUID },
             { "textureChoices", textBoxTextureChoices },
             { "m_BaseTextures", textBoxTextureChoices },
-            { "m_Masks", textBoxMasks },
+       //     { "m_Masks", textBoxMasks },
             { "m_MasksFolder", textBoxmasksFolder },
             { "m_UnderlayMasksFolder", textBoxunderlayMasksFolder }
 
@@ -1467,6 +1488,20 @@ namespace PZOutfitAssembler
 
                         xmlFilePath = PZinstallPath + clothingItemXMLDir + selectedItem + ".xml";
 
+                        try
+                        {
+                            XDocument xmlDoc = XDocument.Load(xmlFilePath);
+                            var masks = xmlDoc.Descendants("m_Masks")
+                                              .Select(x => x.Value.Trim())
+                                              .Where(x => !string.IsNullOrEmpty(x))
+                                              .ToList();
+
+                            textBoxMasks.Text = string.Join(",", masks);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error reading XML: " + ex.Message);
+                        }
 
 
                         try
@@ -1476,29 +1511,31 @@ namespace PZOutfitAssembler
 
                             // Map XML element names to corresponding textboxes
                             var propertyToTextBoxMapping = new Dictionary<string, TextBox>
-        {
-            { "m_MaleModel", textBoxMaleModel },
-            { "m_FemaleModel", textBoxFemaleModel },
-            { "m_AltMaleModel", textBoxaltMaleModel },
-            { "m_AltFemaleModel", textBoxaltFemaleModel },
-            { "m_GUID", textBoxGUID },
-            { "textureChoices", textBoxTextureChoices },
-            { "m_BaseTextures", textBoxTextureChoices },
-            { "m_Masks", textBoxMasks },
-            { "m_MasksFolder", textBoxmasksFolder },
-            { "m_UnderlayMasksFolder", textBoxunderlayMasksFolder }
+                            {
+                                  { "m_MaleModel", textBoxMaleModel },
+                                  { "m_FemaleModel", textBoxFemaleModel },
+                                  { "m_AltMaleModel", textBoxaltMaleModel },
+                                  { "m_AltFemaleModel", textBoxaltFemaleModel },
+                                  { "m_GUID", textBoxGUID },
+                                  { "textureChoices", textBoxTextureChoices },
+                                  { "m_BaseTextures", textBoxTextureChoices },
+                              //    { "m_Masks", textBoxMasks },
+                                  { "m_MasksFolder", textBoxmasksFolder },
+                                  { "m_UnderlayMasksFolder", textBoxunderlayMasksFolder }
             // Add more mappings as needed
-        };
+                            };
 
                             // Map XML element names to corresponding checkboxes
                             var propertyToCheckboxMapping = new Dictionary<string, CheckBox>
-        {
-            {"m_Static", checkBoxStatic },
-            {"m_AllowRandomHue", checkBoxAllowRandomHue},
-            {"m_AllowRandomTint", checkBoxAllowRandomTint},
+                            {
+                                  {"m_Static", checkBoxStatic },
+                                  {"m_AllowRandomHue", checkBoxAllowRandomHue},
+                                  {"m_AllowRandomTint", checkBoxAllowRandomTint},
 
-            // Add more checkboxes as needed
-        };
+                                  // Add more checkboxes as needed
+                            };
+
+
 
                             // Populate textboxes
                             foreach (var property in propertyToTextBoxMapping)
@@ -1576,7 +1613,7 @@ namespace PZOutfitAssembler
 
                 string outputFilePath = outputPath + GUIDsDir + "newFileGuidTable.xml";
 
-//                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 GenerateFileGuidTable(outputFilePath, "media/clothing/clothingItems/", listBoxItems);
             }
@@ -1734,7 +1771,7 @@ namespace PZOutfitAssembler
             {
                 MessageBox.Show($"An error occurred while trying to open the web browser: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        
+
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -1764,9 +1801,9 @@ namespace PZOutfitAssembler
         }
     }
 }
-    
 
-   
+
+
 
 
 
