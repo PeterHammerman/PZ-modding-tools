@@ -62,10 +62,6 @@ namespace PZOutfitAssembler
             this.textBoxBloodLocation = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBoxMale = new System.Windows.Forms.CheckBox();
-            this.checkBoxFemale = new System.Windows.Forms.CheckBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxProbability = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -87,6 +83,10 @@ namespace PZOutfitAssembler
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -140,6 +140,8 @@ namespace PZOutfitAssembler
             this.textBoxStaticModel = new System.Windows.Forms.TextBox();
             this.textBoxReplaceprimaryhand = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.checkBoxAllowRandomTint = new System.Windows.Forms.CheckBox();
+            this.checkBoxAllowRandomHue = new System.Windows.Forms.CheckBox();
             this.textBoxCapacity = new System.Windows.Forms.TextBox();
             this.textBoxPutinsound = new System.Windows.Forms.TextBox();
             this.checkBoxReplaceprimaryhand = new System.Windows.Forms.CheckBox();
@@ -152,14 +154,34 @@ namespace PZOutfitAssembler
             this.checkBoxClosesound = new System.Windows.Forms.CheckBox();
             this.checkBoxOpensound = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonEditVanilaOutfit = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.listBoxVanilaOutfit = new System.Windows.Forms.ListBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.listBoxVanila = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.checkBoxPantsTint = new System.Windows.Forms.CheckBox();
+            this.checkBoxShirtDecal = new System.Windows.Forms.CheckBox();
+            this.checkBoxPantsHue = new System.Windows.Forms.CheckBox();
+            this.checkBoxTopTint = new System.Windows.Forms.CheckBox();
+            this.checkBoxPants = new System.Windows.Forms.CheckBox();
+            this.checkBoxTop = new System.Windows.Forms.CheckBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBoxOutfitGUID = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -170,27 +192,23 @@ namespace PZOutfitAssembler
             this.label13 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.checkBoxAllowRandomHue = new System.Windows.Forms.CheckBox();
-            this.checkBoxAllowRandomTint = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.listBoxFemale = new System.Windows.Forms.ListBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.buttonOutfitClear = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.listBoxMale = new System.Windows.Forms.ListBox();
+            this.textBoxaltFemaleModel = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxaltMaleModel = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBoxmasksFolder = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBoxunderlayMasksFolder = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.textBoxMasks = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -208,7 +226,7 @@ namespace PZOutfitAssembler
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 62);
+            this.label2.Location = new System.Drawing.Point(6, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 2;
@@ -216,7 +234,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxDisplayName
             // 
-            this.textBoxDisplayName.Location = new System.Drawing.Point(106, 59);
+            this.textBoxDisplayName.Location = new System.Drawing.Point(106, 51);
             this.textBoxDisplayName.Name = "textBoxDisplayName";
             this.textBoxDisplayName.Size = new System.Drawing.Size(161, 20);
             this.textBoxDisplayName.TabIndex = 3;
@@ -225,7 +243,7 @@ namespace PZOutfitAssembler
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 40);
+            this.label3.Location = new System.Drawing.Point(7, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 4;
@@ -233,7 +251,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(106, 37);
+            this.textBoxID.Location = new System.Drawing.Point(106, 30);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(161, 20);
             this.textBoxID.TabIndex = 5;
@@ -241,7 +259,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxType
             // 
-            this.textBoxType.Location = new System.Drawing.Point(106, 103);
+            this.textBoxType.Location = new System.Drawing.Point(106, 93);
             this.textBoxType.Name = "textBoxType";
             this.textBoxType.Size = new System.Drawing.Size(161, 20);
             this.textBoxType.TabIndex = 6;
@@ -250,7 +268,7 @@ namespace PZOutfitAssembler
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 107);
+            this.label4.Location = new System.Drawing.Point(6, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 7;
@@ -259,7 +277,7 @@ namespace PZOutfitAssembler
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 194);
+            this.label5.Location = new System.Drawing.Point(7, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 13);
             this.label5.TabIndex = 8;
@@ -268,7 +286,7 @@ namespace PZOutfitAssembler
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 260);
+            this.label6.Location = new System.Drawing.Point(6, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 10;
@@ -276,7 +294,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItem
             // 
-            this.textBoxClothingItem.Location = new System.Drawing.Point(144, 257);
+            this.textBoxClothingItem.Location = new System.Drawing.Point(144, 240);
             this.textBoxClothingItem.Name = "textBoxClothingItem";
             this.textBoxClothingItem.Size = new System.Drawing.Size(123, 20);
             this.textBoxClothingItem.TabIndex = 11;
@@ -285,7 +303,7 @@ namespace PZOutfitAssembler
             // checkBoxCanHaveHoles
             // 
             this.checkBoxCanHaveHoles.AutoSize = true;
-            this.checkBoxCanHaveHoles.Location = new System.Drawing.Point(9, 216);
+            this.checkBoxCanHaveHoles.Location = new System.Drawing.Point(9, 201);
             this.checkBoxCanHaveHoles.Name = "checkBoxCanHaveHoles";
             this.checkBoxCanHaveHoles.Size = new System.Drawing.Size(101, 17);
             this.checkBoxCanHaveHoles.TabIndex = 13;
@@ -294,7 +312,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxChanceToFall
             // 
-            this.textBoxChanceToFall.Location = new System.Drawing.Point(113, 235);
+            this.textBoxChanceToFall.Location = new System.Drawing.Point(113, 219);
             this.textBoxChanceToFall.Name = "textBoxChanceToFall";
             this.textBoxChanceToFall.Size = new System.Drawing.Size(154, 20);
             this.textBoxChanceToFall.TabIndex = 15;
@@ -302,7 +320,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxInsulation
             // 
-            this.textBoxInsulation.Location = new System.Drawing.Point(144, 323);
+            this.textBoxInsulation.Location = new System.Drawing.Point(144, 303);
             this.textBoxInsulation.Name = "textBoxInsulation";
             this.textBoxInsulation.Size = new System.Drawing.Size(123, 20);
             this.textBoxInsulation.TabIndex = 16;
@@ -310,7 +328,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxWind
             // 
-            this.textBoxWind.Location = new System.Drawing.Point(144, 345);
+            this.textBoxWind.Location = new System.Drawing.Point(144, 324);
             this.textBoxWind.Name = "textBoxWind";
             this.textBoxWind.Size = new System.Drawing.Size(123, 20);
             this.textBoxWind.TabIndex = 18;
@@ -319,7 +337,7 @@ namespace PZOutfitAssembler
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(288, 11);
+            this.label10.Location = new System.Drawing.Point(9, 579);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 21;
@@ -327,15 +345,15 @@ namespace PZOutfitAssembler
             // 
             // textBoxTags
             // 
-            this.textBoxTags.Location = new System.Drawing.Point(331, 8);
+            this.textBoxTags.Location = new System.Drawing.Point(52, 576);
             this.textBoxTags.Name = "textBoxTags";
-            this.textBoxTags.Size = new System.Drawing.Size(246, 20);
+            this.textBoxTags.Size = new System.Drawing.Size(215, 20);
             this.textBoxTags.TabIndex = 20;
             this.textBoxTags.Text = "IsFireFuel;IsFireTinder";
             // 
             // textBoxFabric
             // 
-            this.textBoxFabric.Location = new System.Drawing.Point(144, 563);
+            this.textBoxFabric.Location = new System.Drawing.Point(144, 534);
             this.textBoxFabric.Name = "textBoxFabric";
             this.textBoxFabric.Size = new System.Drawing.Size(123, 20);
             this.textBoxFabric.TabIndex = 22;
@@ -343,7 +361,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxWeigth
             // 
-            this.textBoxWeigth.Location = new System.Drawing.Point(106, 125);
+            this.textBoxWeigth.Location = new System.Drawing.Point(106, 114);
             this.textBoxWeigth.Name = "textBoxWeigth";
             this.textBoxWeigth.Size = new System.Drawing.Size(161, 20);
             this.textBoxWeigth.TabIndex = 25;
@@ -352,7 +370,7 @@ namespace PZOutfitAssembler
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 129);
+            this.label12.Location = new System.Drawing.Point(6, 118);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 24;
@@ -360,21 +378,21 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItemExtra
             // 
-            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(144, 279);
+            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(144, 261);
             this.textBoxClothingItemExtra.Name = "textBoxClothingItemExtra";
             this.textBoxClothingItemExtra.Size = new System.Drawing.Size(123, 20);
             this.textBoxClothingItemExtra.TabIndex = 27;
             // 
             // textBoxClothingItemExtraOption
             // 
-            this.textBoxClothingItemExtraOption.Location = new System.Drawing.Point(158, 301);
+            this.textBoxClothingItemExtraOption.Location = new System.Drawing.Point(158, 282);
             this.textBoxClothingItemExtraOption.Name = "textBoxClothingItemExtraOption";
             this.textBoxClothingItemExtraOption.Size = new System.Drawing.Size(109, 20);
             this.textBoxClothingItemExtraOption.TabIndex = 29;
             // 
             // textBoxTextureIcon
             // 
-            this.textBoxTextureIcon.Location = new System.Drawing.Point(106, 147);
+            this.textBoxTextureIcon.Location = new System.Drawing.Point(106, 135);
             this.textBoxTextureIcon.Name = "textBoxTextureIcon";
             this.textBoxTextureIcon.Size = new System.Drawing.Size(161, 20);
             this.textBoxTextureIcon.TabIndex = 31;
@@ -383,7 +401,7 @@ namespace PZOutfitAssembler
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 150);
+            this.label15.Location = new System.Drawing.Point(6, 138);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 13);
             this.label15.TabIndex = 30;
@@ -392,7 +410,7 @@ namespace PZOutfitAssembler
             // checkBoxStatic
             // 
             this.checkBoxStatic.AutoSize = true;
-            this.checkBoxStatic.Location = new System.Drawing.Point(15, 130);
+            this.checkBoxStatic.Location = new System.Drawing.Point(15, 292);
             this.checkBoxStatic.Name = "checkBoxStatic";
             this.checkBoxStatic.Size = new System.Drawing.Size(51, 17);
             this.checkBoxStatic.TabIndex = 32;
@@ -401,7 +419,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxFemaleModel
             // 
-            this.textBoxFemaleModel.Location = new System.Drawing.Point(16, 65);
+            this.textBoxFemaleModel.Location = new System.Drawing.Point(16, 88);
             this.textBoxFemaleModel.Name = "textBoxFemaleModel";
             this.textBoxFemaleModel.Size = new System.Drawing.Size(289, 20);
             this.textBoxFemaleModel.TabIndex = 45;
@@ -410,7 +428,7 @@ namespace PZOutfitAssembler
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 49);
+            this.label16.Location = new System.Drawing.Point(14, 75);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(69, 13);
             this.label16.TabIndex = 44;
@@ -418,7 +436,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxMaleModel
             // 
-            this.textBoxMaleModel.Location = new System.Drawing.Point(15, 25);
+            this.textBoxMaleModel.Location = new System.Drawing.Point(15, 18);
             this.textBoxMaleModel.Name = "textBoxMaleModel";
             this.textBoxMaleModel.Size = new System.Drawing.Size(290, 20);
             this.textBoxMaleModel.TabIndex = 43;
@@ -427,7 +445,7 @@ namespace PZOutfitAssembler
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 8);
+            this.label17.Location = new System.Drawing.Point(12, 4);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 13);
             this.label17.TabIndex = 42;
@@ -435,7 +453,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxTextureChoices
             // 
-            this.textBoxTextureChoices.Location = new System.Drawing.Point(15, 104);
+            this.textBoxTextureChoices.Location = new System.Drawing.Point(16, 158);
             this.textBoxTextureChoices.Name = "textBoxTextureChoices";
             this.textBoxTextureChoices.Size = new System.Drawing.Size(290, 20);
             this.textBoxTextureChoices.TabIndex = 47;
@@ -444,15 +462,15 @@ namespace PZOutfitAssembler
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 88);
+            this.label18.Location = new System.Drawing.Point(15, 145);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 13);
+            this.label18.Size = new System.Drawing.Size(151, 13);
             this.label18.TabIndex = 46;
-            this.label18.Text = "textureChoices";
+            this.label18.Text = "textureChoices (BaseTextures)";
             // 
             // textBoxBloodLocation
             // 
-            this.textBoxBloodLocation.Location = new System.Drawing.Point(106, 586);
+            this.textBoxBloodLocation.Location = new System.Drawing.Point(106, 555);
             this.textBoxBloodLocation.Name = "textBoxBloodLocation";
             this.textBoxBloodLocation.Size = new System.Drawing.Size(161, 20);
             this.textBoxBloodLocation.TabIndex = 49;
@@ -461,7 +479,7 @@ namespace PZOutfitAssembler
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 589);
+            this.label19.Location = new System.Drawing.Point(15, 558);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(73, 13);
             this.label19.TabIndex = 48;
@@ -469,7 +487,7 @@ namespace PZOutfitAssembler
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(476, 619);
+            this.button1.Location = new System.Drawing.Point(159, 646);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 28);
             this.button1.TabIndex = 51;
@@ -477,49 +495,10 @@ namespace PZOutfitAssembler
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBoxMale
-            // 
-            this.checkBoxMale.AutoSize = true;
-            this.checkBoxMale.Location = new System.Drawing.Point(8, 113);
-            this.checkBoxMale.Name = "checkBoxMale";
-            this.checkBoxMale.Size = new System.Drawing.Size(48, 17);
-            this.checkBoxMale.TabIndex = 52;
-            this.checkBoxMale.Text = "male";
-            this.checkBoxMale.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxFemale
-            // 
-            this.checkBoxFemale.AutoSize = true;
-            this.checkBoxFemale.Checked = true;
-            this.checkBoxFemale.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFemale.Location = new System.Drawing.Point(8, 139);
-            this.checkBoxFemale.Name = "checkBoxFemale";
-            this.checkBoxFemale.Size = new System.Drawing.Size(57, 17);
-            this.checkBoxFemale.TabIndex = 53;
-            this.checkBoxFemale.Text = "female";
-            this.checkBoxFemale.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 62);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(54, 13);
-            this.label20.TabIndex = 55;
-            this.label20.Text = "probability";
-            // 
-            // textBoxProbability
-            // 
-            this.textBoxProbability.Location = new System.Drawing.Point(15, 78);
-            this.textBoxProbability.Name = "textBoxProbability";
-            this.textBoxProbability.Size = new System.Drawing.Size(126, 20);
-            this.textBoxProbability.TabIndex = 54;
-            this.textBoxProbability.Text = "0.3";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 12);
+            this.label21.Location = new System.Drawing.Point(15, 8);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 13);
             this.label21.TabIndex = 56;
@@ -528,7 +507,7 @@ namespace PZOutfitAssembler
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(257, 8);
+            this.label22.Location = new System.Drawing.Point(257, 4);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(44, 13);
             this.label22.TabIndex = 57;
@@ -537,7 +516,7 @@ namespace PZOutfitAssembler
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(85, 11);
+            this.label23.Location = new System.Drawing.Point(85, 10);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(62, 13);
             this.label23.TabIndex = 58;
@@ -546,7 +525,7 @@ namespace PZOutfitAssembler
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(9, 682);
+            this.label26.Location = new System.Drawing.Point(9, 694);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(99, 13);
             this.label26.TabIndex = 61;
@@ -555,7 +534,7 @@ namespace PZOutfitAssembler
             // textBoxPath
             // 
             this.textBoxPath.Enabled = false;
-            this.textBoxPath.Location = new System.Drawing.Point(12, 700);
+            this.textBoxPath.Location = new System.Drawing.Point(12, 710);
             this.textBoxPath.Name = "textBoxPath";
             this.textBoxPath.Size = new System.Drawing.Size(160, 20);
             this.textBoxPath.TabIndex = 62;
@@ -563,7 +542,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCategory
             // 
-            this.textBoxCategory.Location = new System.Drawing.Point(106, 81);
+            this.textBoxCategory.Location = new System.Drawing.Point(106, 72);
             this.textBoxCategory.Name = "textBoxCategory";
             this.textBoxCategory.Size = new System.Drawing.Size(161, 20);
             this.textBoxCategory.TabIndex = 64;
@@ -572,7 +551,7 @@ namespace PZOutfitAssembler
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 84);
+            this.label25.Location = new System.Drawing.Point(6, 75);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(86, 13);
             this.label25.TabIndex = 63;
@@ -580,7 +559,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxBodyLocation
             // 
-            this.textBoxBodyLocation.Location = new System.Drawing.Point(106, 191);
+            this.textBoxBodyLocation.Location = new System.Drawing.Point(106, 177);
             this.textBoxBodyLocation.Name = "textBoxBodyLocation";
             this.textBoxBodyLocation.Size = new System.Drawing.Size(161, 20);
             this.textBoxBodyLocation.TabIndex = 65;
@@ -591,7 +570,7 @@ namespace PZOutfitAssembler
             this.checkBoxChanceToFall.AutoSize = true;
             this.checkBoxChanceToFall.Checked = true;
             this.checkBoxChanceToFall.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxChanceToFall.Location = new System.Drawing.Point(9, 235);
+            this.checkBoxChanceToFall.Location = new System.Drawing.Point(9, 219);
             this.checkBoxChanceToFall.Name = "checkBoxChanceToFall";
             this.checkBoxChanceToFall.Size = new System.Drawing.Size(90, 17);
             this.checkBoxChanceToFall.TabIndex = 66;
@@ -603,7 +582,7 @@ namespace PZOutfitAssembler
             this.checkBoxInsulation.AutoSize = true;
             this.checkBoxInsulation.Checked = true;
             this.checkBoxInsulation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxInsulation.Location = new System.Drawing.Point(9, 326);
+            this.checkBoxInsulation.Location = new System.Drawing.Point(9, 306);
             this.checkBoxInsulation.Name = "checkBoxInsulation";
             this.checkBoxInsulation.Size = new System.Drawing.Size(70, 17);
             this.checkBoxInsulation.TabIndex = 67;
@@ -615,7 +594,7 @@ namespace PZOutfitAssembler
             this.checkBoxWind.AutoSize = true;
             this.checkBoxWind.Checked = true;
             this.checkBoxWind.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWind.Location = new System.Drawing.Point(8, 348);
+            this.checkBoxWind.Location = new System.Drawing.Point(8, 327);
             this.checkBoxWind.Name = "checkBoxWind";
             this.checkBoxWind.Size = new System.Drawing.Size(107, 17);
             this.checkBoxWind.TabIndex = 68;
@@ -627,7 +606,7 @@ namespace PZOutfitAssembler
             this.checkBoxFabric.AutoSize = true;
             this.checkBoxFabric.Checked = true;
             this.checkBoxFabric.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFabric.Location = new System.Drawing.Point(8, 565);
+            this.checkBoxFabric.Location = new System.Drawing.Point(8, 536);
             this.checkBoxFabric.Name = "checkBoxFabric";
             this.checkBoxFabric.Size = new System.Drawing.Size(75, 17);
             this.checkBoxFabric.TabIndex = 69;
@@ -637,7 +616,7 @@ namespace PZOutfitAssembler
             // checkBoxClothingItemExtra
             // 
             this.checkBoxClothingItemExtra.AutoSize = true;
-            this.checkBoxClothingItemExtra.Location = new System.Drawing.Point(9, 281);
+            this.checkBoxClothingItemExtra.Location = new System.Drawing.Point(9, 263);
             this.checkBoxClothingItemExtra.Name = "checkBoxClothingItemExtra";
             this.checkBoxClothingItemExtra.Size = new System.Drawing.Size(111, 17);
             this.checkBoxClothingItemExtra.TabIndex = 70;
@@ -647,7 +626,7 @@ namespace PZOutfitAssembler
             // checkBoxClothingItemExtraOption
             // 
             this.checkBoxClothingItemExtraOption.AutoSize = true;
-            this.checkBoxClothingItemExtraOption.Location = new System.Drawing.Point(9, 303);
+            this.checkBoxClothingItemExtraOption.Location = new System.Drawing.Point(9, 284);
             this.checkBoxClothingItemExtraOption.Name = "checkBoxClothingItemExtraOption";
             this.checkBoxClothingItemExtraOption.Size = new System.Drawing.Size(143, 17);
             this.checkBoxClothingItemExtraOption.TabIndex = 71;
@@ -660,7 +639,7 @@ namespace PZOutfitAssembler
             this.checkBoxDebug.Checked = true;
             this.checkBoxDebug.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxDebug.Enabled = false;
-            this.checkBoxDebug.Location = new System.Drawing.Point(114, 681);
+            this.checkBoxDebug.Location = new System.Drawing.Point(114, 693);
             this.checkBoxDebug.Name = "checkBoxDebug";
             this.checkBoxDebug.Size = new System.Drawing.Size(58, 17);
             this.checkBoxDebug.TabIndex = 73;
@@ -670,7 +649,7 @@ namespace PZOutfitAssembler
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 74;
@@ -678,7 +657,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingName
             // 
-            this.textBoxClothingName.Location = new System.Drawing.Point(71, 32);
+            this.textBoxClothingName.Location = new System.Drawing.Point(71, 25);
             this.textBoxClothingName.Name = "textBoxClothingName";
             this.textBoxClothingName.Size = new System.Drawing.Size(157, 20);
             this.textBoxClothingName.TabIndex = 75;
@@ -687,7 +666,7 @@ namespace PZOutfitAssembler
             // listBoxItems
             // 
             this.listBoxItems.FormattingEnabled = true;
-            this.listBoxItems.Location = new System.Drawing.Point(24, 24);
+            this.listBoxItems.Location = new System.Drawing.Point(8, 22);
             this.listBoxItems.Name = "listBoxItems";
             this.listBoxItems.Size = new System.Drawing.Size(156, 238);
             this.listBoxItems.TabIndex = 76;
@@ -695,7 +674,7 @@ namespace PZOutfitAssembler
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 7);
+            this.label8.Location = new System.Drawing.Point(5, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 13);
             this.label8.TabIndex = 77;
@@ -714,6 +693,9 @@ namespace PZOutfitAssembler
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.button18);
+            this.panel1.Controls.Add(this.label36);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label8);
@@ -722,8 +704,44 @@ namespace PZOutfitAssembler
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(617, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(222, 333);
+            this.panel1.Size = new System.Drawing.Size(231, 333);
             this.panel1.TabIndex = 79;
+            // 
+            // button18
+            // 
+            this.button18.Enabled = false;
+            this.button18.Location = new System.Drawing.Point(168, 169);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(49, 42);
+            this.button18.TabIndex = 148;
+            this.button18.Text = "Add as child >";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(165, 83);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(54, 13);
+            this.label36.TabIndex = 144;
+            this.label36.Text = "probability";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(170, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(33, 20);
+            this.textBox1.TabIndex = 143;
+            this.textBox1.Text = "1";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(70, 288);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 34);
+            this.button4.TabIndex = 83;
+            this.button4.Text = "Delete item";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -738,11 +756,11 @@ namespace PZOutfitAssembler
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(186, 126);
+            this.button3.Location = new System.Drawing.Point(168, 125);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 33);
+            this.button3.Size = new System.Drawing.Size(49, 44);
             this.button3.TabIndex = 81;
-            this.button3.Text = "=>";
+            this.button3.Text = "Add as main >";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -846,7 +864,7 @@ namespace PZOutfitAssembler
             this.panel2.Controls.Add(this.label19);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(599, 651);
+            this.panel2.Size = new System.Drawing.Size(599, 677);
             this.panel2.TabIndex = 80;
             // 
             // checkBoxBiteDefense
@@ -854,7 +872,7 @@ namespace PZOutfitAssembler
             this.checkBoxBiteDefense.AutoSize = true;
             this.checkBoxBiteDefense.Checked = true;
             this.checkBoxBiteDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBiteDefense.Location = new System.Drawing.Point(8, 369);
+            this.checkBoxBiteDefense.Location = new System.Drawing.Point(8, 348);
             this.checkBoxBiteDefense.Name = "checkBoxBiteDefense";
             this.checkBoxBiteDefense.Size = new System.Drawing.Size(85, 17);
             this.checkBoxBiteDefense.TabIndex = 138;
@@ -863,7 +881,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxBiteDefense
             // 
-            this.textBoxBiteDefense.Location = new System.Drawing.Point(144, 366);
+            this.textBoxBiteDefense.Location = new System.Drawing.Point(144, 345);
             this.textBoxBiteDefense.Name = "textBoxBiteDefense";
             this.textBoxBiteDefense.Size = new System.Drawing.Size(123, 20);
             this.textBoxBiteDefense.TabIndex = 137;
@@ -874,7 +892,7 @@ namespace PZOutfitAssembler
             this.checkBoxHearingModifier.AutoSize = true;
             this.checkBoxHearingModifier.Checked = true;
             this.checkBoxHearingModifier.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxHearingModifier.Location = new System.Drawing.Point(8, 522);
+            this.checkBoxHearingModifier.Location = new System.Drawing.Point(8, 495);
             this.checkBoxHearingModifier.Name = "checkBoxHearingModifier";
             this.checkBoxHearingModifier.Size = new System.Drawing.Size(102, 17);
             this.checkBoxHearingModifier.TabIndex = 136;
@@ -883,7 +901,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxHearing
             // 
-            this.textBoxHearing.Location = new System.Drawing.Point(144, 519);
+            this.textBoxHearing.Location = new System.Drawing.Point(144, 492);
             this.textBoxHearing.Name = "textBoxHearing";
             this.textBoxHearing.Size = new System.Drawing.Size(123, 20);
             this.textBoxHearing.TabIndex = 135;
@@ -894,7 +912,7 @@ namespace PZOutfitAssembler
             this.checkBoxCorpseSicknessDefence.AutoSize = true;
             this.checkBoxCorpseSicknessDefence.Checked = true;
             this.checkBoxCorpseSicknessDefence.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCorpseSicknessDefence.Location = new System.Drawing.Point(8, 544);
+            this.checkBoxCorpseSicknessDefence.Location = new System.Drawing.Point(8, 516);
             this.checkBoxCorpseSicknessDefence.Name = "checkBoxCorpseSicknessDefence";
             this.checkBoxCorpseSicknessDefence.Size = new System.Drawing.Size(145, 17);
             this.checkBoxCorpseSicknessDefence.TabIndex = 134;
@@ -903,7 +921,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCorpseSicknessDefence
             // 
-            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(159, 541);
+            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(159, 513);
             this.textBoxCorpseSicknessDefence.Name = "textBoxCorpseSicknessDefence";
             this.textBoxCorpseSicknessDefence.Size = new System.Drawing.Size(108, 20);
             this.textBoxCorpseSicknessDefence.TabIndex = 133;
@@ -914,7 +932,7 @@ namespace PZOutfitAssembler
             this.checkBoxVisionModifier.AutoSize = true;
             this.checkBoxVisionModifier.Checked = true;
             this.checkBoxVisionModifier.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxVisionModifier.Location = new System.Drawing.Point(8, 500);
+            this.checkBoxVisionModifier.Location = new System.Drawing.Point(8, 474);
             this.checkBoxVisionModifier.Name = "checkBoxVisionModifier";
             this.checkBoxVisionModifier.Size = new System.Drawing.Size(93, 17);
             this.checkBoxVisionModifier.TabIndex = 132;
@@ -923,7 +941,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxVisionModifier
             // 
-            this.textBoxVisionModifier.Location = new System.Drawing.Point(144, 497);
+            this.textBoxVisionModifier.Location = new System.Drawing.Point(144, 471);
             this.textBoxVisionModifier.Name = "textBoxVisionModifier";
             this.textBoxVisionModifier.Size = new System.Drawing.Size(123, 20);
             this.textBoxVisionModifier.TabIndex = 131;
@@ -934,7 +952,7 @@ namespace PZOutfitAssembler
             this.checkBoxWaterResistance.AutoSize = true;
             this.checkBoxWaterResistance.Checked = true;
             this.checkBoxWaterResistance.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWaterResistance.Location = new System.Drawing.Point(8, 478);
+            this.checkBoxWaterResistance.Location = new System.Drawing.Point(8, 453);
             this.checkBoxWaterResistance.Name = "checkBoxWaterResistance";
             this.checkBoxWaterResistance.Size = new System.Drawing.Size(106, 17);
             this.checkBoxWaterResistance.TabIndex = 130;
@@ -943,7 +961,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxWaterResistance
             // 
-            this.textBoxWaterResistance.Location = new System.Drawing.Point(144, 475);
+            this.textBoxWaterResistance.Location = new System.Drawing.Point(144, 450);
             this.textBoxWaterResistance.Name = "textBoxWaterResistance";
             this.textBoxWaterResistance.Size = new System.Drawing.Size(123, 20);
             this.textBoxWaterResistance.TabIndex = 129;
@@ -954,7 +972,7 @@ namespace PZOutfitAssembler
             this.checkBoxVisualAid.AutoSize = true;
             this.checkBoxVisualAid.Checked = true;
             this.checkBoxVisualAid.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxVisualAid.Location = new System.Drawing.Point(361, 435);
+            this.checkBoxVisualAid.Location = new System.Drawing.Point(83, 598);
             this.checkBoxVisualAid.Name = "checkBoxVisualAid";
             this.checkBoxVisualAid.Size = new System.Drawing.Size(69, 17);
             this.checkBoxVisualAid.TabIndex = 128;
@@ -966,7 +984,7 @@ namespace PZOutfitAssembler
             this.checkBoxCosmetic.AutoSize = true;
             this.checkBoxCosmetic.Checked = true;
             this.checkBoxCosmetic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCosmetic.Location = new System.Drawing.Point(288, 435);
+            this.checkBoxCosmetic.Location = new System.Drawing.Point(10, 598);
             this.checkBoxCosmetic.Name = "checkBoxCosmetic";
             this.checkBoxCosmetic.Size = new System.Drawing.Size(69, 17);
             this.checkBoxCosmetic.TabIndex = 127;
@@ -975,7 +993,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxAcceptItemFunction
             // 
-            this.textBoxAcceptItemFunction.Location = new System.Drawing.Point(434, 402);
+            this.textBoxAcceptItemFunction.Location = new System.Drawing.Point(434, 339);
             this.textBoxAcceptItemFunction.Name = "textBoxAcceptItemFunction";
             this.textBoxAcceptItemFunction.Size = new System.Drawing.Size(144, 20);
             this.textBoxAcceptItemFunction.TabIndex = 126;
@@ -985,7 +1003,7 @@ namespace PZOutfitAssembler
             this.checkBoxAcceptItemFunction.AutoSize = true;
             this.checkBoxAcceptItemFunction.Checked = true;
             this.checkBoxAcceptItemFunction.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAcceptItemFunction.Location = new System.Drawing.Point(287, 404);
+            this.checkBoxAcceptItemFunction.Location = new System.Drawing.Point(287, 341);
             this.checkBoxAcceptItemFunction.Name = "checkBoxAcceptItemFunction";
             this.checkBoxAcceptItemFunction.Size = new System.Drawing.Size(123, 17);
             this.checkBoxAcceptItemFunction.TabIndex = 125;
@@ -994,7 +1012,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxIcon
             // 
-            this.textBoxIcon.Location = new System.Drawing.Point(106, 169);
+            this.textBoxIcon.Location = new System.Drawing.Point(106, 156);
             this.textBoxIcon.Name = "textBoxIcon";
             this.textBoxIcon.Size = new System.Drawing.Size(161, 20);
             this.textBoxIcon.TabIndex = 123;
@@ -1005,7 +1023,7 @@ namespace PZOutfitAssembler
             this.checkBoxIcon.AutoSize = true;
             this.checkBoxIcon.Checked = true;
             this.checkBoxIcon.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxIcon.Location = new System.Drawing.Point(8, 172);
+            this.checkBoxIcon.Location = new System.Drawing.Point(8, 159);
             this.checkBoxIcon.Name = "checkBoxIcon";
             this.checkBoxIcon.Size = new System.Drawing.Size(47, 17);
             this.checkBoxIcon.TabIndex = 124;
@@ -1014,7 +1032,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxMetalValue
             // 
-            this.textBoxMetalValue.Location = new System.Drawing.Point(434, 379);
+            this.textBoxMetalValue.Location = new System.Drawing.Point(434, 318);
             this.textBoxMetalValue.Name = "textBoxMetalValue";
             this.textBoxMetalValue.Size = new System.Drawing.Size(144, 20);
             this.textBoxMetalValue.TabIndex = 122;
@@ -1024,7 +1042,7 @@ namespace PZOutfitAssembler
             this.checkBoxMetalValue.AutoSize = true;
             this.checkBoxMetalValue.Checked = true;
             this.checkBoxMetalValue.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMetalValue.Location = new System.Drawing.Point(287, 381);
+            this.checkBoxMetalValue.Location = new System.Drawing.Point(287, 320);
             this.checkBoxMetalValue.Name = "checkBoxMetalValue";
             this.checkBoxMetalValue.Size = new System.Drawing.Size(82, 17);
             this.checkBoxMetalValue.TabIndex = 121;
@@ -1033,7 +1051,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxSoundParam
             // 
-            this.textBoxSoundParam.Location = new System.Drawing.Point(434, 356);
+            this.textBoxSoundParam.Location = new System.Drawing.Point(434, 297);
             this.textBoxSoundParam.Name = "textBoxSoundParam";
             this.textBoxSoundParam.Size = new System.Drawing.Size(144, 20);
             this.textBoxSoundParam.TabIndex = 120;
@@ -1043,7 +1061,7 @@ namespace PZOutfitAssembler
             this.checkBoxSoundParam.AutoSize = true;
             this.checkBoxSoundParam.Checked = true;
             this.checkBoxSoundParam.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSoundParam.Location = new System.Drawing.Point(287, 358);
+            this.checkBoxSoundParam.Location = new System.Drawing.Point(287, 299);
             this.checkBoxSoundParam.Name = "checkBoxSoundParam";
             this.checkBoxSoundParam.Size = new System.Drawing.Size(108, 17);
             this.checkBoxSoundParam.TabIndex = 119;
@@ -1055,7 +1073,7 @@ namespace PZOutfitAssembler
             this.checkBoxCombatSpeed.AutoSize = true;
             this.checkBoxCombatSpeed.Checked = true;
             this.checkBoxCombatSpeed.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCombatSpeed.Location = new System.Drawing.Point(8, 456);
+            this.checkBoxCombatSpeed.Location = new System.Drawing.Point(8, 432);
             this.checkBoxCombatSpeed.Name = "checkBoxCombatSpeed";
             this.checkBoxCombatSpeed.Size = new System.Drawing.Size(133, 17);
             this.checkBoxCombatSpeed.TabIndex = 118;
@@ -1064,7 +1082,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCombatSpeed
             // 
-            this.textBoxCombatSpeed.Location = new System.Drawing.Point(144, 453);
+            this.textBoxCombatSpeed.Location = new System.Drawing.Point(144, 429);
             this.textBoxCombatSpeed.Name = "textBoxCombatSpeed";
             this.textBoxCombatSpeed.Size = new System.Drawing.Size(123, 20);
             this.textBoxCombatSpeed.TabIndex = 117;
@@ -1072,7 +1090,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxMaxItemSize
             // 
-            this.textBoxMaxItemSize.Location = new System.Drawing.Point(434, 333);
+            this.textBoxMaxItemSize.Location = new System.Drawing.Point(434, 276);
             this.textBoxMaxItemSize.Name = "textBoxMaxItemSize";
             this.textBoxMaxItemSize.Size = new System.Drawing.Size(144, 20);
             this.textBoxMaxItemSize.TabIndex = 116;
@@ -1082,7 +1100,7 @@ namespace PZOutfitAssembler
             this.checkBoxMaxItemSize.AutoSize = true;
             this.checkBoxMaxItemSize.Checked = true;
             this.checkBoxMaxItemSize.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMaxItemSize.Location = new System.Drawing.Point(287, 335);
+            this.checkBoxMaxItemSize.Location = new System.Drawing.Point(287, 278);
             this.checkBoxMaxItemSize.Name = "checkBoxMaxItemSize";
             this.checkBoxMaxItemSize.Size = new System.Drawing.Size(89, 17);
             this.checkBoxMaxItemSize.TabIndex = 115;
@@ -1092,7 +1110,7 @@ namespace PZOutfitAssembler
             // checkBoxAttachmentReplacement
             // 
             this.checkBoxAttachmentReplacement.AutoSize = true;
-            this.checkBoxAttachmentReplacement.Location = new System.Drawing.Point(287, 60);
+            this.checkBoxAttachmentReplacement.Location = new System.Drawing.Point(287, 27);
             this.checkBoxAttachmentReplacement.Name = "checkBoxAttachmentReplacement";
             this.checkBoxAttachmentReplacement.Size = new System.Drawing.Size(141, 17);
             this.checkBoxAttachmentReplacement.TabIndex = 114;
@@ -1104,7 +1122,7 @@ namespace PZOutfitAssembler
             this.checkBoxCapacity.AutoSize = true;
             this.checkBoxCapacity.Checked = true;
             this.checkBoxCapacity.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCapacity.Location = new System.Drawing.Point(287, 105);
+            this.checkBoxCapacity.Location = new System.Drawing.Point(287, 68);
             this.checkBoxCapacity.Name = "checkBoxCapacity";
             this.checkBoxCapacity.Size = new System.Drawing.Size(67, 17);
             this.checkBoxCapacity.TabIndex = 113;
@@ -1113,7 +1131,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxDamageSound
             // 
-            this.textBoxDamageSound.Location = new System.Drawing.Point(434, 195);
+            this.textBoxDamageSound.Location = new System.Drawing.Point(434, 150);
             this.textBoxDamageSound.Name = "textBoxDamageSound";
             this.textBoxDamageSound.Size = new System.Drawing.Size(144, 20);
             this.textBoxDamageSound.TabIndex = 112;
@@ -1123,7 +1141,7 @@ namespace PZOutfitAssembler
             this.checkBoxDamageSound.AutoSize = true;
             this.checkBoxDamageSound.Checked = true;
             this.checkBoxDamageSound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDamageSound.Location = new System.Drawing.Point(287, 197);
+            this.checkBoxDamageSound.Location = new System.Drawing.Point(287, 152);
             this.checkBoxDamageSound.Name = "checkBoxDamageSound";
             this.checkBoxDamageSound.Size = new System.Drawing.Size(98, 17);
             this.checkBoxDamageSound.TabIndex = 111;
@@ -1135,7 +1153,7 @@ namespace PZOutfitAssembler
             this.checkBoxDiscomfort.AutoSize = true;
             this.checkBoxDiscomfort.Checked = true;
             this.checkBoxDiscomfort.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxDiscomfort.Location = new System.Drawing.Point(8, 434);
+            this.checkBoxDiscomfort.Location = new System.Drawing.Point(8, 411);
             this.checkBoxDiscomfort.Name = "checkBoxDiscomfort";
             this.checkBoxDiscomfort.Size = new System.Drawing.Size(115, 17);
             this.checkBoxDiscomfort.TabIndex = 110;
@@ -1144,7 +1162,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxDiscomfort
             // 
-            this.textBoxDiscomfort.Location = new System.Drawing.Point(144, 431);
+            this.textBoxDiscomfort.Location = new System.Drawing.Point(144, 408);
             this.textBoxDiscomfort.Name = "textBoxDiscomfort";
             this.textBoxDiscomfort.Size = new System.Drawing.Size(123, 20);
             this.textBoxDiscomfort.TabIndex = 109;
@@ -1155,7 +1173,7 @@ namespace PZOutfitAssembler
             this.checkBoxScratchDefense.AutoSize = true;
             this.checkBoxScratchDefense.Checked = true;
             this.checkBoxScratchDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxScratchDefense.Location = new System.Drawing.Point(8, 412);
+            this.checkBoxScratchDefense.Location = new System.Drawing.Point(8, 390);
             this.checkBoxScratchDefense.Name = "checkBoxScratchDefense";
             this.checkBoxScratchDefense.Size = new System.Drawing.Size(104, 17);
             this.checkBoxScratchDefense.TabIndex = 108;
@@ -1164,7 +1182,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxScratchDefense
             // 
-            this.textBoxScratchDefense.Location = new System.Drawing.Point(144, 409);
+            this.textBoxScratchDefense.Location = new System.Drawing.Point(144, 387);
             this.textBoxScratchDefense.Name = "textBoxScratchDefense";
             this.textBoxScratchDefense.Size = new System.Drawing.Size(123, 20);
             this.textBoxScratchDefense.TabIndex = 107;
@@ -1175,7 +1193,7 @@ namespace PZOutfitAssembler
             this.checkBoxBulletDefense.AutoSize = true;
             this.checkBoxBulletDefense.Checked = true;
             this.checkBoxBulletDefense.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxBulletDefense.Location = new System.Drawing.Point(8, 390);
+            this.checkBoxBulletDefense.Location = new System.Drawing.Point(8, 369);
             this.checkBoxBulletDefense.Name = "checkBoxBulletDefense";
             this.checkBoxBulletDefense.Size = new System.Drawing.Size(93, 17);
             this.checkBoxBulletDefense.TabIndex = 106;
@@ -1184,7 +1202,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxBulletDefense
             // 
-            this.textBoxBulletDefense.Location = new System.Drawing.Point(144, 387);
+            this.textBoxBulletDefense.Location = new System.Drawing.Point(144, 366);
             this.textBoxBulletDefense.Name = "textBoxBulletDefense";
             this.textBoxBulletDefense.Size = new System.Drawing.Size(123, 20);
             this.textBoxBulletDefense.TabIndex = 105;
@@ -1192,7 +1210,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxAttachmentProvided
             // 
-            this.textBoxAttachmentProvided.Location = new System.Drawing.Point(434, 310);
+            this.textBoxAttachmentProvided.Location = new System.Drawing.Point(434, 255);
             this.textBoxAttachmentProvided.Name = "textBoxAttachmentProvided";
             this.textBoxAttachmentProvided.Size = new System.Drawing.Size(144, 20);
             this.textBoxAttachmentProvided.TabIndex = 104;
@@ -1202,7 +1220,7 @@ namespace PZOutfitAssembler
             this.checkBoxAttachmentProvided.AutoSize = true;
             this.checkBoxAttachmentProvided.Checked = true;
             this.checkBoxAttachmentProvided.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAttachmentProvided.Location = new System.Drawing.Point(287, 312);
+            this.checkBoxAttachmentProvided.Location = new System.Drawing.Point(287, 257);
             this.checkBoxAttachmentProvided.Name = "checkBoxAttachmentProvided";
             this.checkBoxAttachmentProvided.Size = new System.Drawing.Size(124, 17);
             this.checkBoxAttachmentProvided.TabIndex = 103;
@@ -1211,7 +1229,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxAttachReplacement
             // 
-            this.textBoxAttachReplacement.Location = new System.Drawing.Point(434, 57);
+            this.textBoxAttachReplacement.Location = new System.Drawing.Point(434, 24);
             this.textBoxAttachReplacement.Name = "textBoxAttachReplacement";
             this.textBoxAttachReplacement.Size = new System.Drawing.Size(144, 20);
             this.textBoxAttachReplacement.TabIndex = 75;
@@ -1219,7 +1237,7 @@ namespace PZOutfitAssembler
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(122, 7);
+            this.button9.Location = new System.Drawing.Point(122, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(113, 23);
             this.button9.TabIndex = 102;
@@ -1229,14 +1247,14 @@ namespace PZOutfitAssembler
             // 
             // textBoxWeigthreduction
             // 
-            this.textBoxWeigthreduction.Location = new System.Drawing.Point(434, 287);
+            this.textBoxWeigthreduction.Location = new System.Drawing.Point(434, 234);
             this.textBoxWeigthreduction.Name = "textBoxWeigthreduction";
             this.textBoxWeigthreduction.Size = new System.Drawing.Size(144, 20);
             this.textBoxWeigthreduction.TabIndex = 96;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(8, 618);
+            this.button5.Location = new System.Drawing.Point(8, 647);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(96, 29);
             this.button5.TabIndex = 101;
@@ -1246,7 +1264,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCanbeequipped
             // 
-            this.textBoxCanbeequipped.Location = new System.Drawing.Point(434, 80);
+            this.textBoxCanbeequipped.Location = new System.Drawing.Point(434, 45);
             this.textBoxCanbeequipped.Name = "textBoxCanbeequipped";
             this.textBoxCanbeequipped.Size = new System.Drawing.Size(144, 20);
             this.textBoxCanbeequipped.TabIndex = 76;
@@ -1254,15 +1272,15 @@ namespace PZOutfitAssembler
             // 
             // textBoxGUID
             // 
-            this.textBoxGUID.Location = new System.Drawing.Point(150, 623);
+            this.textBoxGUID.Location = new System.Drawing.Point(52, 623);
             this.textBoxGUID.Name = "textBoxGUID";
             this.textBoxGUID.ReadOnly = true;
-            this.textBoxGUID.Size = new System.Drawing.Size(302, 20);
+            this.textBoxGUID.Size = new System.Drawing.Size(215, 20);
             this.textBoxGUID.TabIndex = 100;
             // 
             // textBoxRunspeedmodifier
             // 
-            this.textBoxRunspeedmodifier.Location = new System.Drawing.Point(434, 264);
+            this.textBoxRunspeedmodifier.Location = new System.Drawing.Point(434, 213);
             this.textBoxRunspeedmodifier.Name = "textBoxRunspeedmodifier";
             this.textBoxRunspeedmodifier.Size = new System.Drawing.Size(144, 20);
             this.textBoxRunspeedmodifier.TabIndex = 95;
@@ -1270,7 +1288,7 @@ namespace PZOutfitAssembler
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(107, 627);
+            this.label14.Location = new System.Drawing.Point(9, 627);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(37, 13);
             this.label14.TabIndex = 99;
@@ -1281,7 +1299,7 @@ namespace PZOutfitAssembler
             this.checkBoxCanbeequipped.AutoSize = true;
             this.checkBoxCanbeequipped.Checked = true;
             this.checkBoxCanbeequipped.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCanbeequipped.Location = new System.Drawing.Point(287, 82);
+            this.checkBoxCanbeequipped.Location = new System.Drawing.Point(287, 47);
             this.checkBoxCanbeequipped.Name = "checkBoxCanbeequipped";
             this.checkBoxCanbeequipped.Size = new System.Drawing.Size(106, 17);
             this.checkBoxCanbeequipped.TabIndex = 77;
@@ -1291,7 +1309,7 @@ namespace PZOutfitAssembler
             // checkBoxStaticModel
             // 
             this.checkBoxStaticModel.AutoSize = true;
-            this.checkBoxStaticModel.Location = new System.Drawing.Point(287, 37);
+            this.checkBoxStaticModel.Location = new System.Drawing.Point(287, 6);
             this.checkBoxStaticModel.Name = "checkBoxStaticModel";
             this.checkBoxStaticModel.Size = new System.Drawing.Size(113, 17);
             this.checkBoxStaticModel.TabIndex = 97;
@@ -1300,21 +1318,21 @@ namespace PZOutfitAssembler
             // 
             // textBoxReplacesecondaryhand
             // 
-            this.textBoxReplacesecondaryhand.Location = new System.Drawing.Point(434, 241);
+            this.textBoxReplacesecondaryhand.Location = new System.Drawing.Point(434, 192);
             this.textBoxReplacesecondaryhand.Name = "textBoxReplacesecondaryhand";
             this.textBoxReplacesecondaryhand.Size = new System.Drawing.Size(144, 20);
             this.textBoxReplacesecondaryhand.TabIndex = 94;
             // 
             // textBoxStaticModel
             // 
-            this.textBoxStaticModel.Location = new System.Drawing.Point(434, 34);
+            this.textBoxStaticModel.Location = new System.Drawing.Point(434, 3);
             this.textBoxStaticModel.Name = "textBoxStaticModel";
             this.textBoxStaticModel.Size = new System.Drawing.Size(144, 20);
             this.textBoxStaticModel.TabIndex = 98;
             // 
             // textBoxReplaceprimaryhand
             // 
-            this.textBoxReplaceprimaryhand.Location = new System.Drawing.Point(434, 218);
+            this.textBoxReplaceprimaryhand.Location = new System.Drawing.Point(434, 171);
             this.textBoxReplaceprimaryhand.Name = "textBoxReplaceprimaryhand";
             this.textBoxReplaceprimaryhand.Size = new System.Drawing.Size(144, 20);
             this.textBoxReplaceprimaryhand.TabIndex = 93;
@@ -1322,6 +1340,16 @@ namespace PZOutfitAssembler
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.textBoxMasks);
+            this.panel3.Controls.Add(this.label41);
+            this.panel3.Controls.Add(this.textBoxmasksFolder);
+            this.panel3.Controls.Add(this.label39);
+            this.panel3.Controls.Add(this.textBoxunderlayMasksFolder);
+            this.panel3.Controls.Add(this.label40);
+            this.panel3.Controls.Add(this.textBoxaltFemaleModel);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.textBoxaltMaleModel);
+            this.panel3.Controls.Add(this.label38);
             this.panel3.Controls.Add(this.checkBoxAllowRandomTint);
             this.panel3.Controls.Add(this.checkBoxAllowRandomHue);
             this.panel3.Controls.Add(this.label22);
@@ -1332,21 +1360,41 @@ namespace PZOutfitAssembler
             this.panel3.Controls.Add(this.textBoxMaleModel);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.checkBoxStatic);
-            this.panel3.Location = new System.Drawing.Point(273, 454);
+            this.panel3.Location = new System.Drawing.Point(273, 361);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(319, 153);
+            this.panel3.Size = new System.Drawing.Size(319, 313);
             this.panel3.TabIndex = 72;
+            // 
+            // checkBoxAllowRandomTint
+            // 
+            this.checkBoxAllowRandomTint.AutoSize = true;
+            this.checkBoxAllowRandomTint.Location = new System.Drawing.Point(195, 292);
+            this.checkBoxAllowRandomTint.Name = "checkBoxAllowRandomTint";
+            this.checkBoxAllowRandomTint.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxAllowRandomTint.TabIndex = 59;
+            this.checkBoxAllowRandomTint.Text = "Allow random tint";
+            this.checkBoxAllowRandomTint.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAllowRandomHue
+            // 
+            this.checkBoxAllowRandomHue.AutoSize = true;
+            this.checkBoxAllowRandomHue.Location = new System.Drawing.Point(80, 292);
+            this.checkBoxAllowRandomHue.Name = "checkBoxAllowRandomHue";
+            this.checkBoxAllowRandomHue.Size = new System.Drawing.Size(110, 17);
+            this.checkBoxAllowRandomHue.TabIndex = 58;
+            this.checkBoxAllowRandomHue.Text = "Allow random hue";
+            this.checkBoxAllowRandomHue.UseVisualStyleBackColor = true;
             // 
             // textBoxCapacity
             // 
-            this.textBoxCapacity.Location = new System.Drawing.Point(434, 103);
+            this.textBoxCapacity.Location = new System.Drawing.Point(434, 66);
             this.textBoxCapacity.Name = "textBoxCapacity";
             this.textBoxCapacity.Size = new System.Drawing.Size(144, 20);
             this.textBoxCapacity.TabIndex = 79;
             // 
             // textBoxPutinsound
             // 
-            this.textBoxPutinsound.Location = new System.Drawing.Point(434, 172);
+            this.textBoxPutinsound.Location = new System.Drawing.Point(434, 129);
             this.textBoxPutinsound.Name = "textBoxPutinsound";
             this.textBoxPutinsound.Size = new System.Drawing.Size(144, 20);
             this.textBoxPutinsound.TabIndex = 92;
@@ -1356,7 +1404,7 @@ namespace PZOutfitAssembler
             this.checkBoxReplaceprimaryhand.AutoSize = true;
             this.checkBoxReplaceprimaryhand.Checked = true;
             this.checkBoxReplaceprimaryhand.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxReplaceprimaryhand.Location = new System.Drawing.Point(287, 220);
+            this.checkBoxReplaceprimaryhand.Location = new System.Drawing.Point(287, 173);
             this.checkBoxReplaceprimaryhand.Name = "checkBoxReplaceprimaryhand";
             this.checkBoxReplaceprimaryhand.Size = new System.Drawing.Size(131, 17);
             this.checkBoxReplaceprimaryhand.TabIndex = 83;
@@ -1365,7 +1413,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxCloseSound
             // 
-            this.textBoxCloseSound.Location = new System.Drawing.Point(434, 149);
+            this.textBoxCloseSound.Location = new System.Drawing.Point(434, 108);
             this.textBoxCloseSound.Name = "textBoxCloseSound";
             this.textBoxCloseSound.Size = new System.Drawing.Size(144, 20);
             this.textBoxCloseSound.TabIndex = 91;
@@ -1375,7 +1423,7 @@ namespace PZOutfitAssembler
             this.checkBoxReplacesecondhand.AutoSize = true;
             this.checkBoxReplacesecondhand.Checked = true;
             this.checkBoxReplacesecondhand.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxReplacesecondhand.Location = new System.Drawing.Point(287, 243);
+            this.checkBoxReplacesecondhand.Location = new System.Drawing.Point(287, 194);
             this.checkBoxReplacesecondhand.Name = "checkBoxReplacesecondhand";
             this.checkBoxReplacesecondhand.Size = new System.Drawing.Size(133, 17);
             this.checkBoxReplacesecondhand.TabIndex = 84;
@@ -1384,7 +1432,7 @@ namespace PZOutfitAssembler
             // 
             // textBoxOpenSound
             // 
-            this.textBoxOpenSound.Location = new System.Drawing.Point(434, 126);
+            this.textBoxOpenSound.Location = new System.Drawing.Point(434, 87);
             this.textBoxOpenSound.Name = "textBoxOpenSound";
             this.textBoxOpenSound.Size = new System.Drawing.Size(144, 20);
             this.textBoxOpenSound.TabIndex = 90;
@@ -1394,7 +1442,7 @@ namespace PZOutfitAssembler
             this.checkBoxRunspeedmodifier.AutoSize = true;
             this.checkBoxRunspeedmodifier.Checked = true;
             this.checkBoxRunspeedmodifier.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRunspeedmodifier.Location = new System.Drawing.Point(287, 266);
+            this.checkBoxRunspeedmodifier.Location = new System.Drawing.Point(287, 215);
             this.checkBoxRunspeedmodifier.Name = "checkBoxRunspeedmodifier";
             this.checkBoxRunspeedmodifier.Size = new System.Drawing.Size(117, 17);
             this.checkBoxRunspeedmodifier.TabIndex = 85;
@@ -1406,7 +1454,7 @@ namespace PZOutfitAssembler
             this.checkBoxPutinsound.AutoSize = true;
             this.checkBoxPutinsound.Checked = true;
             this.checkBoxPutinsound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPutinsound.Location = new System.Drawing.Point(287, 175);
+            this.checkBoxPutinsound.Location = new System.Drawing.Point(287, 132);
             this.checkBoxPutinsound.Name = "checkBoxPutinsound";
             this.checkBoxPutinsound.Size = new System.Drawing.Size(85, 17);
             this.checkBoxPutinsound.TabIndex = 89;
@@ -1418,7 +1466,7 @@ namespace PZOutfitAssembler
             this.checkBoxWeigthreduction.AutoSize = true;
             this.checkBoxWeigthreduction.Checked = true;
             this.checkBoxWeigthreduction.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxWeigthreduction.Location = new System.Drawing.Point(287, 289);
+            this.checkBoxWeigthreduction.Location = new System.Drawing.Point(287, 236);
             this.checkBoxWeigthreduction.Name = "checkBoxWeigthreduction";
             this.checkBoxWeigthreduction.Size = new System.Drawing.Size(107, 17);
             this.checkBoxWeigthreduction.TabIndex = 86;
@@ -1430,7 +1478,7 @@ namespace PZOutfitAssembler
             this.checkBoxClosesound.AutoSize = true;
             this.checkBoxClosesound.Checked = true;
             this.checkBoxClosesound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxClosesound.Location = new System.Drawing.Point(287, 151);
+            this.checkBoxClosesound.Location = new System.Drawing.Point(287, 110);
             this.checkBoxClosesound.Name = "checkBoxClosesound";
             this.checkBoxClosesound.Size = new System.Drawing.Size(84, 17);
             this.checkBoxClosesound.TabIndex = 88;
@@ -1442,7 +1490,7 @@ namespace PZOutfitAssembler
             this.checkBoxOpensound.AutoSize = true;
             this.checkBoxOpensound.Checked = true;
             this.checkBoxOpensound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxOpensound.Location = new System.Drawing.Point(287, 128);
+            this.checkBoxOpensound.Location = new System.Drawing.Point(287, 89);
             this.checkBoxOpensound.Name = "checkBoxOpensound";
             this.checkBoxOpensound.Size = new System.Drawing.Size(84, 17);
             this.checkBoxOpensound.TabIndex = 87;
@@ -1452,25 +1500,85 @@ namespace PZOutfitAssembler
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel5.Controls.Add(this.button15);
-            this.panel5.Controls.Add(this.button12);
+            this.panel5.Controls.Add(this.buttonEditVanilaOutfit);
             this.panel5.Controls.Add(this.button11);
             this.panel5.Controls.Add(this.button10);
             this.panel5.Controls.Add(this.label33);
-            this.panel5.Controls.Add(this.listBox3);
+            this.panel5.Controls.Add(this.listBoxVanilaOutfit);
             this.panel5.Controls.Add(this.label32);
             this.panel5.Controls.Add(this.listBox2);
-            this.panel5.Enabled = false;
-            this.panel5.Location = new System.Drawing.Point(1066, 232);
+            this.panel5.Location = new System.Drawing.Point(1066, 168);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(299, 403);
+            this.panel5.Size = new System.Drawing.Size(299, 467);
             this.panel5.TabIndex = 83;
+            // 
+            // buttonEditVanilaOutfit
+            // 
+            this.buttonEditVanilaOutfit.Location = new System.Drawing.Point(196, 429);
+            this.buttonEditVanilaOutfit.Name = "buttonEditVanilaOutfit";
+            this.buttonEditVanilaOutfit.Size = new System.Drawing.Size(59, 29);
+            this.buttonEditVanilaOutfit.TabIndex = 84;
+            this.buttonEditVanilaOutfit.Text = "Edit Item";
+            this.buttonEditVanilaOutfit.UseVisualStyleBackColor = true;
+            this.buttonEditVanilaOutfit.Click += new System.EventHandler(this.buttonEditVanilaOutfit_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(80, 429);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(46, 29);
+            this.button11.TabIndex = 84;
+            this.button11.Text = "Delete item";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(32, 429);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(45, 29);
+            this.button10.TabIndex = 83;
+            this.button10.Text = "Edit Item";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(159, 13);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(69, 13);
+            this.label33.TabIndex = 3;
+            this.label33.Text = "Vanilla outfits";
+            // 
+            // listBoxVanilaOutfit
+            // 
+            this.listBoxVanilaOutfit.FormattingEnabled = true;
+            this.listBoxVanilaOutfit.Location = new System.Drawing.Point(158, 38);
+            this.listBoxVanilaOutfit.Name = "listBoxVanilaOutfit";
+            this.listBoxVanilaOutfit.Size = new System.Drawing.Size(130, 381);
+            this.listBoxVanilaOutfit.TabIndex = 2;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(3, 13);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Custom outfits";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(14, 38);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(127, 381);
+            this.listBox2.TabIndex = 0;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(974, 711);
+            this.label9.Location = new System.Drawing.Point(1078, 711);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(278, 13);
             this.label9.TabIndex = 82;
@@ -1479,7 +1587,10 @@ namespace PZOutfitAssembler
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.button17);
+            this.panel4.Controls.Add(this.label37);
             this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.button8);
             this.panel4.Controls.Add(this.button6);
             this.panel4.Controls.Add(this.label11);
@@ -1489,6 +1600,25 @@ namespace PZOutfitAssembler
             this.panel4.Size = new System.Drawing.Size(222, 315);
             this.panel4.TabIndex = 80;
             // 
+            // button17
+            // 
+            this.button17.Enabled = false;
+            this.button17.Location = new System.Drawing.Point(170, 164);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(49, 42);
+            this.button17.TabIndex = 147;
+            this.button17.Text = "Add as child >";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(165, 79);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(54, 13);
+            this.label37.TabIndex = 146;
+            this.label37.Text = "probability";
+            // 
             // label30
             // 
             this.label30.Location = new System.Drawing.Point(91, 271);
@@ -1496,6 +1626,14 @@ namespace PZOutfitAssembler
             this.label30.Size = new System.Drawing.Size(128, 39);
             this.label30.TabIndex = 85;
             this.label30.Text = "Consider as templates, dont forget to generate new GUID before saving";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(170, 95);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(33, 20);
+            this.textBox3.TabIndex = 145;
+            this.textBox3.Text = "1";
             // 
             // button8
             // 
@@ -1510,17 +1648,17 @@ namespace PZOutfitAssembler
             // button6
             // 
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(186, 121);
+            this.button6.Location = new System.Drawing.Point(170, 121);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(33, 33);
+            this.button6.Size = new System.Drawing.Size(49, 42);
             this.button6.TabIndex = 82;
-            this.button6.Text = "=>";
+            this.button6.Text = "Add as main >";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 12);
+            this.label11.Location = new System.Drawing.Point(5, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 13);
             this.label11.TabIndex = 77;
@@ -1529,7 +1667,7 @@ namespace PZOutfitAssembler
             // listBoxVanila
             // 
             this.listBoxVanila.FormattingEnabled = true;
-            this.listBoxVanila.Location = new System.Drawing.Point(24, 28);
+            this.listBoxVanila.Location = new System.Drawing.Point(8, 28);
             this.listBoxVanila.Name = "listBoxVanila";
             this.listBoxVanila.Size = new System.Drawing.Size(156, 199);
             this.listBoxVanila.TabIndex = 76;
@@ -1537,30 +1675,126 @@ namespace PZOutfitAssembler
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel6.Controls.Add(this.checkBoxPantsTint);
+            this.panel6.Controls.Add(this.checkBoxShirtDecal);
+            this.panel6.Controls.Add(this.checkBoxPantsHue);
+            this.panel6.Controls.Add(this.checkBoxTopTint);
+            this.panel6.Controls.Add(this.checkBoxPants);
+            this.panel6.Controls.Add(this.checkBoxTop);
             this.panel6.Controls.Add(this.button14);
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.textBoxOutfitGUID);
             this.panel6.Controls.Add(this.label34);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.label24);
             this.panel6.Controls.Add(this.button13);
             this.panel6.Controls.Add(this.label23);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.textBoxProbability);
-            this.panel6.Controls.Add(this.checkBoxFemale);
-            this.panel6.Controls.Add(this.checkBoxMale);
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.textBoxClothingName);
-            this.panel6.Enabled = false;
             this.panel6.Location = new System.Drawing.Point(1066, 12);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(299, 215);
+            this.panel6.Size = new System.Drawing.Size(299, 150);
             this.panel6.TabIndex = 83;
+            // 
+            // checkBoxPantsTint
+            // 
+            this.checkBoxPantsTint.AutoSize = true;
+            this.checkBoxPantsTint.Location = new System.Drawing.Point(196, 74);
+            this.checkBoxPantsTint.Name = "checkBoxPantsTint";
+            this.checkBoxPantsTint.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxPantsTint.TabIndex = 148;
+            this.checkBoxPantsTint.Text = "Pants Tint";
+            this.checkBoxPantsTint.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxShirtDecal
+            // 
+            this.checkBoxShirtDecal.AutoSize = true;
+            this.checkBoxShirtDecal.Location = new System.Drawing.Point(14, 97);
+            this.checkBoxShirtDecal.Name = "checkBoxShirtDecal";
+            this.checkBoxShirtDecal.Size = new System.Drawing.Size(78, 17);
+            this.checkBoxShirtDecal.TabIndex = 147;
+            this.checkBoxShirtDecal.Text = "Shirt Decal";
+            this.checkBoxShirtDecal.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPantsHue
+            // 
+            this.checkBoxPantsHue.AutoSize = true;
+            this.checkBoxPantsHue.Location = new System.Drawing.Point(196, 97);
+            this.checkBoxPantsHue.Name = "checkBoxPantsHue";
+            this.checkBoxPantsHue.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxPantsHue.TabIndex = 146;
+            this.checkBoxPantsHue.Text = "Pants Hue";
+            this.checkBoxPantsHue.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTopTint
+            // 
+            this.checkBoxTopTint.AutoSize = true;
+            this.checkBoxTopTint.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.checkBoxTopTint.Location = new System.Drawing.Point(124, 74);
+            this.checkBoxTopTint.Name = "checkBoxTopTint";
+            this.checkBoxTopTint.Size = new System.Drawing.Size(66, 17);
+            this.checkBoxTopTint.TabIndex = 145;
+            this.checkBoxTopTint.Text = "Top Tint";
+            this.checkBoxTopTint.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPants
+            // 
+            this.checkBoxPants.AutoSize = true;
+            this.checkBoxPants.Location = new System.Drawing.Point(65, 74);
+            this.checkBoxPants.Name = "checkBoxPants";
+            this.checkBoxPants.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxPants.TabIndex = 144;
+            this.checkBoxPants.Text = "Pants";
+            this.checkBoxPants.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTop
+            // 
+            this.checkBoxTop.AutoSize = true;
+            this.checkBoxTop.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.checkBoxTop.Location = new System.Drawing.Point(14, 74);
+            this.checkBoxTop.Name = "checkBoxTop";
+            this.checkBoxTop.Size = new System.Drawing.Size(45, 17);
+            this.checkBoxTop.TabIndex = 143;
+            this.checkBoxTop.Text = "Top";
+            this.checkBoxTop.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(10, 113);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(96, 29);
+            this.button14.TabIndex = 139;
+            this.button14.Text = "New GUIDs";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // textBoxOutfitGUID
+            // 
+            this.textBoxOutfitGUID.Location = new System.Drawing.Point(47, 47);
+            this.textBoxOutfitGUID.Name = "textBoxOutfitGUID";
+            this.textBoxOutfitGUID.ReadOnly = true;
+            this.textBoxOutfitGUID.Size = new System.Drawing.Size(192, 20);
+            this.textBoxOutfitGUID.TabIndex = 142;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(11, 51);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(37, 13);
+            this.label34.TabIndex = 141;
+            this.label34.Text = "GUID:";
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(184, 113);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(107, 28);
+            this.button13.TabIndex = 139;
+            this.button13.Text = "Save Outfit";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
-            this.label28.Location = new System.Drawing.Point(196, 682);
+            this.label28.Location = new System.Drawing.Point(189, 713);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(246, 36);
+            this.label28.Size = new System.Drawing.Size(246, 16);
             this.label28.TabIndex = 84;
             this.label28.Text = "Debug will create files in C:\\PZTest folder";
             // 
@@ -1568,9 +1802,9 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(664, 686);
+            this.pictureBox1.Location = new System.Drawing.Point(834, 686);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 85;
             this.pictureBox1.TabStop = false;
@@ -1580,7 +1814,7 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1066, 641);
+            this.pictureBox2.Location = new System.Drawing.Point(1170, 641);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(69, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1592,9 +1826,9 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(522, 683);
+            this.pictureBox3.Location = new System.Drawing.Point(692, 683);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(117, 44);
+            this.pictureBox3.Size = new System.Drawing.Size(118, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 87;
             this.pictureBox3.TabStop = false;
@@ -1604,9 +1838,9 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(736, 685);
+            this.pictureBox4.Location = new System.Drawing.Point(906, 685);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(61, 41);
+            this.pictureBox4.Size = new System.Drawing.Size(62, 41);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 88;
             this.pictureBox4.TabStop = false;
@@ -1616,9 +1850,9 @@ namespace PZOutfitAssembler
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(803, 686);
+            this.pictureBox5.Location = new System.Drawing.Point(973, 686);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(65, 41);
+            this.pictureBox5.Size = new System.Drawing.Size(66, 41);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 89;
             this.pictureBox5.TabStop = false;
@@ -1628,7 +1862,7 @@ namespace PZOutfitAssembler
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(523, 665);
+            this.label7.Location = new System.Drawing.Point(693, 665);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 90;
@@ -1637,7 +1871,7 @@ namespace PZOutfitAssembler
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(744, 667);
+            this.label13.Location = new System.Drawing.Point(914, 667);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 91;
@@ -1646,7 +1880,7 @@ namespace PZOutfitAssembler
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(819, 667);
+            this.label27.Location = new System.Drawing.Point(989, 667);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(33, 13);
             this.label27.TabIndex = 92;
@@ -1655,62 +1889,72 @@ namespace PZOutfitAssembler
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(674, 666);
+            this.label29.Location = new System.Drawing.Point(844, 666);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(47, 13);
             this.label29.TabIndex = 93;
             this.label29.Text = "Youtube";
             // 
-            // checkBoxAllowRandomHue
-            // 
-            this.checkBoxAllowRandomHue.AutoSize = true;
-            this.checkBoxAllowRandomHue.Location = new System.Drawing.Point(80, 130);
-            this.checkBoxAllowRandomHue.Name = "checkBoxAllowRandomHue";
-            this.checkBoxAllowRandomHue.Size = new System.Drawing.Size(110, 17);
-            this.checkBoxAllowRandomHue.TabIndex = 58;
-            this.checkBoxAllowRandomHue.Text = "Allow random hue";
-            this.checkBoxAllowRandomHue.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAllowRandomTint
-            // 
-            this.checkBoxAllowRandomTint.AutoSize = true;
-            this.checkBoxAllowRandomTint.Location = new System.Drawing.Point(195, 130);
-            this.checkBoxAllowRandomTint.Name = "checkBoxAllowRandomTint";
-            this.checkBoxAllowRandomTint.Size = new System.Drawing.Size(106, 17);
-            this.checkBoxAllowRandomTint.TabIndex = 59;
-            this.checkBoxAllowRandomTint.Text = "Allow random tint";
-            this.checkBoxAllowRandomTint.UseVisualStyleBackColor = true;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel7.Controls.Add(this.button16);
+            this.panel7.Controls.Add(this.label35);
+            this.panel7.Controls.Add(this.listBoxFemale);
+            this.panel7.Controls.Add(this.label24);
+            this.panel7.Controls.Add(this.buttonOutfitClear);
             this.panel7.Controls.Add(this.label31);
-            this.panel7.Controls.Add(this.listBox1);
-            this.panel7.Enabled = false;
+            this.panel7.Controls.Add(this.listBoxMale);
             this.panel7.Location = new System.Drawing.Point(854, 12);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(206, 623);
+            this.panel7.Size = new System.Drawing.Size(206, 651);
             this.panel7.TabIndex = 94;
             // 
-            // listBox1
+            // label35
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 364);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(41, 13);
+            this.label35.TabIndex = 142;
+            this.label35.Text = "Female";
+            // 
+            // listBoxFemale
+            // 
+            this.listBoxFemale.FormattingEnabled = true;
+            this.listBoxFemale.Items.AddRange(new object[] {
             "Item1",
-            "-subitem1",
-            "-subitem2",
-            "--subitem1",
-            "-subitem3",
+            "- subitem1",
+            "- subitem2",
+            "- - subitem1",
+            "- subitem3",
             "Item2",
             "Item3",
-            "-subtem1",
+            "- subtem1",
             "Item4",
             "Item5"});
-            this.listBox1.Location = new System.Drawing.Point(13, 36);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(173, 576);
-            this.listBox1.TabIndex = 0;
+            this.listBoxFemale.Location = new System.Drawing.Point(10, 380);
+            this.listBoxFemale.Name = "listBoxFemale";
+            this.listBoxFemale.Size = new System.Drawing.Size(173, 264);
+            this.listBoxFemale.TabIndex = 141;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 81);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.TabIndex = 140;
+            this.label24.Text = "Male";
+            // 
+            // buttonOutfitClear
+            // 
+            this.buttonOutfitClear.Location = new System.Drawing.Point(90, 7);
+            this.buttonOutfitClear.Name = "buttonOutfitClear";
+            this.buttonOutfitClear.Size = new System.Drawing.Size(96, 23);
+            this.buttonOutfitClear.TabIndex = 139;
+            this.buttonOutfitClear.Text = "Clear";
+            this.buttonOutfitClear.UseVisualStyleBackColor = true;
+            this.buttonOutfitClear.Click += new System.EventHandler(this.buttonOutfitClear_Click);
             // 
             // label31
             // 
@@ -1721,145 +1965,106 @@ namespace PZOutfitAssembler
             this.label31.TabIndex = 1;
             this.label31.Text = "Outfit structure";
             // 
-            // button4
+            // listBoxMale
             // 
-            this.button4.Location = new System.Drawing.Point(70, 288);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 34);
-            this.button4.TabIndex = 83;
-            this.button4.Text = "Delete item";
-            this.button4.UseVisualStyleBackColor = true;
+            this.listBoxMale.FormattingEnabled = true;
+            this.listBoxMale.Items.AddRange(new object[] {
+            "Item1",
+            "- subitem1",
+            "- subitem2",
+            "- - subitem1",
+            "- subitem3",
+            "Item2",
+            "Item3",
+            "- subtem1",
+            "Item4",
+            "Item5"});
+            this.listBoxMale.Location = new System.Drawing.Point(10, 97);
+            this.listBoxMale.Name = "listBoxMale";
+            this.listBoxMale.Size = new System.Drawing.Size(173, 264);
+            this.listBoxMale.TabIndex = 0;
             // 
-            // listBox2
+            // textBoxaltFemaleModel
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(14, 38);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(127, 303);
-            this.listBox2.TabIndex = 0;
+            this.textBoxaltFemaleModel.Location = new System.Drawing.Point(17, 123);
+            this.textBoxaltFemaleModel.Name = "textBoxaltFemaleModel";
+            this.textBoxaltFemaleModel.Size = new System.Drawing.Size(289, 20);
+            this.textBoxaltFemaleModel.TabIndex = 63;
+            this.textBoxaltFemaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Kate_AmmoStrap.X";
             // 
-            // label32
+            // label20
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 13);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(73, 13);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "Custom outfits";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 110);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 13);
+            this.label20.TabIndex = 62;
+            this.label20.Text = "alt female model";
             // 
-            // listBox3
+            // textBoxaltMaleModel
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(158, 38);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(130, 303);
-            this.listBox3.TabIndex = 2;
+            this.textBoxaltMaleModel.Location = new System.Drawing.Point(16, 53);
+            this.textBoxaltMaleModel.Name = "textBoxaltMaleModel";
+            this.textBoxaltMaleModel.Size = new System.Drawing.Size(290, 20);
+            this.textBoxaltMaleModel.TabIndex = 61;
+            this.textBoxaltMaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Bob_AmmoStrap.X";
             // 
-            // label33
+            // label38
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(159, 13);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(69, 13);
-            this.label33.TabIndex = 3;
-            this.label33.Text = "Vanilla outfits";
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(13, 39);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(74, 13);
+            this.label38.TabIndex = 60;
+            this.label38.Text = "alt male model";
             // 
-            // button10
+            // textBoxmasksFolder
             // 
-            this.button10.Location = new System.Drawing.Point(30, 348);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(45, 34);
-            this.button10.TabIndex = 83;
-            this.button10.Text = "Edit Item";
-            this.button10.UseVisualStyleBackColor = true;
+            this.textBoxmasksFolder.Location = new System.Drawing.Point(17, 191);
+            this.textBoxmasksFolder.Name = "textBoxmasksFolder";
+            this.textBoxmasksFolder.Size = new System.Drawing.Size(289, 20);
+            this.textBoxmasksFolder.TabIndex = 67;
             // 
-            // button11
+            // label39
             // 
-            this.button11.Location = new System.Drawing.Point(78, 348);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(46, 34);
-            this.button11.TabIndex = 84;
-            this.button11.Text = "Delete item";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(14, 178);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(66, 13);
+            this.label39.TabIndex = 66;
+            this.label39.Text = "masks folder";
             // 
-            // button12
+            // textBoxunderlayMasksFolder
             // 
-            this.button12.Location = new System.Drawing.Point(194, 354);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(59, 34);
-            this.button12.TabIndex = 84;
-            this.button12.Text = "Edit Item";
-            this.button12.UseVisualStyleBackColor = true;
+            this.textBoxunderlayMasksFolder.Location = new System.Drawing.Point(16, 224);
+            this.textBoxunderlayMasksFolder.Name = "textBoxunderlayMasksFolder";
+            this.textBoxunderlayMasksFolder.Size = new System.Drawing.Size(290, 20);
+            this.textBoxunderlayMasksFolder.TabIndex = 65;
             // 
-            // button13
+            // label40
             // 
-            this.button13.Location = new System.Drawing.Point(185, 172);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(107, 28);
-            this.button13.TabIndex = 139;
-            this.button13.Text = "Save Outfit";
-            this.button13.UseVisualStyleBackColor = true;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(15, 211);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(109, 13);
+            this.label40.TabIndex = 64;
+            this.label40.Text = "underlay masks folder";
             // 
-            // textBox1
+            // textBoxMasks
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 140;
+            this.textBoxMasks.Location = new System.Drawing.Point(17, 259);
+            this.textBoxMasks.Name = "textBoxMasks";
+            this.textBoxMasks.Size = new System.Drawing.Size(289, 20);
+            this.textBoxMasks.TabIndex = 69;
             // 
-            // label24
+            // label41
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(68, 114);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 13);
-            this.label24.TabIndex = 139;
-            this.label24.Text = "GUID:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(104, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(192, 20);
-            this.textBox2.TabIndex = 142;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(68, 140);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(37, 13);
-            this.label34.TabIndex = 141;
-            this.label34.Text = "GUID:";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(11, 172);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(96, 29);
-            this.button14.TabIndex = 139;
-            this.button14.Text = "New GUIDs";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(78, 2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(63, 34);
-            this.button15.TabIndex = 85;
-            this.button15.Text = "Assemble XML";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(90, 7);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(96, 23);
-            this.button16.TabIndex = 139;
-            this.button16.Text = "Clear";
-            this.button16.UseVisualStyleBackColor = true;
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(16, 246);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(37, 13);
+            this.label41.TabIndex = 68;
+            this.label41.Text = "masks";
             // 
             // Form1
             // 
@@ -1946,10 +2151,6 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.TextBox textBoxBloodLocation;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBoxMale;
-        private System.Windows.Forms.CheckBox checkBoxFemale;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxProbability;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -2057,24 +2258,46 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.CheckBox checkBoxAllowRandomTint;
         private System.Windows.Forms.CheckBox checkBoxAllowRandomHue;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button buttonEditVanilaOutfit;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBoxVanilaOutfit;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxMale;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxOutfitGUID;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonOutfitClear;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ListBox listBoxFemale;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox checkBoxShirtDecal;
+        private System.Windows.Forms.CheckBox checkBoxPantsHue;
+        private System.Windows.Forms.CheckBox checkBoxTopTint;
+        private System.Windows.Forms.CheckBox checkBoxPants;
+        private System.Windows.Forms.CheckBox checkBoxTop;
+        private System.Windows.Forms.CheckBox checkBoxPantsTint;
+        private System.Windows.Forms.TextBox textBoxaltFemaleModel;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBoxaltMaleModel;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox textBoxMasks;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox textBoxmasksFolder;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBoxunderlayMasksFolder;
+        private System.Windows.Forms.Label label40;
     }
 }
 
