@@ -14,8 +14,11 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Diagnostics;
 
+
+
 namespace PZOutfitAssembler
 {
+
     public partial class Form1 : Form
     {
         public string guid;
@@ -30,7 +33,11 @@ namespace PZOutfitAssembler
 
 
 
-
+        public static class GlobalConfig
+        {
+            public static string VanillaPath { get; set; } = @"C:\Path\To\Vanilla\XML";
+            public static string ModdedPath { get; set; } = @"C:\Path\To\Modded\XML";
+        }
 
 
         public Form1()
@@ -47,6 +54,11 @@ namespace PZOutfitAssembler
             {
                 string vanillaItems = installPath + clothingScriptsDir;
                 PZinstallPath = installPath;
+
+                GlobalConfig.VanillaPath = installPath;
+                GlobalConfig.ModdedPath = "C:/PZTest/GeneratedFiles";
+
+
                 PopulateItemListBoxWithFileNames(vanillaItems, listBoxVanila);
 
 
@@ -89,6 +101,44 @@ namespace PZOutfitAssembler
                 checkBoxAllowTShirtDecal = allowTShirtDecalBox;
             }
 
+            private Dictionary<string, string> BuildGuidToNameDictionary()
+            {
+                Dictionary<string, string> guidToName = new Dictionary<string, string>();
+
+                // Check both vanilla and modded paths
+                string[] paths = { GlobalConfig.VanillaPath + "/media/clothing/clothingItems/", GlobalConfig.ModdedPath+ "/media/clothing/clothingItems/" };
+
+                foreach (string path in paths)
+                {
+                    if (!Directory.Exists(path)) continue; // Skip if path does not exist
+
+                    foreach (string file in Directory.GetFiles(path, "*.xml"))
+                    {
+                        try
+                        {
+                            XDocument doc = XDocument.Load(file);
+                            string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(file);
+
+                            // Search for GUIDs in XML
+                            foreach (var guidElement in doc.Descendants("m_GUID"))
+                            {
+                                string guid = guidElement.Value.Trim();
+                                if (!string.IsNullOrEmpty(guid) && !guidToName.ContainsKey(guid))
+                                {
+                                    guidToName[guid] = fileNameWithoutExtension;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error reading {file}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                return guidToName;
+            }
+
             public void PopulateItemListBoxes(ListBox outfitListBox, ListBox listBoxMale, ListBox listBoxFemale)
             {
                 if (!File.Exists(xmlFilePath))
@@ -104,12 +154,12 @@ namespace PZOutfitAssembler
                 }
 
                 string selectedOutfit = outfitListBox.SelectedItem.ToString();
+                Dictionary<string, string> guidToName = BuildGuidToNameDictionary();
 
                 try
                 {
                     XDocument doc = XDocument.Load(xmlFilePath);
 
-                    // Select both male and female outfits with the selected name
                     var outfitElements = doc.Descendants("m_FemaleOutfits")
                                             .Concat(doc.Descendants("m_MaleOutfits"))
                                             .Where(o => (string)o.Element("m_Name") == selectedOutfit);
@@ -121,21 +171,17 @@ namespace PZOutfitAssembler
                     {
                         bool isFemale = outfit.Name.LocalName == "m_FemaleOutfits";
 
-                        // Populate textboxes
                         textBoxName.Text = (string)outfit.Element("m_Name");
                         textBoxGUID.Text = (string)outfit.Element("m_Guid");
 
-                        // Populate checkboxes (Fixed Boolean Parsing)
                         checkBoxTop.Checked = outfit.Element("m_Top")?.Value.Trim().ToLower() == "true";
                         checkBoxPants.Checked = outfit.Element("m_Pants")?.Value.Trim().ToLower() == "true";
                         checkBoxAllowPantsHue.Checked = outfit.Element("m_AllowPantsHue")?.Value.Trim().ToLower() == "true";
-                        checkBoxAllowPantsTint.Checked = outfit.Element("m_AllowPantsTint")?.Value.Trim().ToLower() == "true"; // New line
+                        checkBoxAllowPantsTint.Checked = outfit.Element("m_AllowPantsTint")?.Value.Trim().ToLower() == "true";
                         checkBoxAllowTopTint.Checked = outfit.Element("m_AllowTopTint")?.Value.Trim().ToLower() == "true";
                         checkBoxAllowTShirtDecal.Checked = outfit.Element("m_AllowTShirtDecal")?.Value.Trim().ToLower() == "true";
 
-                        // Get all items inside <m_items>
                         var itemElements = outfit.Elements("m_items");
-
                         foreach (var item in itemElements)
                         {
                             string itemGuid = item.Element("itemGUID")?.Value;
@@ -143,7 +189,8 @@ namespace PZOutfitAssembler
 
                             if (!string.IsNullOrEmpty(itemGuid))
                             {
-                                string itemText = !string.IsNullOrEmpty(probability) ? $"{itemGuid} ({probability})" : itemGuid;
+                                string displayName = guidToName.ContainsKey(itemGuid) ? guidToName[itemGuid] : itemGuid;
+                                string itemText = !string.IsNullOrEmpty(probability) ? $"{displayName} ({probability})" : displayName;
 
                                 if (isFemale)
                                     listBoxFemale.Items.Add(itemText);
@@ -151,21 +198,21 @@ namespace PZOutfitAssembler
                                     listBoxMale.Items.Add(itemText);
                             }
 
-                            // Get all sub-items inside <subItems>
-                            var subItemElements = item.Element("subItems")?.Elements("itemGUID");
-                            if (subItemElements != null)
+                            // FIXED: Iterate over all subItems properly
+                            var subItemElements = item.Elements("subItems").SelectMany(sub => sub.Elements("itemGUID"));
+
+                            foreach (var subItem in subItemElements)
                             {
-                                foreach (var subItem in subItemElements)
+                                string subItemGuid = subItem.Value;
+                                if (!string.IsNullOrEmpty(subItemGuid))
                                 {
-                                    string subItemGuid = subItem.Value;
-                                    if (!string.IsNullOrEmpty(subItemGuid))
-                                    {
-                                        string subItemText = $"<>{subItemGuid}";
-                                        if (isFemale)
-                                            listBoxFemale.Items.Add(subItemText);
-                                        else
-                                            listBoxMale.Items.Add(subItemText);
-                                    }
+                                    string displaySubItemName = guidToName.ContainsKey(subItemGuid) ? guidToName[subItemGuid] : subItemGuid;
+                                    string subItemText = $"<>{displaySubItemName}";
+
+                                    if (isFemale)
+                                        listBoxFemale.Items.Add(subItemText);
+                                    else
+                                        listBoxMale.Items.Add(subItemText);
                                 }
                             }
                         }
@@ -187,11 +234,53 @@ namespace PZOutfitAssembler
         public class OutfitLoader  //loading vanilla outfits
         {
             private string xmlFilePath;
+            private Dictionary<string, string> guidToFilenameMap = new Dictionary<string, string>();
+            string vanillaPath = GlobalConfig.VanillaPath + "/media/clothing/clothingItems/";
+            string moddedPath = GlobalConfig.ModdedPath + "/media/clothing/clothingItems/";
 
             public OutfitLoader(string path)
             {
                 xmlFilePath = path;
+                LoadGuidMappings(vanillaPath, moddedPath);
             }
+
+            private void LoadGuidMappings(string vanillaPath, string moddedPath)
+            {
+                guidToFilenameMap.Clear();
+                LoadGuidsFromPath(vanillaPath);
+                LoadGuidsFromPath(moddedPath);
+            }
+
+            private void LoadGuidsFromPath(string folderPath)
+            {
+                if (!Directory.Exists(folderPath))
+                    return;
+
+                foreach (string file in Directory.GetFiles(folderPath, "*.xml", SearchOption.AllDirectories))
+                {
+                    try
+                    {
+                        XDocument doc = XDocument.Load(file);
+                        var guidElement = doc.Descendants("m_GUID").FirstOrDefault();
+
+                        if (guidElement != null)
+                        {
+                            string guid = guidElement.Value.Trim();
+                            string fileName = Path.GetFileNameWithoutExtension(file);
+
+                            if (!guidToFilenameMap.ContainsKey(guid))
+                            {
+                                guidToFilenameMap[guid] = fileName;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error reading {file}: {ex.Message}");
+                    }
+                }
+            }
+
 
             public void PopulateListBox(ListBox listBox)
             {
@@ -237,6 +326,7 @@ namespace PZOutfitAssembler
                 }
             }
         }
+
 
 
 

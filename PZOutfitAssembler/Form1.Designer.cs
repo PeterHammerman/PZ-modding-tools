@@ -140,6 +140,16 @@ namespace PZOutfitAssembler
             this.textBoxStaticModel = new System.Windows.Forms.TextBox();
             this.textBoxReplaceprimaryhand = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxMasks = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBoxmasksFolder = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBoxunderlayMasksFolder = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.textBoxaltFemaleModel = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxaltMaleModel = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.checkBoxAllowRandomTint = new System.Windows.Forms.CheckBox();
             this.checkBoxAllowRandomHue = new System.Windows.Forms.CheckBox();
             this.textBoxCapacity = new System.Windows.Forms.TextBox();
@@ -199,16 +209,6 @@ namespace PZOutfitAssembler
             this.buttonOutfitClear = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.listBoxMale = new System.Windows.Forms.ListBox();
-            this.textBoxaltFemaleModel = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxaltMaleModel = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.textBoxmasksFolder = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBoxunderlayMasksFolder = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.textBoxMasks = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -374,7 +374,7 @@ namespace PZOutfitAssembler
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(38, 13);
             this.label12.TabIndex = 24;
-            this.label12.Text = "weigth";
+            this.label12.Text = "weight";
             // 
             // textBoxClothingItemExtra
             // 
@@ -666,9 +666,10 @@ namespace PZOutfitAssembler
             // listBoxItems
             // 
             this.listBoxItems.FormattingEnabled = true;
+            this.listBoxItems.HorizontalScrollbar = true;
             this.listBoxItems.Location = new System.Drawing.Point(8, 22);
             this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(156, 238);
+            this.listBoxItems.Size = new System.Drawing.Size(156, 264);
             this.listBoxItems.TabIndex = 76;
             // 
             // label8
@@ -736,6 +737,7 @@ namespace PZOutfitAssembler
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(70, 288);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(57, 34);
@@ -1365,6 +1367,88 @@ namespace PZOutfitAssembler
             this.panel3.Size = new System.Drawing.Size(319, 313);
             this.panel3.TabIndex = 72;
             // 
+            // textBoxMasks
+            // 
+            this.textBoxMasks.Location = new System.Drawing.Point(17, 259);
+            this.textBoxMasks.Name = "textBoxMasks";
+            this.textBoxMasks.Size = new System.Drawing.Size(289, 20);
+            this.textBoxMasks.TabIndex = 69;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(16, 246);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(37, 13);
+            this.label41.TabIndex = 68;
+            this.label41.Text = "masks";
+            // 
+            // textBoxmasksFolder
+            // 
+            this.textBoxmasksFolder.Location = new System.Drawing.Point(17, 191);
+            this.textBoxmasksFolder.Name = "textBoxmasksFolder";
+            this.textBoxmasksFolder.Size = new System.Drawing.Size(289, 20);
+            this.textBoxmasksFolder.TabIndex = 67;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(14, 178);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(66, 13);
+            this.label39.TabIndex = 66;
+            this.label39.Text = "masks folder";
+            // 
+            // textBoxunderlayMasksFolder
+            // 
+            this.textBoxunderlayMasksFolder.Location = new System.Drawing.Point(16, 224);
+            this.textBoxunderlayMasksFolder.Name = "textBoxunderlayMasksFolder";
+            this.textBoxunderlayMasksFolder.Size = new System.Drawing.Size(290, 20);
+            this.textBoxunderlayMasksFolder.TabIndex = 65;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(15, 211);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(109, 13);
+            this.label40.TabIndex = 64;
+            this.label40.Text = "underlay masks folder";
+            // 
+            // textBoxaltFemaleModel
+            // 
+            this.textBoxaltFemaleModel.Location = new System.Drawing.Point(17, 123);
+            this.textBoxaltFemaleModel.Name = "textBoxaltFemaleModel";
+            this.textBoxaltFemaleModel.Size = new System.Drawing.Size(289, 20);
+            this.textBoxaltFemaleModel.TabIndex = 63;
+            this.textBoxaltFemaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Kate_AmmoStrap.X";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 110);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 13);
+            this.label20.TabIndex = 62;
+            this.label20.Text = "alt female model";
+            // 
+            // textBoxaltMaleModel
+            // 
+            this.textBoxaltMaleModel.Location = new System.Drawing.Point(16, 53);
+            this.textBoxaltMaleModel.Name = "textBoxaltMaleModel";
+            this.textBoxaltMaleModel.Size = new System.Drawing.Size(290, 20);
+            this.textBoxaltMaleModel.TabIndex = 61;
+            this.textBoxaltMaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Bob_AmmoStrap.X";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(13, 39);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(74, 13);
+            this.label38.TabIndex = 60;
+            this.label38.Text = "alt male model";
+            // 
             // checkBoxAllowRandomTint
             // 
             this.checkBoxAllowRandomTint.AutoSize = true;
@@ -1470,7 +1554,7 @@ namespace PZOutfitAssembler
             this.checkBoxWeigthreduction.Name = "checkBoxWeigthreduction";
             this.checkBoxWeigthreduction.Size = new System.Drawing.Size(107, 17);
             this.checkBoxWeigthreduction.TabIndex = 86;
-            this.checkBoxWeigthreduction.Text = "Weigth reduction";
+            this.checkBoxWeigthreduction.Text = "Weight reduction";
             this.checkBoxWeigthreduction.UseVisualStyleBackColor = true;
             // 
             // checkBoxClosesound
@@ -1524,6 +1608,7 @@ namespace PZOutfitAssembler
             // 
             // button11
             // 
+            this.button11.Enabled = false;
             this.button11.Location = new System.Drawing.Point(80, 429);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(46, 29);
@@ -1533,6 +1618,7 @@ namespace PZOutfitAssembler
             // 
             // button10
             // 
+            this.button10.Enabled = false;
             this.button10.Location = new System.Drawing.Point(32, 429);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(45, 29);
@@ -1552,9 +1638,9 @@ namespace PZOutfitAssembler
             // listBoxVanilaOutfit
             // 
             this.listBoxVanilaOutfit.FormattingEnabled = true;
-            this.listBoxVanilaOutfit.Location = new System.Drawing.Point(158, 38);
+            this.listBoxVanilaOutfit.Location = new System.Drawing.Point(154, 38);
             this.listBoxVanilaOutfit.Name = "listBoxVanilaOutfit";
-            this.listBoxVanilaOutfit.Size = new System.Drawing.Size(130, 381);
+            this.listBoxVanilaOutfit.Size = new System.Drawing.Size(141, 381);
             this.listBoxVanilaOutfit.TabIndex = 2;
             // 
             // label32
@@ -1569,9 +1655,9 @@ namespace PZOutfitAssembler
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(14, 38);
+            this.listBox2.Location = new System.Drawing.Point(3, 38);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(127, 381);
+            this.listBox2.Size = new System.Drawing.Size(149, 381);
             this.listBox2.TabIndex = 0;
             // 
             // label9
@@ -1667,9 +1753,10 @@ namespace PZOutfitAssembler
             // listBoxVanila
             // 
             this.listBoxVanila.FormattingEnabled = true;
+            this.listBoxVanila.HorizontalScrollbar = true;
             this.listBoxVanila.Location = new System.Drawing.Point(8, 28);
             this.listBoxVanila.Name = "listBoxVanila";
-            this.listBoxVanila.Size = new System.Drawing.Size(156, 199);
+            this.listBoxVanila.Size = new System.Drawing.Size(156, 238);
             this.listBoxVanila.TabIndex = 76;
             // 
             // panel6
@@ -1757,6 +1844,7 @@ namespace PZOutfitAssembler
             // 
             // button14
             // 
+            this.button14.Enabled = false;
             this.button14.Location = new System.Drawing.Point(10, 113);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(96, 29);
@@ -1783,6 +1871,7 @@ namespace PZOutfitAssembler
             // 
             // button13
             // 
+            this.button13.Enabled = false;
             this.button13.Location = new System.Drawing.Point(184, 113);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(107, 28);
@@ -1912,7 +2001,7 @@ namespace PZOutfitAssembler
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(7, 364);
+            this.label35.Location = new System.Drawing.Point(7, 341);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(41, 13);
             this.label35.TabIndex = 142;
@@ -1921,6 +2010,7 @@ namespace PZOutfitAssembler
             // listBoxFemale
             // 
             this.listBoxFemale.FormattingEnabled = true;
+            this.listBoxFemale.HorizontalScrollbar = true;
             this.listBoxFemale.Items.AddRange(new object[] {
             "Item1",
             "- subitem1",
@@ -1932,15 +2022,15 @@ namespace PZOutfitAssembler
             "- subtem1",
             "Item4",
             "Item5"});
-            this.listBoxFemale.Location = new System.Drawing.Point(10, 380);
+            this.listBoxFemale.Location = new System.Drawing.Point(6, 357);
             this.listBoxFemale.Name = "listBoxFemale";
-            this.listBoxFemale.Size = new System.Drawing.Size(173, 264);
+            this.listBoxFemale.Size = new System.Drawing.Size(193, 290);
             this.listBoxFemale.TabIndex = 141;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(7, 81);
+            this.label24.Location = new System.Drawing.Point(7, 31);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(30, 13);
             this.label24.TabIndex = 140;
@@ -1968,6 +2058,7 @@ namespace PZOutfitAssembler
             // listBoxMale
             // 
             this.listBoxMale.FormattingEnabled = true;
+            this.listBoxMale.HorizontalScrollbar = true;
             this.listBoxMale.Items.AddRange(new object[] {
             "Item1",
             "- subitem1",
@@ -1979,92 +2070,10 @@ namespace PZOutfitAssembler
             "- subtem1",
             "Item4",
             "Item5"});
-            this.listBoxMale.Location = new System.Drawing.Point(10, 97);
+            this.listBoxMale.Location = new System.Drawing.Point(6, 47);
             this.listBoxMale.Name = "listBoxMale";
-            this.listBoxMale.Size = new System.Drawing.Size(173, 264);
+            this.listBoxMale.Size = new System.Drawing.Size(193, 290);
             this.listBoxMale.TabIndex = 0;
-            // 
-            // textBoxaltFemaleModel
-            // 
-            this.textBoxaltFemaleModel.Location = new System.Drawing.Point(17, 123);
-            this.textBoxaltFemaleModel.Name = "textBoxaltFemaleModel";
-            this.textBoxaltFemaleModel.Size = new System.Drawing.Size(289, 20);
-            this.textBoxaltFemaleModel.TabIndex = 63;
-            this.textBoxaltFemaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Kate_AmmoStrap.X";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 110);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 13);
-            this.label20.TabIndex = 62;
-            this.label20.Text = "alt female model";
-            // 
-            // textBoxaltMaleModel
-            // 
-            this.textBoxaltMaleModel.Location = new System.Drawing.Point(16, 53);
-            this.textBoxaltMaleModel.Name = "textBoxaltMaleModel";
-            this.textBoxaltMaleModel.Size = new System.Drawing.Size(290, 20);
-            this.textBoxaltMaleModel.TabIndex = 61;
-            this.textBoxaltMaleModel.Text = "media\\models_X\\Skinned\\Clothes\\Bob_AmmoStrap.X";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(13, 39);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(74, 13);
-            this.label38.TabIndex = 60;
-            this.label38.Text = "alt male model";
-            // 
-            // textBoxmasksFolder
-            // 
-            this.textBoxmasksFolder.Location = new System.Drawing.Point(17, 191);
-            this.textBoxmasksFolder.Name = "textBoxmasksFolder";
-            this.textBoxmasksFolder.Size = new System.Drawing.Size(289, 20);
-            this.textBoxmasksFolder.TabIndex = 67;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(14, 178);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(66, 13);
-            this.label39.TabIndex = 66;
-            this.label39.Text = "masks folder";
-            // 
-            // textBoxunderlayMasksFolder
-            // 
-            this.textBoxunderlayMasksFolder.Location = new System.Drawing.Point(16, 224);
-            this.textBoxunderlayMasksFolder.Name = "textBoxunderlayMasksFolder";
-            this.textBoxunderlayMasksFolder.Size = new System.Drawing.Size(290, 20);
-            this.textBoxunderlayMasksFolder.TabIndex = 65;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(15, 211);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(109, 13);
-            this.label40.TabIndex = 64;
-            this.label40.Text = "underlay masks folder";
-            // 
-            // textBoxMasks
-            // 
-            this.textBoxMasks.Location = new System.Drawing.Point(17, 259);
-            this.textBoxMasks.Name = "textBoxMasks";
-            this.textBoxMasks.Size = new System.Drawing.Size(289, 20);
-            this.textBoxMasks.TabIndex = 69;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(16, 246);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(37, 13);
-            this.label41.TabIndex = 68;
-            this.label41.Text = "masks";
             // 
             // Form1
             // 

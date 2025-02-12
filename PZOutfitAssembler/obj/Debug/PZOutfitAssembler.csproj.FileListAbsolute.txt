@@ -2,9 +2,9 @@ E:\PZOutfitAssembler\PZOutfitAssembler\bin\Debug\PZOutfitAssembler.exe.config
 E:\PZOutfitAssembler\PZOutfitAssembler\bin\Debug\PZOutfitAssembler.exe
 E:\PZOutfitAssembler\PZOutfitAssembler\bin\Debug\PZOutfitAssembler.pdb
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.csproj.AssemblyReference.cache
-E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.Form1.resources
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.Properties.Resources.resources
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.csproj.GenerateResource.cache
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.csproj.CoreCompileInputs.cache
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.exe
 E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.pdb
+E:\PZOutfitAssembler\PZOutfitAssembler\obj\Debug\PZOutfitAssembler.Form1.resources
