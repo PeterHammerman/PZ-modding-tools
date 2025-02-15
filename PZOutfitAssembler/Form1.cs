@@ -10,7 +10,6 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Diagnostics;
 
@@ -22,6 +21,7 @@ namespace PZOutfitAssembler
     public partial class Form1 : Form
     {
         public string guid;
+        public string oGuid;
         public string itemID;
         // string directoryPath = AppDomain.CurrentDomain.BaseDirectory + "/GeneratedFiles/media/scripts/clothing/";
         public string directoryPath = "C:/PZTest/GeneratedFiles/media/scripts/clothing/";
@@ -30,13 +30,13 @@ namespace PZOutfitAssembler
         public string clothingScriptsDir = "/media/scripts/clothing/";
         public string clothingXMLDir = "/media/clothing/";
         public string clothingItemXMLDir = "/media/clothing/clothingItems/";
-
+        private ListBox activeListBox = null;
 
 
         public static class GlobalConfig
         {
-            public static string VanillaPath { get; set; } = @"C:\Path\To\Vanilla\XML";
-            public static string ModdedPath { get; set; } = @"C:\Path\To\Modded\XML";
+            public static string VanillaPath { get; set; } = "";
+            public static string ModdedPath { get; set; } = "";
         }
 
 
@@ -50,6 +50,7 @@ namespace PZOutfitAssembler
 
             InitializeComponent();
             PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
+
             if (!string.IsNullOrEmpty(installPath))
             {
                 string vanillaItems = installPath + clothingScriptsDir;
@@ -66,6 +67,9 @@ namespace PZOutfitAssembler
                 OutfitLoader loader = new OutfitLoader(installPath + clothingXMLDir + "clothing.xml");
                 loader.PopulateListBox(listBoxVanilaOutfit);
             }
+
+            listBoxMale.SelectedIndexChanged += ListBoxMale_SelectedIndexChanged;
+            listBoxFemale.SelectedIndexChanged += ListBoxFemale_SelectedIndexChanged;
 
         }
 
@@ -673,6 +677,7 @@ namespace PZOutfitAssembler
 
             // Build the script content
             string script = "module Base\n{ \n";
+            script += $"/* created by PZ Clothing Editor - PZK Forge - Peter Hammerman */\n";
             script += $"    item {IDName}\n";
             script += "    {\n";
             script += $"        DisplayName = {displayName},\n";
@@ -741,7 +746,7 @@ namespace PZOutfitAssembler
             if (checkBoxWeigthreduction.Checked)
                 script += $"        WeightReduction = {weigthreduction},\n";
             if (checkBoxAttachmentProvided.Checked)
-                script += $"        AttachmentProvided = {attachmentprovided},\n";
+                script += $"        AttachmentsProvided = {attachmentprovided},\n";
 
             if (checkBoxIcon.Checked)
                 script += $"        Icon = {icon},\n";
@@ -1709,7 +1714,9 @@ namespace PZOutfitAssembler
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"An error occurred while generating GUID Table: {ex.Message}");
             }
 
         }
@@ -1888,6 +1895,173 @@ namespace PZOutfitAssembler
         {
             listBoxMale.Items.Clear();
             listBoxFemale.Items.Clear();
+        }
+
+        private void ListBoxMale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListBoxFemale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Remove selected item from listBoxMale if something is selected
+            if (listBoxMale.SelectedIndex != -1)
+            {
+                listBoxMale.Items.RemoveAt(listBoxMale.SelectedIndex);
+                return;
+            }
+
+            // Remove selected item from listBoxFemale if something is selected
+            if (listBoxFemale.SelectedIndex != -1)
+            {
+                listBoxFemale.Items.RemoveAt(listBoxFemale.SelectedIndex);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            oGuid = GenerateGuid();
+            textBoxOutfitGUID.Text = oGuid;
+        }
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EnsureListBoxSelected();
+            if (listBoxItems.SelectedItem != null)
+            {
+                AddItemToSelectedListBox(listBoxItems.SelectedItem.ToString(), listBoxItems, textBoxProb1.Text);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            EnsureListBoxSelected();
+            if (listBoxVanila.SelectedItem != null)
+            {
+                AddItemToSelectedListBox(listBoxVanila.SelectedItem.ToString(), listBoxVanila, textBoxProb2.Text);
+            }
+        }
+
+        private void AddItemToSelectedListBox(string itemText, ListBox inputListbox, string prob)
+        {
+            if (activeListBox == null)
+            {
+                MessageBox.Show("Please select either Male or Female list first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxVanila.SelectedItem == null && listBoxItems.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item to add!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get selected item from either listBoxVanilla or listBoxItems
+            string selectedItem = inputListbox.SelectedItem?.ToString();
+
+            if (prob != "1" && prob != "")
+            {
+                selectedItem += " (" + prob + ")";
+            }
+
+            if (!string.IsNullOrEmpty(selectedItem))
+            {
+                // Check if activeListBox is empty, then just add the item
+                if (activeListBox.Items.Count == 0)
+                {
+                    activeListBox.Items.Add(selectedItem);
+                }
+                else
+                {
+                    // Otherwise, add below the currently selected item
+                    int selectedIndex = activeListBox.SelectedIndex;
+                    if (selectedIndex >= 0 && selectedIndex < activeListBox.Items.Count - 1)
+                    {
+                        activeListBox.Items.Insert(selectedIndex + 1, selectedItem);
+                    }
+                    else
+                    {
+                        activeListBox.Items.Add(selectedItem);
+                    }
+                }
+            }
+        }
+
+        private void UpdateListBoxAppearance()
+        {
+            listBoxMale.BackColor = (activeListBox == listBoxMale) ? SystemColors.Window : SystemColors.InactiveBorder;
+            listBoxFemale.BackColor = (activeListBox == listBoxFemale) ? SystemColors.Window : SystemColors.InactiveBorder;
+        }
+
+        private void EnsureListBoxSelected()
+        {
+            if (activeListBox == null )
+            {
+                MessageBox.Show("Please select either Male or Female list!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void listBoxMale_Click(object sender, EventArgs e)
+        {
+            if (listBoxFemale.SelectedIndex != -1) // Only switch if an item is selected
+            {
+                activeListBox = listBoxMale;
+                listBoxFemale.ClearSelected();
+                UpdateListBoxAppearance();
+             //   MessageBox.Show("listBoxMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                activeListBox = listBoxMale;
+                UpdateListBoxAppearance();
+            }
+
+        }
+
+        private void listBoxFemale_Click(object sender, EventArgs e)
+        {
+            if (listBoxMale.SelectedIndex != -1) // Only switch if an item is selected
+            {
+                activeListBox = listBoxFemale;
+                listBoxMale.ClearSelected();
+                UpdateListBoxAppearance();
+             //   MessageBox.Show("listBoxFeMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                activeListBox = listBoxFemale;
+                UpdateListBoxAppearance();
+            }
+
+        }
+
+        private void listBoxMale_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            activeListBox = listBoxMale;
+            if (listBoxMale.SelectedIndex != -1) // Only switch if an item is selected
+            {
+                   listBoxFemale.ClearSelected();
+            }
+                UpdateListBoxAppearance();
+         //   MessageBox.Show("listBoxMale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void listBoxFemale_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            activeListBox = listBoxFemale;
+            if (listBoxFemale.SelectedIndex != -1) // Only switch if an item is selected
+            {
+                    listBoxMale.ClearSelected();
+            }
+                UpdateListBoxAppearance();
+         //   MessageBox.Show("listBoxFemale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
