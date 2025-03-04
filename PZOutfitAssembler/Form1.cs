@@ -55,6 +55,8 @@ namespace PZOutfitAssembler
             activeListBox = listBoxMale;
             UpdateListBoxAppearance();
 
+
+
             PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
 
             if (!string.IsNullOrEmpty(installPath))
@@ -77,6 +79,13 @@ namespace PZOutfitAssembler
 
             listBoxMale.SelectedIndexChanged += ListBoxMale_SelectedIndexChanged;
             listBoxFemale.SelectedIndexChanged += ListBoxFemale_SelectedIndexChanged;
+
+          //  string aaa = Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems");
+         //   MessageBox.Show(aaa, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            searchDirectories[1] = Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems");
+
+
 
         }
 
@@ -2117,11 +2126,14 @@ namespace PZOutfitAssembler
         }
 
         // Define your search directories for item XML files
-        private readonly string[] searchDirectories = {
+        public string[] searchDirectories = {
             @"C:\PZTest\GeneratedFiles\media\scripts\clothing\clothingItems",
-            @"H:\Program Files (x86)\SteamLibrary\steamapps\common\ProjectZomboid\media\clothing\clothingItems"
+ //           @"H:\Program Files (x86)\SteamLibrary\steamapps\common\ProjectZomboid\media\clothing\clothingItems",
+            Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems")
+
 
         };
+
 
         private void buttonSaveOutfit_Click(object sender, EventArgs e)
         {
