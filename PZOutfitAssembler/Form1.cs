@@ -12,6 +12,9 @@ using Microsoft.Win32;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Diagnostics;
+using System.Globalization;
+using System.Xml;
+
 
 
 
@@ -33,7 +36,7 @@ namespace PZOutfitAssembler
         private ListBox activeListBox = null;
 
 
-        public static class GlobalConfig
+        public static class GlobalConfig //global variables
         {
             public static string VanillaPath { get; set; } = "";
             public static string ModdedPath { get; set; } = "";
@@ -49,6 +52,9 @@ namespace PZOutfitAssembler
             }
 
             InitializeComponent();
+            activeListBox = listBoxMale;
+            UpdateListBoxAppearance();
+
             PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
 
             if (!string.IsNullOrEmpty(installPath))
@@ -62,9 +68,10 @@ namespace PZOutfitAssembler
 
                 PopulateItemListBoxWithFileNames(vanillaItems, listBoxVanila);
 
+                OutfitLoader cloader = new OutfitLoader(GlobalConfig.ModdedPath + clothingXMLDir + "clothing.xml"); //loading vanilla outfits
+                cloader.PopulateListBox(listBoxCustomOutfit);
 
-
-                OutfitLoader loader = new OutfitLoader(installPath + clothingXMLDir + "clothing.xml");
+                OutfitLoader loader = new OutfitLoader(GlobalConfig.VanillaPath + clothingXMLDir + "clothing.xml"); //loading vanilla outfits
                 loader.PopulateListBox(listBoxVanilaOutfit);
             }
 
@@ -75,7 +82,7 @@ namespace PZOutfitAssembler
 
         private void buttonEditVanilaOutfit_Click(object sender, EventArgs e)
         {
-            OutfitEditor editor = new OutfitEditor(PZinstallPath + clothingXMLDir + "clothing.xml", textBoxClothingName, textBoxOutfitGUID, checkBoxTop, checkBoxPants, checkBoxPantsHue, checkBoxPantsTint, checkBoxTopTint, checkBoxShirtDecal);
+            OutfitEditor editor = new OutfitEditor(PZinstallPath + clothingXMLDir + "clothing.xml", textBoxClothingName, textBoxOutfitGUID, textBoxOutfitFemaleGUID, checkBoxTop, checkBoxPants, checkBoxPantsHue, checkBoxPantsTint, checkBoxTopTint, checkBoxShirtDecal);
             editor.PopulateItemListBoxes(listBoxVanilaOutfit, listBoxMale, listBoxFemale);
         }
 
@@ -84,6 +91,7 @@ namespace PZOutfitAssembler
             private string xmlFilePath;
             private TextBox textBoxName;
             private TextBox textBoxGUID;
+            private TextBox textBoxFemaleGUID;
             private CheckBox checkBoxTop;
             private CheckBox checkBoxPants;
             private CheckBox checkBoxAllowPantsHue;
@@ -91,12 +99,13 @@ namespace PZOutfitAssembler
             private CheckBox checkBoxAllowTopTint;
             private CheckBox checkBoxAllowTShirtDecal;
 
-            public OutfitEditor(string path, TextBox nameBox, TextBox guidBox, CheckBox topBox, CheckBox pantsBox,
+            public OutfitEditor(string path, TextBox nameBox, TextBox guidBox, TextBox guidFemaleBox, CheckBox topBox, CheckBox pantsBox,
                         CheckBox allowPantsHueBox, CheckBox allowPantsTintBox, CheckBox allowTopTintBox, CheckBox allowTShirtDecalBox)
             {
                 xmlFilePath = path;
                 textBoxName = nameBox;
                 textBoxGUID = guidBox;
+                textBoxFemaleGUID = guidFemaleBox;
                 checkBoxTop = topBox;
                 checkBoxPants = pantsBox;
                 checkBoxAllowPantsHue = allowPantsHueBox;
@@ -110,7 +119,7 @@ namespace PZOutfitAssembler
                 Dictionary<string, string> guidToName = new Dictionary<string, string>();
 
                 // Check both vanilla and modded paths
-                string[] paths = { GlobalConfig.VanillaPath + "/media/clothing/clothingItems/", GlobalConfig.ModdedPath+ "/media/clothing/clothingItems/" };
+                string[] paths = { GlobalConfig.VanillaPath + "/media/clothing/clothingItems/", GlobalConfig.ModdedPath + "/media/clothing/clothingItems/" };
 
                 foreach (string path in paths)
                 {
@@ -163,21 +172,28 @@ namespace PZOutfitAssembler
                 try
                 {
                     XDocument doc = XDocument.Load(xmlFilePath);
-
                     var outfitElements = doc.Descendants("m_FemaleOutfits")
                                             .Concat(doc.Descendants("m_MaleOutfits"))
                                             .Where(o => (string)o.Element("m_Name") == selectedOutfit);
 
                     listBoxMale.Items.Clear();
                     listBoxFemale.Items.Clear();
+                    textBoxFemaleGUID.Text = "";
+                    textBoxGUID.Text = "";
 
                     foreach (var outfit in outfitElements)
                     {
                         bool isFemale = outfit.Name.LocalName == "m_FemaleOutfits";
+                        var targetGuidBox = isFemale ? textBoxFemaleGUID : textBoxGUID;
+                        var targetListBox = isFemale ? listBoxFemale : listBoxMale;
 
+                        // Set GUID for appropriate gender
+                        targetGuidBox.Text = (string)outfit.Element("m_Guid");
+
+                        // Set common elements
                         textBoxName.Text = (string)outfit.Element("m_Name");
-                        textBoxGUID.Text = (string)outfit.Element("m_Guid");
 
+                        // Set checkboxes (keep as is)
                         checkBoxTop.Checked = outfit.Element("m_Top")?.Value.Trim().ToLower() == "true";
                         checkBoxPants.Checked = outfit.Element("m_Pants")?.Value.Trim().ToLower() == "true";
                         checkBoxAllowPantsHue.Checked = outfit.Element("m_AllowPantsHue")?.Value.Trim().ToLower() == "true";
@@ -185,8 +201,8 @@ namespace PZOutfitAssembler
                         checkBoxAllowTopTint.Checked = outfit.Element("m_AllowTopTint")?.Value.Trim().ToLower() == "true";
                         checkBoxAllowTShirtDecal.Checked = outfit.Element("m_AllowTShirtDecal")?.Value.Trim().ToLower() == "true";
 
-                        var itemElements = outfit.Elements("m_items");
-                        foreach (var item in itemElements)
+                        // Process items
+                        foreach (var item in outfit.Elements("m_items"))
                         {
                             string itemGuid = item.Element("itemGUID")?.Value;
                             string probability = item.Element("probability")?.Value;
@@ -195,28 +211,17 @@ namespace PZOutfitAssembler
                             {
                                 string displayName = guidToName.ContainsKey(itemGuid) ? guidToName[itemGuid] : itemGuid;
                                 string itemText = !string.IsNullOrEmpty(probability) ? $"{displayName} ({probability})" : displayName;
-
-                                if (isFemale)
-                                    listBoxFemale.Items.Add(itemText);
-                                else
-                                    listBoxMale.Items.Add(itemText);
+                                targetListBox.Items.Add(itemText);
                             }
 
-                            // FIXED: Iterate over all subItems properly
-                            var subItemElements = item.Elements("subItems").SelectMany(sub => sub.Elements("itemGUID"));
-
-                            foreach (var subItem in subItemElements)
+                            // Process subitems
+                            foreach (var subItem in item.Elements("subItems").Elements("itemGUID"))
                             {
                                 string subItemGuid = subItem.Value;
                                 if (!string.IsNullOrEmpty(subItemGuid))
                                 {
                                     string displaySubItemName = guidToName.ContainsKey(subItemGuid) ? guidToName[subItemGuid] : subItemGuid;
-                                    string subItemText = $"<>{displaySubItemName}";
-
-                                    if (isFemale)
-                                        listBoxFemale.Items.Add(subItemText);
-                                    else
-                                        listBoxMale.Items.Add(subItemText);
+                                    targetListBox.Items.Add($"<>{displaySubItemName}");
                                 }
                             }
                         }
@@ -286,47 +291,49 @@ namespace PZOutfitAssembler
             }
 
 
+
             public void PopulateListBox(ListBox listBox)
             {
-                if (!File.Exists(xmlFilePath))
+                if (!File.Exists(xmlFilePath) && listBox.Name == "listBoxVanilaOutfit")
                 {
-                    MessageBox.Show("XML file not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("vanilla outfit XML file not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (!File.Exists(xmlFilePath) && listBox.Name != "listBoxVanilaOutfit")
+                {
                     return;
                 }
 
                 try
                 {
-                    HashSet<string> addedGuids = new HashSet<string>();
+                    HashSet<string> addedNames = new HashSet<string>(); // Changed to track names
                     List<string> outfits = new List<string>();
 
                     XDocument doc = XDocument.Load(xmlFilePath);
 
-                    // Select both male and female outfits
-                    var outfitElements = doc.Descendants("m_FemaleOutfits").Concat(doc.Descendants("m_MaleOutfits"));
+                    var outfitElements = doc.Descendants("m_FemaleOutfits")
+                                          .Concat(doc.Descendants("m_MaleOutfits"));
 
                     foreach (var outfit in outfitElements)
                     {
                         string name = outfit.Element("m_Name")?.Value;
                         string guid = outfit.Element("m_Guid")?.Value;
 
-                        // Ensure name and GUID exist
-                        if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(guid))
+                        if (!string.IsNullOrEmpty(name) &&
+                            !string.IsNullOrEmpty(guid) &&
+                            addedNames.Add(name)) // Check name uniqueness
                         {
-                            // Add only if GUID hasn't been added before
-                            if (addedGuids.Add(guid))
-                            {
-                                outfits.Add(name);
-                            }
+                            outfits.Add(name);
                         }
                     }
 
-                    // Populate the ListBox
                     listBox.Items.Clear();
                     listBox.Items.AddRange(outfits.ToArray());
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error reading XML: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Error reading XML: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -552,7 +559,7 @@ namespace PZOutfitAssembler
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) //Save item
+        private void button1_Click(object sender, EventArgs e) //Save new item
         {
 
             // Get the file path from textBoxPath
@@ -814,6 +821,7 @@ namespace PZOutfitAssembler
             StringBuilder xml = new StringBuilder();
 
             xml.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+            xml.AppendLine("<!-- Script generated by PZ Outfit Assembler | PZK Forge - Peter Hammerman | https://github.com/PeterHammerman/PZ-modding-tools -->");
             xml.AppendLine("<clothingItem>");
             xml.AppendLine($"  <m_MaleModel>{maleModel}</m_MaleModel>");
             xml.AppendLine($"  <m_FemaleModel>{femaleModel}</m_FemaleModel>");
@@ -1907,7 +1915,7 @@ namespace PZOutfitAssembler
 
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)  //Remove selected button
         {
             // Remove selected item from listBoxMale if something is selected
             if (listBoxMale.SelectedIndex != -1)
@@ -1923,15 +1931,17 @@ namespace PZOutfitAssembler
             }
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e)  // Generate GUID for outfit
         {
             oGuid = GenerateGuid();
             textBoxOutfitGUID.Text = oGuid;
+            oGuid = GenerateGuid();
+            textBoxOutfitFemaleGUID.Text = oGuid;
         }
 
 
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Add from created items database
         {
             EnsureListBoxSelected();
             if (listBoxItems.SelectedItem != null)
@@ -1940,7 +1950,7 @@ namespace PZOutfitAssembler
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) //Add from vanilla item database
         {
             EnsureListBoxSelected();
             if (listBoxVanila.SelectedItem != null)
@@ -1994,6 +2004,48 @@ namespace PZOutfitAssembler
             }
         }
 
+        private void AddAltItemToSelectedListBox(string itemText, ListBox inputListbox)
+        {
+            if (activeListBox == null)
+            {
+                MessageBox.Show("Please select either Male or Female list first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (listBoxVanila.SelectedItem == null && listBoxItems.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an item to add!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get selected item from either listBoxVanilla or listBoxItems
+            string selectedItem = "<>"+inputListbox.SelectedItem?.ToString();
+
+
+
+            if (!string.IsNullOrEmpty(selectedItem))
+            {
+                // Check if activeListBox is empty, then just add the item
+                if (activeListBox.Items.Count == 0)
+                {
+                    activeListBox.Items.Add(selectedItem);
+                }
+                else
+                {
+                    // Otherwise, add below the currently selected item
+                    int selectedIndex = activeListBox.SelectedIndex;
+                    if (selectedIndex >= 0 && selectedIndex < activeListBox.Items.Count - 1)
+                    {
+                        activeListBox.Items.Insert(selectedIndex + 1, selectedItem);
+                    }
+                    else
+                    {
+                        activeListBox.Items.Add(selectedItem);
+                    }
+                }
+            }
+        }
+
         private void UpdateListBoxAppearance()
         {
             listBoxMale.BackColor = (activeListBox == listBoxMale) ? SystemColors.Window : SystemColors.InactiveBorder;
@@ -2002,7 +2054,7 @@ namespace PZOutfitAssembler
 
         private void EnsureListBoxSelected()
         {
-            if (activeListBox == null )
+            if (activeListBox == null)
             {
                 MessageBox.Show("Please select either Male or Female list!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -2015,7 +2067,7 @@ namespace PZOutfitAssembler
                 activeListBox = listBoxMale;
                 listBoxFemale.ClearSelected();
                 UpdateListBoxAppearance();
-             //   MessageBox.Show("listBoxMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //   MessageBox.Show("listBoxMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -2032,7 +2084,7 @@ namespace PZOutfitAssembler
                 activeListBox = listBoxFemale;
                 listBoxMale.ClearSelected();
                 UpdateListBoxAppearance();
-             //   MessageBox.Show("listBoxFeMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //   MessageBox.Show("listBoxFeMale_Click", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -2047,10 +2099,10 @@ namespace PZOutfitAssembler
             activeListBox = listBoxMale;
             if (listBoxMale.SelectedIndex != -1) // Only switch if an item is selected
             {
-                   listBoxFemale.ClearSelected();
+                listBoxFemale.ClearSelected();
             }
-                UpdateListBoxAppearance();
-         //   MessageBox.Show("listBoxMale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            UpdateListBoxAppearance();
+            //   MessageBox.Show("listBoxMale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void listBoxFemale_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -2058,13 +2110,317 @@ namespace PZOutfitAssembler
             activeListBox = listBoxFemale;
             if (listBoxFemale.SelectedIndex != -1) // Only switch if an item is selected
             {
-                    listBoxMale.ClearSelected();
+                listBoxMale.ClearSelected();
             }
-                UpdateListBoxAppearance();
-         //   MessageBox.Show("listBoxFemale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            UpdateListBoxAppearance();
+            //   MessageBox.Show("listBoxFemale_SelectedIndexChanged_1", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        // Define your search directories for item XML files
+        private readonly string[] searchDirectories = {
+            @"C:\PZTest\GeneratedFiles\media\scripts\clothing\clothingItems",
+            @"H:\Program Files (x86)\SteamLibrary\steamapps\common\ProjectZomboid\media\clothing\clothingItems"
+
+        };
+
+        private void buttonSaveOutfit_Click(object sender, EventArgs e)
+        {
+            string outputDirectory = @"C:\PZTest\GeneratedFiles\media\clothing";
+            string fileName = "clothing.xml";
+            string fullPath = Path.Combine(outputDirectory, fileName);
+
+            // Check if both listboxes are empty
+            if (listBoxFemale.Items.Count == 0 && listBoxMale.Items.Count == 0)
+            {
+                MessageBox.Show("Both male and female outfits are empty!\nNothing to save.",
+                               "Error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
+            Directory.CreateDirectory(outputDirectory);
+
+            // Create outfit elements only for non-empty listboxes
+
+
+            var genderOutfits = new List<XElement>();
+
+            if (listBoxFemale.Items.Count > 0)
+            {
+                genderOutfits.Add(CreateGenderOutfits("Female", listBoxFemale, textBoxOutfitFemaleGUID.Text));
+            }
+
+            if (listBoxMale.Items.Count > 0)
+            {
+                genderOutfits.Add(CreateGenderOutfits("Male", listBoxMale, textBoxOutfitGUID.Text));
+            }
+
+            XDocument finalDoc;
+            var newOutfitElements = new XElement("outfitManager", genderOutfits).Elements();
+            var comment = new XComment(" Script generated by PZ Outfit Assembler | PZK Forge - Peter Hammerman | https://github.com/PeterHammerman/PZ-modding-tools ");
+
+            // Merge logic
+            if (File.Exists(fullPath))
+            {
+                finalDoc = XDocument.Load(fullPath);
+
+                // Remove existing version of our comment if present
+                var existingComments = finalDoc.DescendantNodes()
+                    .OfType<XComment>()
+                    .Where(c => c.Value.Trim() == comment.Value.Trim())
+                    .ToList();
+
+                foreach (var c in existingComments)
+                {
+                    c.Remove();
+                }
+
+                var newNames = genderOutfits
+                .Select(x => x.Element("m_Name")?.Value)
+                .Where(n => !string.IsNullOrEmpty(n))
+                .Distinct()
+                .ToList();
+
+                finalDoc.Root.Elements()
+                    .Where(el => newNames.Contains(el.Element("m_Name")?.Value))
+                    .Remove();
+
+                finalDoc.Root.Add(newOutfitElements);
+
+                // Add new comment at the top
+                finalDoc.AddFirst(comment);
+            }
+            else
+            {
+                finalDoc = new XDocument(
+                    new XDeclaration("1.0", "utf-8", null),
+                    comment,
+                    new XElement("outfitManager", newOutfitElements)
+                );
+            }
+
+            // Save with formatting
+            var settings = new XmlWriterSettings
+            {
+                Indent = true,
+                IndentChars = "    ",
+                Encoding = Encoding.UTF8
+            };
+
+            using (var writer = XmlWriter.Create(fullPath, settings))
+            {
+                finalDoc.Save(writer);
+            }
+
+            // Refresh ListBox
+            OutfitLoader cloader = new OutfitLoader(fullPath);
+            cloader.PopulateListBox(listBoxCustomOutfit);
+            MessageBox.Show("XML file saved successfully!");
+        }
+
+        private XElement CreateGenderOutfits(string gender, ListBox listBox, string guid)
+        {
+            return new XElement($"m_{gender}Outfits",
+                new XElement("m_Name", textBoxClothingName.Text),
+                new XElement("m_Guid", guid),
+                new XElement("m_Top", checkBoxTop.Checked.ToString().ToLower()),
+                new XElement("m_Pants", checkBoxPants.Checked.ToString().ToLower()),
+                new XElement("m_AllowPantsHue", checkBoxPantsHue.Checked.ToString().ToLower()),
+                new XElement("m_AllowTopTint", checkBoxTopTint.Checked.ToString().ToLower()),
+                new XElement("m_AllowTShirtDecal", checkBoxShirtDecal.Checked.ToString().ToLower()),
+                ProcessListBoxItemsProperly(listBox)
+            );
+        }
+
+        private IEnumerable<XElement> ProcessListBoxItemsProperly(ListBox listBox)
+        {
+            var items = new List<OutfitItem>();
+            OutfitItem currentItem = null;
+
+            foreach (var item in listBox.Items)
+            {
+                var line = item.ToString();
+                if (line.StartsWith("<>"))
+                {
+                    currentItem?.SubItems.Add(line.Substring(2).Trim());
+                }
+                else
+                {
+                    currentItem = ParseItemLine(line);
+                    items.Add(currentItem);
+                }
+            }
+
+            foreach (var item in items)
+            {
+                var itemElement = new XElement("m_items");
+                var mainGuid = FindItemGuid(item.Name);
+
+                if (string.IsNullOrEmpty(mainGuid))
+                {
+                    MessageBox.Show($"GUID not found for item: {item.Name}");
+                    continue;
+                }
+
+                if (item.Probability.HasValue && item.Probability < 1.0)
+                {
+                    itemElement.Add(new XElement("probability",
+                        item.Probability.Value.ToString("0.0##", CultureInfo.InvariantCulture)));
+                }
+
+                itemElement.Add(new XElement("itemGUID", mainGuid));
+
+                foreach (var subItem in item.SubItems)
+                {
+                    var subGuid = FindItemGuid(subItem);
+                    if (!string.IsNullOrEmpty(subGuid))
+                    {
+                        itemElement.Add(new XElement("subItems",
+                            new XElement("itemGUID", subGuid)
+                        ));
+                    }
+                }
+
+                yield return itemElement;
+            }
+        }
+
+        private string FindItemGuid(string itemName)
+        {
+            foreach (var dir in searchDirectories)
+            {
+                var xmlPath = Path.Combine(dir, $"{itemName}.xml");
+                if (File.Exists(xmlPath))
+                {
+                    try
+                    {
+                        var doc = XDocument.Load(xmlPath);
+                        return doc.Root?.Element("m_GUID")?.Value; // Fixed element name
+                    }
+                    catch { /* Add error logging */ }
+                }
+            }
+            return null;
+        }
+
+        // Rest of the class remains the same
+
+
+        private OutfitItem ParseItemLine(string line)
+        {
+            var item = new OutfitItem();
+            var match = Regex.Match(line, @"^(.*?)(?:\s+\(([0-9.,]+)\))?$");
+
+            if (match.Success)
+            {
+                item.Name = match.Groups[1].Value.Trim();
+
+                if (match.Groups[2].Success)
+                {
+                    var numberString = match.Groups[2].Value
+                        .Replace(',', '.');
+
+                    if (float.TryParse(numberString, NumberStyles.Any,
+                        CultureInfo.InvariantCulture, out float prob))
+                    {
+                        item.Probability = prob;
+                    }
+                }
+            }
+            return item;
+        }
+
+        private void button11_Click(object sender, EventArgs e)  //Delete outfit entry
+        {
+            if (listBoxCustomOutfit.SelectedItem == null)
+            {
+                MessageBox.Show("Please select an outfit to delete");
+                return;
+            }
+
+            string outputDirectory = @"C:\PZTest\GeneratedFiles\media\clothing";
+            string fileName = "clothing.xml";
+            string fullPath = Path.Combine(outputDirectory, fileName);
+
+            var selectedName = listBoxCustomOutfit.SelectedItem.ToString();
+
+            try
+            {
+                XDocument doc = XDocument.Load(fullPath);
+
+                // Find both male and female versions
+                var toDelete = doc.Root.Elements()
+                    .Where(el => el.Element("m_Name")?.Value == selectedName)
+                    .ToList();
+
+                if (toDelete.Count == 0)
+                {
+                    MessageBox.Show("Outfit not found in XML file");
+                    return;
+                }
+
+                // Remove found elements
+                toDelete.Remove();
+
+                // Save changes
+                var settings = new XmlWriterSettings
+                {
+                    Indent = true,
+                    IndentChars = "    ",
+                    Encoding = Encoding.UTF8
+                };
+
+                using (var writer = XmlWriter.Create(fullPath, settings))
+                {
+                    doc.Save(writer);
+                }
+
+                // Refresh list
+                OutfitLoader cloader = new OutfitLoader(fullPath);
+                cloader.PopulateListBox(listBoxCustomOutfit);
+                MessageBox.Show("Outfit deleted successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting outfit: {ex.Message}");
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            OutfitEditor editor = new OutfitEditor(GlobalConfig.ModdedPath + clothingXMLDir + "clothing.xml", textBoxClothingName, textBoxOutfitGUID, textBoxOutfitFemaleGUID, checkBoxTop, checkBoxPants, checkBoxPantsHue, checkBoxPantsTint, checkBoxTopTint, checkBoxShirtDecal);
+            editor.PopulateItemListBoxes(listBoxCustomOutfit, listBoxMale, listBoxFemale);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            EnsureListBoxSelected();
+            if (listBoxItems.SelectedItem != null)
+            {
+                AddAltItemToSelectedListBox(listBoxItems.SelectedItem.ToString(), listBoxItems);
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            EnsureListBoxSelected();
+            if (listBoxVanila.SelectedItem != null)
+            {
+                AddAltItemToSelectedListBox(listBoxVanila.SelectedItem.ToString(), listBoxVanila);
+            }
         }
     }
+
+
+    public class OutfitItem
+    {
+        public string Name { get; set; }
+        public float? Probability { get; set; }
+        public List<string> SubItems { get; } = new List<string>();
+    }
 }
+
 
 
 
