@@ -65,7 +65,7 @@ namespace PZOutfitAssembler
                 PZinstallPath = installPath;
 
                 GlobalConfig.VanillaPath = installPath;
-                GlobalConfig.ModdedPath = "C:/PZTest/GeneratedFiles";
+                GlobalConfig.ModdedPath = @"C:\PZTest\GeneratedFiles";
 
 
                 PopulateItemListBoxWithFileNames(vanillaItems, listBoxVanila);
@@ -80,12 +80,13 @@ namespace PZOutfitAssembler
             listBoxMale.SelectedIndexChanged += ListBoxMale_SelectedIndexChanged;
             listBoxFemale.SelectedIndexChanged += ListBoxFemale_SelectedIndexChanged;
 
-          //  string aaa = Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems");
-         //   MessageBox.Show(aaa, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+         //     string aaa = Path.Combine(GlobalConfig.ModdedPath, "media", "clothing", "clothingItems");
+         //      MessageBox.Show(aaa, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            searchDirectories[1] = Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems");
+            searchDirectories[0] = Path.Combine(GlobalConfig.ModdedPath, "media");
+            searchDirectories[1] = Path.Combine(GlobalConfig.VanillaPath, "media");
 
-
+            InitializeGuidCache();
 
         }
 
@@ -620,6 +621,36 @@ namespace PZOutfitAssembler
 
                     MessageBox.Show("item has been generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
+
+                    // --------------------------- assemble GUID Table ------------------------------------
+                    string outputPathguid;
+
+                    if (checkBoxDebug.Checked)
+                        outputPathguid = textBoxPath.Text;
+                    else
+                        outputPathguid = AppDomain.CurrentDomain.BaseDirectory;
+                    // Validate the output path
+
+
+                    try
+                    {
+
+                        outputPathguid += "/GeneratedFiles";
+                        // Create the output directory if it doesn't exist
+                        Directory.CreateDirectory(outputPathguid + GUIDsDir);
+
+                        string outputFilePathguid = outputPathguid + GUIDsDir + "newFileGuidTable.xml";
+
+                        //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        GenerateFileGuidTable(outputFilePathguid, "media/clothing/clothingItems/", listBoxItems);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Console.WriteLine($"An error occurred while generating GUID Table: {ex.Message}");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -1704,39 +1735,7 @@ namespace PZOutfitAssembler
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)  // Assemble GUID table
-        {
-
-            string outputPath;
-
-            if (checkBoxDebug.Checked)
-                outputPath = textBoxPath.Text;
-            else
-                outputPath = AppDomain.CurrentDomain.BaseDirectory;
-            // Validate the output path
-
-
-            try
-            {
-
-                outputPath += "/GeneratedFiles";
-                // Create the output directory if it doesn't exist
-                Directory.CreateDirectory(outputPath + GUIDsDir);
-
-                string outputFilePath = outputPath + GUIDsDir + "newFileGuidTable.xml";
-
-                //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                GenerateFileGuidTable(outputFilePath, "media/clothing/clothingItems/", listBoxItems);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine($"An error occurred while generating GUID Table: {ex.Message}");
-            }
-
-        }
+      
 
         private void GenerateFileGuidTable(string outputFilePath, string folderPath, ListBox listBox)
         {
@@ -2127,8 +2126,7 @@ namespace PZOutfitAssembler
 
         // Define your search directories for item XML files
         public string[] searchDirectories = {
-            @"C:\PZTest\GeneratedFiles\media\scripts\clothing\clothingItems",
- //           @"H:\Program Files (x86)\SteamLibrary\steamapps\common\ProjectZomboid\media\clothing\clothingItems",
+            Path.Combine(GlobalConfig.ModdedPath, "media", "clothing", "clothingItems"),   
             Path.Combine(GlobalConfig.VanillaPath, "media", "clothing", "clothingItems")
 
 
@@ -2298,25 +2296,60 @@ namespace PZOutfitAssembler
             }
         }
 
-        private string FindItemGuid(string itemName)
+        private Dictionary<string, string> _guidCache = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+        // Initialize this cache during startup/initialization
+        public void InitializeGuidCache()
         {
+            // List of possible GUID table filenames
+            string[] guidTableNames = { "fileGuidTable.xml", "newFileGuidTable.xml" };
+
             foreach (var dir in searchDirectories)
             {
-                var xmlPath = Path.Combine(dir, $"{itemName}.xml");
-                if (File.Exists(xmlPath))
+                foreach (var guidTableName in guidTableNames)
                 {
-                    try
+                    var guidTablePath = Path.Combine(dir, guidTableName);
+                    if (File.Exists(guidTablePath))
                     {
-                        var doc = XDocument.Load(xmlPath);
-                        return doc.Root?.Element("m_GUID")?.Value; // Fixed element name
+                        try
+                        {
+                            var doc = XDocument.Load(guidTablePath);
+                            foreach (var fileElement in doc.Descendants("files"))
+                            {
+                                var path = fileElement.Element("path")?.Value;
+                                var guid = fileElement.Element("guid")?.Value;
+
+                                if (!string.IsNullOrEmpty(path) && !string.IsNullOrEmpty(guid))
+                                {
+                                    var itemName = Path.GetFileNameWithoutExtension(path);
+                                    _guidCache[itemName] = guid;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error loading {guidTableName}: {ex.Message}", "Error",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch { /* Add error logging */ }
                 }
             }
-            return null;
         }
 
-        // Rest of the class remains the same
+        private string FindItemGuid(string itemName)
+        {
+            // Direct lookup from pre-loaded cache
+            if (_guidCache.TryGetValue(itemName, out string guid))
+            {
+                return guid;
+            }
+
+            // Optional: Fallback to original file scanning (if needed)
+            // return FindItemGuidLegacy(itemName);
+
+            MessageBox.Show($"GUID not found for: {itemName}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return null;
+        }
 
 
         private OutfitItem ParseItemLine(string line)

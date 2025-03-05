@@ -80,7 +80,6 @@ namespace PZOutfitAssembler
             this.textBoxClothingName = new System.Windows.Forms.TextBox();
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button18 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
@@ -648,16 +647,6 @@ namespace PZOutfitAssembler
             this.label8.TabIndex = 77;
             this.label8.Text = "Created Items Database";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(130, 288);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 34);
-            this.button2.TabIndex = 78;
-            this.button2.Text = "Assemble new GUID Table";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -667,7 +656,6 @@ namespace PZOutfitAssembler
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.listBoxItems);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Location = new System.Drawing.Point(617, 12);
@@ -2089,7 +2077,6 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.TextBox textBoxClothingName;
         private System.Windows.Forms.ListBox listBoxItems;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
