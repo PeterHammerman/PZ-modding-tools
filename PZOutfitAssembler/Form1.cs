@@ -644,6 +644,8 @@ namespace PZOutfitAssembler
                         //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         GenerateFileGuidTable(outputFilePathguid, "media/clothing/clothingItems/", listBoxItems);
+
+                        RefreshGuidCache();
                     }
                     catch (Exception ex)
                     {
@@ -2335,6 +2337,20 @@ namespace PZOutfitAssembler
                 }
             }
         }
+
+        public void RefreshGuidCache()
+        {
+            // Clear existing cache
+            _guidCache.Clear();
+
+            // Re-initialize from all GUID tables
+            InitializeGuidCache();
+
+            // Optional: Add debug logging
+            Debug.WriteLine($"GUID Cache refreshed. Total entries: {_guidCache.Count}");
+        }
+
+
 
         private string FindItemGuid(string itemName)
         {
