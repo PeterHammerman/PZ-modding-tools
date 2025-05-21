@@ -748,10 +748,10 @@ namespace PZOutfitAssembler
 
             script += $"        ClothingItem = {clothingItem},\n";
             if (checkBoxClothingItemExtra.Checked)
-                script += $"        ClothingExtra = {clothingItemExtra},\n";
+                script += $"        ClothingItemExtra = {clothingItemExtra},\n";
 
             if (checkBoxClothingItemExtraOption.Checked)
-                script += $"        ClothingExtraOption = {clothingItemExtraOption},\n";
+                script += $"        ClothingItemExtraOption = {clothingItemExtraOption},\n";
 
             if (checkBoxInsulation.Checked)
                 script += $"        Insulation = {insulation},\n";
