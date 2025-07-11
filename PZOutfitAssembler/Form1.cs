@@ -639,7 +639,7 @@ namespace PZOutfitAssembler
                         // Create the output directory if it doesn't exist
                         Directory.CreateDirectory(outputPathguid + GUIDsDir);
 
-                        string outputFilePathguid = outputPathguid + GUIDsDir + "newFileGuidTable.xml";
+                        string outputFilePathguid = outputPathguid + GUIDsDir + "fileGuidTable.xml";
 
                         //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -738,8 +738,13 @@ namespace PZOutfitAssembler
             }
 
             script += $"        Type = {type},\n";
-            script += $"        Weight = {weight},\n";
-            script += $"        IconsForTexture = {iconsForTexture},\n";
+
+            if(weight != "")
+                script += $"        Weight = {weight},\n";
+
+            if (iconsForTexture != "")
+                script += $"        IconsForTexture = {iconsForTexture},\n";
+
             script += $"        BodyLocation = {bodyLocation},\n";
             script += $"        BloodLocation = {bloodLocation},\n";
 
@@ -1309,6 +1314,7 @@ namespace PZOutfitAssembler
                         kvp.Value.Checked = false;
                     }
                 }
+                guid = textBoxGUID.Text;
             }
             catch (Exception ex)
             {
@@ -1744,8 +1750,8 @@ namespace PZOutfitAssembler
             try
             {
                 // Define paths
-                string inputFolderPath = @"C:/PZTest/GeneratedFiles/media/clothing/clothingitems/";
-                string outputFilePathGUID = @"C:/PZTest/GeneratedFiles/media/newFileGuidTable.xml";
+                string inputFolderPath = @"C:/PZTest/GeneratedFiles/media/clothing/clothingItems/";
+                string outputFilePathGUID = @"C:/PZTest/GeneratedFiles/media/fileGuidTable.xml";
 
                 // Initialize the root element of the XML
                 var xmlDoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
@@ -2304,7 +2310,7 @@ namespace PZOutfitAssembler
         public void InitializeGuidCache()
         {
             // List of possible GUID table filenames
-            string[] guidTableNames = { "fileGuidTable.xml", "newFileGuidTable.xml" };
+            string[] guidTableNames = { "fileGuidTable.xml", "fileGuidTable.xml" };
 
             foreach (var dir in searchDirectories)
             {
