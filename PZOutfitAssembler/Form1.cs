@@ -740,36 +740,7 @@ namespace PZOutfitAssembler
                     PopulateItemListBoxWithFileNames(directoryPath, listBoxItems);
 
                     // --------------------------- assemble GUID Table ------------------------------------
-                    string outputPathguid;
-
-                    if (checkBoxDebug.Checked)
-                        outputPathguid = textBoxPath.Text;
-                    else
-                        outputPathguid = AppDomain.CurrentDomain.BaseDirectory;
-                    // Validate the output path
-
-
-                    try
-                    {
-
-                        outputPathguid += "/GeneratedFiles";
-                        // Create the output directory if it doesn't exist
-                        Directory.CreateDirectory(outputPathguid + GUIDsDir);
-
-                        string outputFilePathguid = outputPathguid + GUIDsDir + "fileGuidTable.xml";
-
-                        //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        GenerateFileGuidTable(outputFilePathguid, "media/clothing/clothingItems/", listBoxItems);
-
-                        RefreshGuidCache();
-                    }
-                    catch (Exception ex)
-                    {
-
-                        MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Console.WriteLine($"An error occurred while generating GUID Table: {ex.Message}");
-                    }
+                    assembleGUIDTable();
                 }
                 catch (Exception ex)
                 {
@@ -782,6 +753,41 @@ namespace PZOutfitAssembler
                 MessageBox.Show($"No valid GUID, please generate new before saving", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        void assembleGUIDTable()
+        {
+            // --------------------------- assemble GUID Table ------------------------------------
+            string outputPathguid;
+
+            if (checkBoxDebug.Checked)
+                outputPathguid = textBoxPath.Text;
+            else
+                outputPathguid = AppDomain.CurrentDomain.BaseDirectory;
+            // Validate the output path
+
+
+            try
+            {
+
+                outputPathguid += "/GeneratedFiles";
+                // Create the output directory if it doesn't exist
+                Directory.CreateDirectory(outputPathguid + GUIDsDir);
+
+                string outputFilePathguid = outputPathguid + GUIDsDir + "fileGuidTable.xml";
+
+                //                MessageBox.Show("C:/PZTest/GeneratedFiles" + clothingItemXMLDir, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                GenerateFileGuidTable(outputFilePathguid, "media/clothing/clothingItems/", listBoxItems);
+
+                RefreshGuidCache();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"An error occurred while generating GUID Table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"An error occurred while generating GUID Table: {ex.Message}");
+            }
         }
 
         private string AssembleItemNameScript()
@@ -1871,7 +1877,7 @@ namespace PZOutfitAssembler
                 string outputFilePathGUID = @"C:/PZTest/GeneratedFiles/media/fileGuidTable.xml";
 
                 // Initialize the root element of the XML
-                var xmlDoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
+                //var xmlDoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
                 var rootElement = new XElement("fileGuidTable");
 
                 // Get all XML files in the folder
@@ -1919,8 +1925,56 @@ namespace PZOutfitAssembler
                     }
                 }
 
+                // ----- PART 2: Append vanilla entries -----
+
+                if (listBoxCustomOutfit.Items.Count > 0)
+                {
+
+
+                    string xmlVanilaFilePath = PZinstallPath + GUIDsDir + "fileGUIDTable.xml";
+
+                    if (File.Exists(xmlVanilaFilePath))
+                    {
+                        try
+                        {
+                            // Load vanilla XML
+                            XDocument vanillaDoc = XDocument.Load(xmlVanilaFilePath);
+                            var vanillaEntries = vanillaDoc.Descendants("files");
+
+                            // Add separator comment
+                            rootElement.Add(new XComment(""));
+                            rootElement.Add(new XComment("-----------------------------"));
+                            rootElement.Add(new XComment(" VANILLA ITEMS BELOW "));
+                            rootElement.Add(new XComment("-----------------------------"));
+                            rootElement.Add(new XComment(""));
+
+                            foreach (var fileNode in vanillaEntries)
+                            {
+                                rootElement.Add(new XElement(fileNode));
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error reading vanilla file: {ex.Message}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Vanilla file not found: {xmlVanilaFilePath}");
+                    }
+
+                }
                 // Add root element and save the output file
-                xmlDoc.Add(rootElement);
+
+                // ----- PART 3: Final XML Document Construction -----
+                var xmlDoc = new XDocument(
+                    new XDeclaration("1.0", "utf-8", "yes"),
+                    new XComment(" Script generated by PZ Outfit Assembler | PZK Forge - Peter Hammerman | https://github.com/PeterHammerman/PZ-modding-tools "),
+                    rootElement
+                );
+
+
+               // xmlDoc.Add(rootElement);
                 xmlDoc.Save(outputFilePathGUID);
 
                 MessageBox.Show("FileGuidTable.xml generated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2351,8 +2405,13 @@ namespace PZOutfitAssembler
             // Refresh ListBox
             OutfitLoader cloader = new OutfitLoader(fullPath);
             cloader.PopulateListBox(listBoxCustomOutfit);
+
+            assembleGUIDTable();
+
             MessageBox.Show("XML file saved successfully!");
         }
+
+        
 
         private XElement CreateGenderOutfits(string gender, ListBox listBox, string guid)
         {
