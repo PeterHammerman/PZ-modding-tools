@@ -81,6 +81,7 @@ namespace PZOutfitAssembler
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBox1 = new System.Windows.Forms.TextBox();
             this.button18 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
             this.textBoxProb1 = new System.Windows.Forms.TextBox();
@@ -171,6 +172,7 @@ namespace PZOutfitAssembler
             this.listBoxCustomOutfit = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.searchBox2 = new System.Windows.Forms.TextBox();
             this.button17 = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -210,6 +212,12 @@ namespace PZOutfitAssembler
             this.buttonOutfitClear = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.listBoxMale = new System.Windows.Forms.ListBox();
+            this.searchNextbutton1 = new System.Windows.Forms.Button();
+            this.searchNextbutton2 = new System.Windows.Forms.Button();
+            this.searchBox3 = new System.Windows.Forms.TextBox();
+            this.searchBox4 = new System.Windows.Forms.TextBox();
+            this.searchNextbutton3 = new System.Windows.Forms.Button();
+            this.searchNextbutton4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -292,9 +300,9 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItem
             // 
-            this.textBoxClothingItem.Location = new System.Drawing.Point(144, 240);
+            this.textBoxClothingItem.Location = new System.Drawing.Point(113, 240);
             this.textBoxClothingItem.Name = "textBoxClothingItem";
-            this.textBoxClothingItem.Size = new System.Drawing.Size(123, 20);
+            this.textBoxClothingItem.Size = new System.Drawing.Size(154, 20);
             this.textBoxClothingItem.TabIndex = 11;
             // 
             // checkBoxCanHaveHoles
@@ -369,9 +377,9 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingItemExtra
             // 
-            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(144, 261);
+            this.textBoxClothingItemExtra.Location = new System.Drawing.Point(122, 261);
             this.textBoxClothingItemExtra.Name = "textBoxClothingItemExtra";
-            this.textBoxClothingItemExtra.Size = new System.Drawing.Size(123, 20);
+            this.textBoxClothingItemExtra.Size = new System.Drawing.Size(144, 20);
             this.textBoxClothingItemExtra.TabIndex = 27;
             // 
             // textBoxClothingItemExtraOption
@@ -624,18 +632,18 @@ namespace PZOutfitAssembler
             // 
             // textBoxClothingName
             // 
-            this.textBoxClothingName.Location = new System.Drawing.Point(71, 25);
+            this.textBoxClothingName.Location = new System.Drawing.Point(51, 25);
             this.textBoxClothingName.Name = "textBoxClothingName";
-            this.textBoxClothingName.Size = new System.Drawing.Size(157, 20);
+            this.textBoxClothingName.Size = new System.Drawing.Size(242, 20);
             this.textBoxClothingName.TabIndex = 75;
             // 
             // listBoxItems
             // 
             this.listBoxItems.FormattingEnabled = true;
             this.listBoxItems.HorizontalScrollbar = true;
-            this.listBoxItems.Location = new System.Drawing.Point(8, 22);
+            this.listBoxItems.Location = new System.Drawing.Point(8, 48);
             this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(156, 264);
+            this.listBoxItems.Size = new System.Drawing.Size(156, 238);
             this.listBoxItems.TabIndex = 76;
             // 
             // label8
@@ -650,6 +658,8 @@ namespace PZOutfitAssembler
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.searchNextbutton1);
+            this.panel1.Controls.Add(this.searchBox1);
             this.panel1.Controls.Add(this.button18);
             this.panel1.Controls.Add(this.label36);
             this.panel1.Controls.Add(this.textBoxProb1);
@@ -662,6 +672,13 @@ namespace PZOutfitAssembler
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 333);
             this.panel1.TabIndex = 79;
+            // 
+            // searchBox1
+            // 
+            this.searchBox1.Location = new System.Drawing.Point(8, 26);
+            this.searchBox1.Name = "searchBox1";
+            this.searchBox1.Size = new System.Drawing.Size(156, 20);
+            this.searchBox1.TabIndex = 149;
             // 
             // button18
             // 
@@ -1471,6 +1488,10 @@ namespace PZOutfitAssembler
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel5.Controls.Add(this.searchNextbutton4);
+            this.panel5.Controls.Add(this.searchNextbutton3);
+            this.panel5.Controls.Add(this.searchBox4);
+            this.panel5.Controls.Add(this.searchBox3);
             this.panel5.Controls.Add(this.buttonEditVanilaOutfit);
             this.panel5.Controls.Add(this.button11);
             this.panel5.Controls.Add(this.button10);
@@ -1497,17 +1518,17 @@ namespace PZOutfitAssembler
             // 
             this.button11.Location = new System.Drawing.Point(80, 429);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(46, 29);
+            this.button11.Size = new System.Drawing.Size(66, 29);
             this.button11.TabIndex = 84;
-            this.button11.Text = "Delete item";
+            this.button11.Text = "Delete";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(32, 429);
+            this.button10.Location = new System.Drawing.Point(3, 429);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(45, 29);
+            this.button10.Size = new System.Drawing.Size(71, 29);
             this.button10.TabIndex = 83;
             this.button10.Text = "Edit Item";
             this.button10.UseVisualStyleBackColor = true;
@@ -1516,7 +1537,7 @@ namespace PZOutfitAssembler
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(159, 13);
+            this.label33.Location = new System.Drawing.Point(159, 3);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(69, 13);
             this.label33.TabIndex = 3;
@@ -1525,15 +1546,15 @@ namespace PZOutfitAssembler
             // listBoxVanilaOutfit
             // 
             this.listBoxVanilaOutfit.FormattingEnabled = true;
-            this.listBoxVanilaOutfit.Location = new System.Drawing.Point(154, 38);
+            this.listBoxVanilaOutfit.Location = new System.Drawing.Point(152, 45);
             this.listBoxVanilaOutfit.Name = "listBoxVanilaOutfit";
-            this.listBoxVanilaOutfit.Size = new System.Drawing.Size(141, 381);
+            this.listBoxVanilaOutfit.Size = new System.Drawing.Size(143, 381);
             this.listBoxVanilaOutfit.TabIndex = 2;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(3, 13);
+            this.label32.Location = new System.Drawing.Point(3, 3);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(73, 13);
             this.label32.TabIndex = 1;
@@ -1542,9 +1563,9 @@ namespace PZOutfitAssembler
             // listBoxCustomOutfit
             // 
             this.listBoxCustomOutfit.FormattingEnabled = true;
-            this.listBoxCustomOutfit.Location = new System.Drawing.Point(3, 38);
+            this.listBoxCustomOutfit.Location = new System.Drawing.Point(3, 45);
             this.listBoxCustomOutfit.Name = "listBoxCustomOutfit";
-            this.listBoxCustomOutfit.Size = new System.Drawing.Size(149, 381);
+            this.listBoxCustomOutfit.Size = new System.Drawing.Size(143, 381);
             this.listBoxCustomOutfit.TabIndex = 0;
             // 
             // label9
@@ -1560,6 +1581,8 @@ namespace PZOutfitAssembler
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.searchNextbutton2);
+            this.panel4.Controls.Add(this.searchBox2);
             this.panel4.Controls.Add(this.button17);
             this.panel4.Controls.Add(this.label37);
             this.panel4.Controls.Add(this.label30);
@@ -1570,8 +1593,15 @@ namespace PZOutfitAssembler
             this.panel4.Controls.Add(this.listBoxVanila);
             this.panel4.Location = new System.Drawing.Point(617, 348);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(222, 315);
+            this.panel4.Size = new System.Drawing.Size(231, 315);
             this.panel4.TabIndex = 80;
+            // 
+            // searchBox2
+            // 
+            this.searchBox2.Location = new System.Drawing.Point(8, 32);
+            this.searchBox2.Name = "searchBox2";
+            this.searchBox2.Size = new System.Drawing.Size(156, 20);
+            this.searchBox2.TabIndex = 148;
             // 
             // button17
             // 
@@ -1641,9 +1671,9 @@ namespace PZOutfitAssembler
             // 
             this.listBoxVanila.FormattingEnabled = true;
             this.listBoxVanila.HorizontalScrollbar = true;
-            this.listBoxVanila.Location = new System.Drawing.Point(8, 28);
+            this.listBoxVanila.Location = new System.Drawing.Point(8, 54);
             this.listBoxVanila.Name = "listBoxVanila";
-            this.listBoxVanila.Size = new System.Drawing.Size(156, 238);
+            this.listBoxVanila.Size = new System.Drawing.Size(156, 212);
             this.listBoxVanila.TabIndex = 76;
             // 
             // panel6
@@ -1671,10 +1701,10 @@ namespace PZOutfitAssembler
             // 
             // textBoxOutfitFemaleGUID
             // 
-            this.textBoxOutfitFemaleGUID.Location = new System.Drawing.Point(101, 69);
+            this.textBoxOutfitFemaleGUID.Location = new System.Drawing.Point(88, 69);
             this.textBoxOutfitFemaleGUID.Name = "textBoxOutfitFemaleGUID";
             this.textBoxOutfitFemaleGUID.ReadOnly = true;
-            this.textBoxOutfitFemaleGUID.Size = new System.Drawing.Size(192, 20);
+            this.textBoxOutfitFemaleGUID.Size = new System.Drawing.Size(205, 20);
             this.textBoxOutfitFemaleGUID.TabIndex = 150;
             // 
             // label26
@@ -1760,10 +1790,10 @@ namespace PZOutfitAssembler
             // 
             // textBoxOutfitGUID
             // 
-            this.textBoxOutfitGUID.Location = new System.Drawing.Point(101, 47);
+            this.textBoxOutfitGUID.Location = new System.Drawing.Point(88, 47);
             this.textBoxOutfitGUID.Name = "textBoxOutfitGUID";
             this.textBoxOutfitGUID.ReadOnly = true;
-            this.textBoxOutfitGUID.Size = new System.Drawing.Size(192, 20);
+            this.textBoxOutfitGUID.Size = new System.Drawing.Size(205, 20);
             this.textBoxOutfitGUID.TabIndex = 142;
             // 
             // label34
@@ -1974,6 +2004,56 @@ namespace PZOutfitAssembler
             this.listBoxMale.TabIndex = 0;
             this.listBoxMale.Click += new System.EventHandler(this.listBoxMale_Click);
             this.listBoxMale.SelectedIndexChanged += new System.EventHandler(this.listBoxMale_SelectedIndexChanged_1);
+            // 
+            // searchNextbutton1
+            // 
+            this.searchNextbutton1.Location = new System.Drawing.Point(168, 25);
+            this.searchNextbutton1.Name = "searchNextbutton1";
+            this.searchNextbutton1.Size = new System.Drawing.Size(49, 24);
+            this.searchNextbutton1.TabIndex = 150;
+            this.searchNextbutton1.Text = "Next";
+            this.searchNextbutton1.UseVisualStyleBackColor = true;
+            // 
+            // searchNextbutton2
+            // 
+            this.searchNextbutton2.Location = new System.Drawing.Point(168, 31);
+            this.searchNextbutton2.Name = "searchNextbutton2";
+            this.searchNextbutton2.Size = new System.Drawing.Size(49, 23);
+            this.searchNextbutton2.TabIndex = 149;
+            this.searchNextbutton2.Text = "Next";
+            this.searchNextbutton2.UseVisualStyleBackColor = true;
+            // 
+            // searchBox3
+            // 
+            this.searchBox3.Location = new System.Drawing.Point(3, 21);
+            this.searchBox3.Name = "searchBox3";
+            this.searchBox3.Size = new System.Drawing.Size(92, 20);
+            this.searchBox3.TabIndex = 85;
+            // 
+            // searchBox4
+            // 
+            this.searchBox4.Location = new System.Drawing.Point(152, 21);
+            this.searchBox4.Name = "searchBox4";
+            this.searchBox4.Size = new System.Drawing.Size(92, 20);
+            this.searchBox4.TabIndex = 86;
+            // 
+            // searchNextbutton3
+            // 
+            this.searchNextbutton3.Location = new System.Drawing.Point(101, 20);
+            this.searchNextbutton3.Name = "searchNextbutton3";
+            this.searchNextbutton3.Size = new System.Drawing.Size(45, 21);
+            this.searchNextbutton3.TabIndex = 87;
+            this.searchNextbutton3.Text = "Next";
+            this.searchNextbutton3.UseVisualStyleBackColor = true;
+            // 
+            // searchNextbutton4
+            // 
+            this.searchNextbutton4.Location = new System.Drawing.Point(250, 20);
+            this.searchNextbutton4.Name = "searchNextbutton4";
+            this.searchNextbutton4.Size = new System.Drawing.Size(45, 21);
+            this.searchNextbutton4.TabIndex = 88;
+            this.searchNextbutton4.Text = "Next";
+            this.searchNextbutton4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2207,6 +2287,14 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.TextBox textBoxOutfitFemaleGUID;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox searchBox1;
+        private System.Windows.Forms.TextBox searchBox2;
+        private System.Windows.Forms.Button searchNextbutton1;
+        private System.Windows.Forms.Button searchNextbutton2;
+        private System.Windows.Forms.Button searchNextbutton4;
+        private System.Windows.Forms.Button searchNextbutton3;
+        private System.Windows.Forms.TextBox searchBox4;
+        private System.Windows.Forms.TextBox searchBox3;
     }
 }
 

@@ -88,6 +88,15 @@ namespace PZOutfitAssembler
 
             InitializeGuidCache();
 
+            searchBox1.TextChanged += SearchBox_TextChanged;
+            searchBox2.TextChanged += SearchBox_TextChanged;
+            searchBox3.TextChanged += SearchBox_TextChanged;
+            searchBox4.TextChanged += SearchBox_TextChanged;
+            searchNextbutton1.Click += SearchNextButton_Click;
+            searchNextbutton2.Click += SearchNextButton_Click;
+            searchNextbutton3.Click += SearchNextButton_Click;
+            searchNextbutton4.Click += SearchNextButton_Click;
+
         }
 
         private void buttonEditVanilaOutfit_Click(object sender, EventArgs e)
@@ -567,6 +576,114 @@ namespace PZOutfitAssembler
             {
                 MessageBox.Show($"An error occurred while populating the list: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox searchBox = sender as TextBox;
+            if (searchBox == null) return;
+
+            ListBox targetListBox = null;
+
+            // Match each search box to its corresponding list box
+            if (searchBox == searchBox1)
+                targetListBox = listBoxItems;
+            else if (searchBox == searchBox2)
+                targetListBox = listBoxVanila;
+            else if (searchBox == searchBox3)
+                targetListBox = listBoxCustomOutfit;
+            else if (searchBox == searchBox4)
+                targetListBox = listBoxVanilaOutfit;
+
+            if (targetListBox == null) return;
+
+            string searchText = searchBox.Text.ToLower();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                targetListBox.ClearSelected();
+                return;
+            }
+
+            for (int i = 0; i < targetListBox.Items.Count; i++)
+            {
+                string itemText = targetListBox.Items[i].ToString().ToLower();
+                if (itemText.Contains(searchText)) // Match anywhere in the item
+                {
+                    targetListBox.SelectedIndex = i;
+                    targetListBox.TopIndex = i;
+                    return;
+                }
+            }
+
+            // No match found
+            targetListBox.ClearSelected();
+        }
+
+        private void SearchNextButton_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            if (clickedButton == null) return;
+
+            TextBox searchBox = null;
+            ListBox targetListBox = null;
+
+            // Map buttons to their corresponding text boxes and list boxes
+            if (clickedButton == searchNextbutton1)
+            {
+                searchBox = searchBox1;
+                targetListBox = listBoxItems;
+            }
+            else if (clickedButton == searchNextbutton2)
+            {
+                searchBox = searchBox2;
+                targetListBox = listBoxVanila;
+            }
+            else if (clickedButton == searchNextbutton3)
+            {
+                searchBox = searchBox3;
+                targetListBox = listBoxCustomOutfit;
+            }
+            else if (clickedButton == searchNextbutton4)
+            {
+                searchBox = searchBox4;
+                targetListBox = listBoxVanilaOutfit;
+            }
+
+            if (searchBox == null || targetListBox == null) return;
+
+            string searchText = searchBox.Text.ToLower();
+            if (string.IsNullOrWhiteSpace(searchText)) return;
+
+            int startIndex = targetListBox.SelectedIndex + 1;
+            int count = targetListBox.Items.Count;
+
+            // Search from current selection to end
+            for (int i = startIndex; i < count; i++)
+            {
+                string itemText = targetListBox.Items[i].ToString().ToLower();
+                if (itemText.Contains(searchText))
+                {
+                    targetListBox.SelectedIndex = i;
+                    targetListBox.TopIndex = i;
+                    return;
+                }
+            }
+
+            // Wrap: search from start to current selection
+            for (int i = 0; i < startIndex; i++)
+            {
+                string itemText = targetListBox.Items[i].ToString().ToLower();
+                if (itemText.Contains(searchText))
+                {
+                    targetListBox.SelectedIndex = i;
+                    targetListBox.TopIndex = i;
+                    return;
+                }
+            }
+
+            // No match found
+            targetListBox.ClearSelected();
         }
 
         private void button1_Click(object sender, EventArgs e) //Save new item
