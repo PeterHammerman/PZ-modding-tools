@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PZOutfitAssembler", "PZOutfitAssembler.csproj", "{48A4BE6F-7413-468B-9459-E0CCF426C7BF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7D40A05-E304-4EE6-9A79-5015697F18A4}"
+	ProjectSection(SolutionItems) = preProject
+		OED1.ico = OED1.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -81,6 +81,7 @@ namespace PZOutfitAssembler
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchNextbutton1 = new System.Windows.Forms.Button();
             this.searchBox1 = new System.Windows.Forms.TextBox();
             this.button18 = new System.Windows.Forms.Button();
             this.label36 = new System.Windows.Forms.Label();
@@ -163,6 +164,10 @@ namespace PZOutfitAssembler
             this.checkBoxClosesound = new System.Windows.Forms.CheckBox();
             this.checkBoxOpensound = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.searchNextbutton4 = new System.Windows.Forms.Button();
+            this.searchNextbutton3 = new System.Windows.Forms.Button();
+            this.searchBox4 = new System.Windows.Forms.TextBox();
+            this.searchBox3 = new System.Windows.Forms.TextBox();
             this.buttonEditVanilaOutfit = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -172,6 +177,7 @@ namespace PZOutfitAssembler
             this.listBoxCustomOutfit = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.searchNextbutton2 = new System.Windows.Forms.Button();
             this.searchBox2 = new System.Windows.Forms.TextBox();
             this.button17 = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
@@ -212,12 +218,6 @@ namespace PZOutfitAssembler
             this.buttonOutfitClear = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.listBoxMale = new System.Windows.Forms.ListBox();
-            this.searchNextbutton1 = new System.Windows.Forms.Button();
-            this.searchNextbutton2 = new System.Windows.Forms.Button();
-            this.searchBox3 = new System.Windows.Forms.TextBox();
-            this.searchBox4 = new System.Windows.Forms.TextBox();
-            this.searchNextbutton3 = new System.Windows.Forms.Button();
-            this.searchNextbutton4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -672,6 +672,15 @@ namespace PZOutfitAssembler
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(231, 333);
             this.panel1.TabIndex = 79;
+            // 
+            // searchNextbutton1
+            // 
+            this.searchNextbutton1.Location = new System.Drawing.Point(168, 25);
+            this.searchNextbutton1.Name = "searchNextbutton1";
+            this.searchNextbutton1.Size = new System.Drawing.Size(49, 24);
+            this.searchNextbutton1.TabIndex = 150;
+            this.searchNextbutton1.Text = "Next";
+            this.searchNextbutton1.UseVisualStyleBackColor = true;
             // 
             // searchBox1
             // 
@@ -1504,6 +1513,38 @@ namespace PZOutfitAssembler
             this.panel5.Size = new System.Drawing.Size(299, 467);
             this.panel5.TabIndex = 83;
             // 
+            // searchNextbutton4
+            // 
+            this.searchNextbutton4.Location = new System.Drawing.Point(250, 20);
+            this.searchNextbutton4.Name = "searchNextbutton4";
+            this.searchNextbutton4.Size = new System.Drawing.Size(45, 21);
+            this.searchNextbutton4.TabIndex = 88;
+            this.searchNextbutton4.Text = "Next";
+            this.searchNextbutton4.UseVisualStyleBackColor = true;
+            // 
+            // searchNextbutton3
+            // 
+            this.searchNextbutton3.Location = new System.Drawing.Point(101, 20);
+            this.searchNextbutton3.Name = "searchNextbutton3";
+            this.searchNextbutton3.Size = new System.Drawing.Size(45, 21);
+            this.searchNextbutton3.TabIndex = 87;
+            this.searchNextbutton3.Text = "Next";
+            this.searchNextbutton3.UseVisualStyleBackColor = true;
+            // 
+            // searchBox4
+            // 
+            this.searchBox4.Location = new System.Drawing.Point(152, 21);
+            this.searchBox4.Name = "searchBox4";
+            this.searchBox4.Size = new System.Drawing.Size(92, 20);
+            this.searchBox4.TabIndex = 86;
+            // 
+            // searchBox3
+            // 
+            this.searchBox3.Location = new System.Drawing.Point(3, 21);
+            this.searchBox3.Name = "searchBox3";
+            this.searchBox3.Size = new System.Drawing.Size(92, 20);
+            this.searchBox3.TabIndex = 85;
+            // 
             // buttonEditVanilaOutfit
             // 
             this.buttonEditVanilaOutfit.Location = new System.Drawing.Point(196, 429);
@@ -1595,6 +1636,15 @@ namespace PZOutfitAssembler
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(231, 315);
             this.panel4.TabIndex = 80;
+            // 
+            // searchNextbutton2
+            // 
+            this.searchNextbutton2.Location = new System.Drawing.Point(168, 31);
+            this.searchNextbutton2.Name = "searchNextbutton2";
+            this.searchNextbutton2.Size = new System.Drawing.Size(49, 23);
+            this.searchNextbutton2.TabIndex = 149;
+            this.searchNextbutton2.Text = "Next";
+            this.searchNextbutton2.UseVisualStyleBackColor = true;
             // 
             // searchBox2
             // 
@@ -2005,56 +2055,6 @@ namespace PZOutfitAssembler
             this.listBoxMale.Click += new System.EventHandler(this.listBoxMale_Click);
             this.listBoxMale.SelectedIndexChanged += new System.EventHandler(this.listBoxMale_SelectedIndexChanged_1);
             // 
-            // searchNextbutton1
-            // 
-            this.searchNextbutton1.Location = new System.Drawing.Point(168, 25);
-            this.searchNextbutton1.Name = "searchNextbutton1";
-            this.searchNextbutton1.Size = new System.Drawing.Size(49, 24);
-            this.searchNextbutton1.TabIndex = 150;
-            this.searchNextbutton1.Text = "Next";
-            this.searchNextbutton1.UseVisualStyleBackColor = true;
-            // 
-            // searchNextbutton2
-            // 
-            this.searchNextbutton2.Location = new System.Drawing.Point(168, 31);
-            this.searchNextbutton2.Name = "searchNextbutton2";
-            this.searchNextbutton2.Size = new System.Drawing.Size(49, 23);
-            this.searchNextbutton2.TabIndex = 149;
-            this.searchNextbutton2.Text = "Next";
-            this.searchNextbutton2.UseVisualStyleBackColor = true;
-            // 
-            // searchBox3
-            // 
-            this.searchBox3.Location = new System.Drawing.Point(3, 21);
-            this.searchBox3.Name = "searchBox3";
-            this.searchBox3.Size = new System.Drawing.Size(92, 20);
-            this.searchBox3.TabIndex = 85;
-            // 
-            // searchBox4
-            // 
-            this.searchBox4.Location = new System.Drawing.Point(152, 21);
-            this.searchBox4.Name = "searchBox4";
-            this.searchBox4.Size = new System.Drawing.Size(92, 20);
-            this.searchBox4.TabIndex = 86;
-            // 
-            // searchNextbutton3
-            // 
-            this.searchNextbutton3.Location = new System.Drawing.Point(101, 20);
-            this.searchNextbutton3.Name = "searchNextbutton3";
-            this.searchNextbutton3.Size = new System.Drawing.Size(45, 21);
-            this.searchNextbutton3.TabIndex = 87;
-            this.searchNextbutton3.Text = "Next";
-            this.searchNextbutton3.UseVisualStyleBackColor = true;
-            // 
-            // searchNextbutton4
-            // 
-            this.searchNextbutton4.Location = new System.Drawing.Point(250, 20);
-            this.searchNextbutton4.Name = "searchNextbutton4";
-            this.searchNextbutton4.Size = new System.Drawing.Size(45, 21);
-            this.searchNextbutton4.TabIndex = 88;
-            this.searchNextbutton4.Text = "Next";
-            this.searchNextbutton4.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2081,7 +2081,7 @@ namespace PZOutfitAssembler
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "PZK Forge - PZ Clothing editor v42.1";
+            this.Text = "PZK Forge - PZ Clothing editor v42.10";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
