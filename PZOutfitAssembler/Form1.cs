@@ -1002,9 +1002,9 @@ namespace PZOutfitAssembler
                 xml.AppendLine($"  <m_AltFemaleModel>{altfemaleModel}</m_AltFemaleModel>");
 
             xml.AppendLine($"  <m_GUID>{guid}</m_GUID>");
-            xml.AppendLine($"  <m_Static>{isStatic}</m_Static>");
-            xml.AppendLine($"  <m_AllowRandomHue>{checkBoxAllowRandomHue.Checked}</m_AllowRandomHue>");
-            xml.AppendLine($"  <m_AllowRandomTint>{checkBoxAllowRandomTint.Checked}</m_AllowRandomTint>");
+            xml.AppendLine($"  <m_Static>{isStatic.ToString().ToLowerInvariant()}</m_Static>");
+            xml.AppendLine($"  <m_AllowRandomHue>{checkBoxAllowRandomHue.Checked.ToString().ToLowerInvariant()}</m_AllowRandomHue>");
+            xml.AppendLine($"  <m_AllowRandomTint>{checkBoxAllowRandomTint.Checked.ToString().ToLowerInvariant()}</m_AllowRandomTint>");
             xml.AppendLine("  <m_AttachBone></m_AttachBone>");
 
             if (!string.IsNullOrEmpty(maleModel) || !string.IsNullOrEmpty(femaleModel))

@@ -896,9 +896,9 @@ namespace PZOutfitAssembler
             // 
             // textBoxCorpseSicknessDefence
             // 
-            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(159, 513);
+            this.textBoxCorpseSicknessDefence.Location = new System.Drawing.Point(158, 513);
             this.textBoxCorpseSicknessDefence.Name = "textBoxCorpseSicknessDefence";
-            this.textBoxCorpseSicknessDefence.Size = new System.Drawing.Size(108, 20);
+            this.textBoxCorpseSicknessDefence.Size = new System.Drawing.Size(109, 20);
             this.textBoxCorpseSicknessDefence.TabIndex = 133;
             // 
             // checkBoxVisionModifier
