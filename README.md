@@ -1,10 +1,6 @@
-Warning!
-With 42.12 update for PZ TIS decided that: "Lets make something stupid! Let's remove scripts from game and merge into java code, lets leave modders in dark place where sun doesn't shine...". 
-Editor is now not fully functional and will be no longer updated and supported. Thx TIS!
 
 
-Editor for making scripts for modded clothing for Project Zomboid. For those who enjoyed - you can still making clothes if you had created previously with editor some scripts, they should be in database. Now you cannot edit or load any vanilla stuff.
-
+Editor for making scripts for modded clothing for Project Zomboid.
 
 Purpose of this tool is to automatic generate necessary scripts for modded clothing.
 

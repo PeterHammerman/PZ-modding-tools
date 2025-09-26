@@ -30,7 +30,7 @@ namespace PZOutfitAssembler
         public string directoryPath = "C:/PZTest/GeneratedFiles/media/scripts/clothing/";
         public string PZinstallPath = "";
         public string GUIDsDir = "/media/";
-        public string clothingScriptsDir = "/media/scripts/clothing/";
+        public string clothingScriptsDir = "/media/scripts/generated/items/";
         public string clothingXMLDir = "/media/clothing/";
         public string clothingItemXMLDir = "/media/clothing/clothingItems/";
         private ListBox activeListBox = null;
