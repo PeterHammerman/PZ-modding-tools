@@ -474,7 +474,8 @@ namespace PZOutfitAssembler
             textBoxMasks.Text = "";
             textBoxunderlayMasksFolder.Text = "";
             textBoxmasksFolder.Text = "";
-
+            textBoxBiteDefense.Text = "";
+            
 
 
             checkBoxStatic.Checked = false;
@@ -515,6 +516,7 @@ namespace PZOutfitAssembler
             checkBoxAcceptItemFunction.Checked = false;
             checkBoxAllowRandomHue.Checked = false;
             checkBoxAllowRandomTint.Checked = false;
+            checkBoxBloodLocation.Checked = false;
 
 
 
@@ -800,7 +802,7 @@ namespace PZOutfitAssembler
             string type = textBoxType.Text;
             string weight = textBoxWeigth.Text;
             string iconsForTexture = textBoxTextureIcon.Text;
-            string bodyLocation = textBoxBodyLocation.Text;
+            string bodyLocation = textBoxBodyLocation.Text;  
             string bloodLocation = textBoxBloodLocation.Text;
             string chanceToFall = textBoxChanceToFall.Text;
             string clothingItem = textBoxClothingItem.Text;
@@ -869,7 +871,10 @@ namespace PZOutfitAssembler
                 script += $"        IconsForTexture = {iconsForTexture},\n";
 
             script += $"        BodyLocation = {bodyLocation},\n";
-            script += $"        BloodLocation = {bloodLocation},\n";
+
+            if (checkBoxBloodLocation.Checked)
+                script += $"        BloodLocation = {bloodLocation},\n";
+          
 
             if (checkBoxChanceToFall.Checked)
                 script += $"        ChanceToFall = {chanceToFall},\n";
@@ -1253,6 +1258,7 @@ namespace PZOutfitAssembler
                             {"BulletDefense", checkBoxBulletDefense },
                             {"ScratchDefense", checkBoxScratchDefense },
                             {"DiscomfortModifier", checkBoxDiscomfort },
+                            {"BloodLocation", checkBoxBloodLocation },
                             {"CombatSpeedModifier", checkBoxCombatSpeed },
                             {"WaterResisstance", checkBoxWaterResistance },
                             {"VisionModifier", checkBoxVisionModifier },
@@ -1666,6 +1672,7 @@ namespace PZOutfitAssembler
                             {"BulletDefense", checkBoxBulletDefense },
                             {"ScratchDefense", checkBoxScratchDefense },
                             {"DiscomfortModifier", checkBoxDiscomfort },
+                            {"BloodLocation", checkBoxBloodLocation },
                             {"CombatSpeedModifier", checkBoxCombatSpeed },
                             {"WaterResisstance", checkBoxWaterResistance },
                             {"VisionModifier", checkBoxVisionModifier },

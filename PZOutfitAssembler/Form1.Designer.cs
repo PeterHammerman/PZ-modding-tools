@@ -60,7 +60,6 @@ namespace PZOutfitAssembler
             this.textBoxTextureChoices = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBoxBloodLocation = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -218,6 +217,7 @@ namespace PZOutfitAssembler
             this.buttonOutfitClear = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.listBoxMale = new System.Windows.Forms.ListBox();
+            this.checkBoxBloodLocation = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -469,15 +469,6 @@ namespace PZOutfitAssembler
             this.textBoxBloodLocation.Name = "textBoxBloodLocation";
             this.textBoxBloodLocation.Size = new System.Drawing.Size(161, 20);
             this.textBoxBloodLocation.TabIndex = 49;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 558);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(73, 13);
-            this.label19.TabIndex = 48;
-            this.label19.Text = "blood location";
             // 
             // button1
             // 
@@ -749,6 +740,7 @@ namespace PZOutfitAssembler
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.Controls.Add(this.checkBoxBloodLocation);
             this.panel2.Controls.Add(this.checkBoxBiteDefense);
             this.panel2.Controls.Add(this.textBoxBiteDefense);
             this.panel2.Controls.Add(this.checkBoxHearingModifier);
@@ -844,7 +836,6 @@ namespace PZOutfitAssembler
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.textBoxTextureIcon);
             this.panel2.Controls.Add(this.textBoxBloodLocation);
-            this.panel2.Controls.Add(this.label19);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(599, 696);
@@ -2055,6 +2046,16 @@ namespace PZOutfitAssembler
             this.listBoxMale.Click += new System.EventHandler(this.listBoxMale_Click);
             this.listBoxMale.SelectedIndexChanged += new System.EventHandler(this.listBoxMale_SelectedIndexChanged_1);
             // 
+            // checkBoxBloodLocation
+            // 
+            this.checkBoxBloodLocation.AutoSize = true;
+            this.checkBoxBloodLocation.Location = new System.Drawing.Point(8, 557);
+            this.checkBoxBloodLocation.Name = "checkBoxBloodLocation";
+            this.checkBoxBloodLocation.Size = new System.Drawing.Size(92, 17);
+            this.checkBoxBloodLocation.TabIndex = 139;
+            this.checkBoxBloodLocation.Text = "blood location";
+            this.checkBoxBloodLocation.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2137,7 +2138,6 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.TextBox textBoxTextureChoices;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBoxBloodLocation;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -2295,6 +2295,7 @@ namespace PZOutfitAssembler
         private System.Windows.Forms.Button searchNextbutton3;
         private System.Windows.Forms.TextBox searchBox4;
         private System.Windows.Forms.TextBox searchBox3;
+        private System.Windows.Forms.CheckBox checkBoxBloodLocation;
     }
 }
 
