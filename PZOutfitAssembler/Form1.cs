@@ -31,6 +31,7 @@ namespace PZOutfitAssembler
         public string PZinstallPath = "";
         public string GUIDsDir = "/media/";
         public string clothingScriptsDir = "/media/scripts/generated/items/";
+        public string oldclothingScriptsDir = "/media/scripts/clothing/";
         public string clothingXMLDir = "/media/clothing/";
         public string clothingItemXMLDir = "/media/clothing/clothingItems/";
         private ListBox activeListBox = null;
@@ -712,7 +713,7 @@ namespace PZOutfitAssembler
                     outputPath += "/GeneratedFiles";
                     // Create the output directory if it doesn't exist
                     Directory.CreateDirectory(outputPath);
-                    Directory.CreateDirectory(outputPath + clothingScriptsDir);
+                    Directory.CreateDirectory(outputPath + oldclothingScriptsDir);
                     Directory.CreateDirectory(outputPath + clothingItemXMLDir);
                     Directory.CreateDirectory(outputPath + "/media/clothing/");
 
@@ -727,7 +728,7 @@ namespace PZOutfitAssembler
 
 
                     // Save the itemname.txt file
-                    string itemNameFilePath = Path.Combine(outputPath + clothingScriptsDir, itemID + ".txt");
+                    string itemNameFilePath = Path.Combine(outputPath + oldclothingScriptsDir, itemID + ".txt");
                     File.WriteAllText(itemNameFilePath, itemNameContent);
 
                     string xmlClothItemFilePath = Path.Combine(outputPath + clothingItemXMLDir, textBoxClothingItem.Text + ".xml");
