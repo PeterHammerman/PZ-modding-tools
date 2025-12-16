@@ -863,7 +863,7 @@ namespace PZOutfitAssembler
                 script += $"        DisplayCategory = {displayCategory},\n";
             }
 
-            script += $"        Type = {type},\n";
+            script += $"        ItemType = {type},\n";
 
             if(weight != "")
                 script += $"        Weight = {weight},\n";
@@ -1185,7 +1185,7 @@ namespace PZOutfitAssembler
             {
                 { "DisplayName", textBoxDisplayName },
                 { "DisplayCategory",textBoxCategory},
-                { "Type", textBoxType },
+                { "ItemType", textBoxType },
                 { "Weight",textBoxWeigth },
                 { "IconsForTexture", textBoxTextureIcon },
                 { "BodyLocation", textBoxBodyLocation },
@@ -1597,7 +1597,7 @@ namespace PZOutfitAssembler
             {
                 { "DisplayName", textBoxDisplayName },
                 { "DisplayCategory",textBoxCategory},
-                { "Type", textBoxType },
+                { "ItemType", textBoxType },
                 { "Weight",textBoxWeigth },
                 { "IconsForTexture", textBoxTextureIcon },
                 { "BodyLocation", textBoxBodyLocation },
